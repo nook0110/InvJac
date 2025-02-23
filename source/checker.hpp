@@ -8,23 +8,29 @@
 #include <string>
 #include <vector>
 
+#include "map.hpp"
 #include "point.hpp"
-#include "polynomial.hpp"
 #include "solver.hpp"
 #include "source/phc_wrapper.hpp"
 #include "symbol.hpp"
 class Checker
 {
  public:
+  struct Settings
+  {
+    size_t iterations = 10;
+    double epsilon = 1e-4;
+  };
+
   void SetMap(const Map* new_map)
   {
-    LOG(INFO) << "Setting new map.";
+    VLOG(0) << "Setting new map.";
     map_ = new_map;
   }
 
   std::optional<Complex> TestPoint(const Point& point) const
   {
-    LOG(INFO) << "Testing point: " << point.ToStr();
+    VLOG(0) << "Testing point: " << point.ToStr();
     auto solutions = Solver::GetInstance().Solve(*map_, point);
 
     GiNaC::numeric sum_reciprocals = 0;
@@ -39,10 +45,10 @@ class Checker
 
     GiNaC::numeric approximate_sum = GiNaC::abs(sum_reciprocals).to_double();
 
-    LOG(INFO) << "Sum of reciprocals of Jacobians: " << approximate_sum;
+    VLOG(1) << "Sum of reciprocals of Jacobians: " << approximate_sum;
 
-    bool result = approximate_sum < 1e-4;
-    LOG(INFO) << "Test result: " << (result ? "passed" : "failed");
+    bool result = approximate_sum < settings_.epsilon;
+    VLOG(1) << "Test result: " << (result ? "passed" : "failed");
     return result ? std::nullopt : std::optional<Complex>{approximate_sum};
   }
 
@@ -53,7 +59,8 @@ class Checker
         Symbols::GetSymbolsList(map_->GetDimensions()), point.ToLst()));
   }
 
-  const Map* map_ = {};
+  Map map_;
+  Settings settings_;
 };
 
 inline std::optional<Point> GeneratePointWithUnitJacobian(const Map& map,
@@ -92,15 +99,15 @@ inline std::optional<Point> GeneratePointWithUnitJacobian(const Map& map,
     auto solution = *solutions.begin();
     DLOG_IF(FATAL, solution.point.GetDimensions() != dimensions)
         << "The solution point does not have the expected dimensions.";
-    LOG(INFO) << "Using point with jacobian equal to "
-              << ToStr(map.GetJacobian()
-                           .subs(Symbols::GetSymbolsList(map.GetDimensions()),
-                                 solution.point.ToLst())
-                           .evalf());
-    LOG(INFO) << "Point is " << solution.point.ToStr();
+    VLOG(1) << "Using point with jacobian equal to "
+            << ToStr(map.GetJacobian()
+                         .subs(Symbols::GetSymbolsList(map.GetDimensions()),
+                               solution.point.ToLst())
+                         .evalf());
+    VLOG(1) << "Point is " << solution.point.ToStr();
 
     return solution.point;
   }
-  LOG(INFO) << "Couldn't generate a point with jacobian equal to 1.";
+  VLOG(1) << "Couldn't generate a point with jacobian equal to 1.";
   return {};
 }

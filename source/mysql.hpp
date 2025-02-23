@@ -9,8 +9,8 @@
 #include <tuple>
 #include <variant>
 
+#include "map.hpp"
 #include "point.hpp"
-#include "polynomial.hpp"
 
 class Map;
 

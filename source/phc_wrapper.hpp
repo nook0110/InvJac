@@ -6,8 +6,8 @@
 #include <string_view>
 #include <vector>
 
-#include "source/point.hpp"
-#include "source/polynomial.hpp"
+#include "point.hpp"
+#include "map.hpp"
 
 namespace phc
 {

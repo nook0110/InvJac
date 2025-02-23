@@ -4,9 +4,9 @@
 #include <cln/real.h>
 #include <complex.h>
 
-#include "source/phc_wrapper.hpp"
-#include "source/point.hpp"
-#include "source/polynomial.hpp"
+#include "map.hpp"
+#include "phc_wrapper.hpp"
+#include "point.hpp"
 
 Solver& Solver::GetInstance()
 {

@@ -13,17 +13,13 @@
 #include <cassert>
 #include <cstddef>
 #include <cstdlib>
-#include <string>
 #include <vector>
 
 #include "checker.hpp"
+#include "map.hpp"
+#include "map_factory.hpp"
 #include "mysql.hpp"
-#include "polynomial.hpp"
-#include "source/phc_wrapper.hpp"
-#include "source/point.hpp"
-#include "source/solver.hpp"
-#include "symbol.hpp"
-
+#include "point.hpp"
 void TestMap(const Map& map, FunctionDatabase& db);
 int main(int argc, char* argv[])
 {
@@ -34,30 +30,15 @@ int main(int argc, char* argv[])
   bool user_input = argc > 0;
   if (user_input)
   {
-    size_t dimensions;
-    std::cin >> dimensions;
-    Symbols::FitInto(dimensions);
-
-    std::vector<Polynomial> polynomials(dimensions);
-
-    std::string input;
-    std::getline(std::cin, input);
-    for (auto& poly : polynomials)
-    {
-      std::string s;
-      std::getline(std::cin, s);
-      poly = GiNaC::ex(s, Symbols::GetSymbolsList());
-    }
-
-    Map map(std::move(polynomials));
+    Map map = MapFactory::CreateMapFromInput(std::cin);
 
     LOG(INFO) << "Map has contraction: " << map.HasContraction();
 
     return 0;
 
-    Point point = Point::GenerateRandom(dimensions);
+    Point point = Point::GenerateRandom(map.GetDimensions());
     point = map.Image(
-        GeneratePointWithUnitJacobian(map, Point::GenerateRandom(dimensions))
+        GeneratePointWithUnitJacobian(map, Point::GenerateRandom(map.GetDimensions()))
             .value_or(point));
 
     Checker checker;

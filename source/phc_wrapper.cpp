@@ -2,6 +2,8 @@
 
 #include <glog/logging.h>
 // PHCPack
+#include <cln/cln.h>
+#include <ginac/ginac.h>
 #include <phc/celcon.h>
 #include <phc/phcpack.h>
 #include <phc/solcon.h>
@@ -10,20 +12,15 @@
 #include <cassert>
 #include <cstddef>
 #include <iterator>
-#include <memory>
-#include <ranges>
-#include <stdexcept>
 #include <string>
 #include <string_view>
 #include <vector>
 
+#include "map.hpp"
 #include "phc/next_track.h"
 #include "phc/product.h"
 #include "phc/witsols.h"
-#include "solver.hpp"
-#include "source/point.hpp"
-#include "source/polynomial.hpp"
-#include "source/symbol.hpp"
+#include "point.hpp"
 
 namespace phc
 {
@@ -63,7 +60,7 @@ class PHCWrapper::PHCWrapperImplementation
 PHCWrapper::PHCWrapperImplementation::PHCWrapperImplementation()
 {
   adainit();
-  LOG(INFO) << "PHCWrapper initialized.";
+  VLOG(0) << "PHCWrapper initialized.";
 }
 
 void PHCWrapper::PHCWrapperImplementation::Clear() const
@@ -86,7 +83,7 @@ void PHCWrapper::PHCWrapperImplementation::InitializeNumberOfPolynomials(
   {
     LOG(DFATAL) << "Failed to initialize number of standard polynomials.";
   }
-  LOG(INFO) << "Initialized number of standard polynomials: " << n;
+  VLOG(0) << "Initialized number of standard polynomials: " << n;
 }
 
 size_t PHCWrapper::PHCWrapperImplementation::GetAmountOfSymbols() const
@@ -130,7 +127,7 @@ void PHCWrapper::PHCWrapperImplementation::InsertPolynomial(
     LOG(DFATAL) << "Failed to store standard polynomial for equation: "
                 << polynomial;
   }
-  LOG(INFO) << "Inserted polynomial at index " << idx << ": " << polynomial;
+  VLOG(0) << "Inserted polynomial at index " << idx << ": " << polynomial;
 }
 
 std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
@@ -161,14 +158,14 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
     ans.emplace_back(static_cast<size_t>(multiplicity), std::move(solution));
   }
 
-  LOG(INFO) << "Solved system with " << root_count << " solutions.";
+  VLOG(1) << "Solved system with " << root_count << " solutions.";
   return ans;
 }
 
 PHCWrapper::PHCWrapperImplementation::~PHCWrapperImplementation()
 {
   adafinal();
-  LOG(INFO) << "PHCWrapper finalized.";
+  VLOG(0) << "PHCWrapper finalized.";
 }
 
 PHCWrapper::PHCWrapper()

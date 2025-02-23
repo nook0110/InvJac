@@ -1,4 +1,4 @@
-#include "polynomial.hpp"
+#include "map.hpp"
 
 #include <ginac/ex.h>
 #include <ginac/matrix.h>
@@ -78,8 +78,6 @@ bool Map::HasContraction() const
 
   for (const auto& [multiplicity, root] : equation.Solve())
   {
-    LOG(INFO) << root.ToStr();
-
     auto result_at_point = result;
     for (size_t row = 0; row < GetDimensions(); ++row)
     {
@@ -88,8 +86,6 @@ bool Map::HasContraction() const
     }
 
     const auto epsilon = 1e-4;
-
-    LOG(INFO) << result_at_point.evalf();
 
     if (GiNaC::abs(result_at_point(0, 0)) < epsilon &&
         GiNaC::abs(result_at_point(1, 0)) < epsilon)

@@ -22,9 +22,9 @@
 #include <thread>
 #include <vector>
 
+#include "map.hpp"
 #include "phc_wrapper.hpp"
 #include "point.hpp"
-#include "polynomial.hpp"
 
 class Solver
 {
