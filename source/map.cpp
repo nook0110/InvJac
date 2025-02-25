@@ -5,7 +5,6 @@
 
 #include <algorithm>
 #include <cstddef>
-#include <exception>
 
 #include "point.hpp"
 #include "solver.hpp"
@@ -51,7 +50,7 @@ bool Map::HasContraction() const
   static std::mt19937 gen(80085);
   static std::uniform_int_distribution dis(-10, 10);
 
-  phc::Equation equation;
+  Equation equation;
   equation.AppendEquation(jacobian);
   if (jacobian.has(Symbols::GetSymbol(0)))
   {

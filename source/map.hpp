@@ -8,12 +8,12 @@
 #include <cassert>
 #include <cstddef>
 #include <optional>
-#include <ranges>
 #include <sstream>
 #include <vector>
 
 #include "point.hpp"
 #include "symbol.hpp"
+
 using Polynomial = GiNaC::ex;
 
 inline std::string ToStr(const Polynomial& poly)

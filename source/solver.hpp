@@ -22,26 +22,26 @@
 #include <thread>
 #include <vector>
 
+#include "equation.hpp"
 #include "map.hpp"
-#include "phc_wrapper.hpp"
 #include "point.hpp"
 
 class Solver
 {
  public:
-  using Root = phc::Equation::Root;
-  using Solution = phc::Equation::Solution;
+  using Root = Equation::Root;
+  using Solution = Equation::Solution;
   static Solver& GetInstance();
 
   Solution Solve(const Map& mapping, const Point& point) const;
 
  private:
-  phc::Equation CreateEquation(const Map& mapping, const Point& point) const
+  Equation CreateEquation(const Map& mapping, const Point& point) const
   {
     LOG_IF(DFATAL, mapping.GetDimensions() != point.GetDimensions())
         << "Mapping and point dimensions are incompatible!";
 
-    phc::Equation equation(mapping.GetDimensions());
+    Equation equation(mapping.GetDimensions());
 
     for (const auto& [polynomial, coordinate] : std::views::zip(mapping, point))
     {
@@ -51,6 +51,7 @@ class Solver
     return equation;
   }
 
+  Solver() = default;
   Solver(const Solver& root) = delete;
   Solver(Solver&& root) = delete;
   Solver& operator=(const Solver&) = delete;

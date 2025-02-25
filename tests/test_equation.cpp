@@ -4,7 +4,7 @@
 
 #include <cassert>
 
-#include "source/phc_wrapper.hpp"
+#include "source/equation.hpp"
 #include "source/point.hpp"
 #include "source/symbol.hpp"
 
@@ -26,7 +26,7 @@ bool IsNear(const Point& first, const Point& second)
 
 TEST(EquationTest, IsSquare)
 {
-  phc::Equation equation(2);
+  Equation equation(2);
   equation.AppendEquation(x * y - 2);
   equation.AppendEquation(x * x - 1);
   ASSERT_TRUE(equation.IsSquare());
@@ -34,7 +34,7 @@ TEST(EquationTest, IsSquare)
 
 TEST(EquationTest, Solve)
 {
-  phc::Equation equation(2);
+  Equation equation(2);
   equation.AppendEquation(x * y - 2);
   equation.AppendEquation(x * x - 1);
   auto solution = equation.Solve();

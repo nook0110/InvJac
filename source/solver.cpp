@@ -1,11 +1,9 @@
 #include "solver.hpp"
 
-#include <bits/ranges_algo.h>
-#include <cln/real.h>
 #include <complex.h>
 
 #include "map.hpp"
-#include "phc_wrapper.hpp"
+#include "equation.hpp"
 #include "point.hpp"
 
 Solver& Solver::GetInstance()

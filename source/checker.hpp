@@ -5,14 +5,14 @@
 #include <algorithm>
 #include <iterator>
 #include <optional>
-#include <string>
 #include <vector>
 
+#include "equation.hpp"
 #include "map.hpp"
 #include "point.hpp"
 #include "solver.hpp"
-#include "source/phc_wrapper.hpp"
 #include "symbol.hpp"
+
 class Checker
 {
  public:
@@ -33,7 +33,7 @@ class Checker
     VLOG(0) << "Testing point: " << point.ToStr();
     auto solutions = Solver::GetInstance().Solve(*map_, point);
 
-    GiNaC::numeric sum_reciprocals = 0;
+    Complex sum_reciprocals = 0;
 
     for (const auto& [multiplicity, solution] : solutions)
     {
@@ -43,8 +43,7 @@ class Checker
       sum_reciprocals += term;
     }
 
-    GiNaC::numeric approximate_sum = GiNaC::abs(sum_reciprocals).to_double();
-
+    auto approximate_sum = GiNaC::abs(sum_reciprocals).to_double();
     VLOG(1) << "Sum of reciprocals of Jacobians: " << approximate_sum;
 
     bool result = approximate_sum < settings_.epsilon;
@@ -78,7 +77,7 @@ inline std::optional<Point> GeneratePointWithUnitJacobian(const Map& map,
 
   for (size_t i = 0; i < dimensions; ++i)
   {
-    phc::Equation equation;
+    Equation equation;
     for (size_t j = 0; j < dimensions; ++j)
     {
       if (j == i)

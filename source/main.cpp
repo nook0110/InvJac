@@ -1,14 +1,3 @@
-#include <cln/float.h>
-#include <cln/floatformat.h>
-#include <ginac/ex.h>
-#include <ginac/ginac.h>
-#include <ginac/numeric.h>
-#include <ginac/power.h>
-#include <glog/logging.h>
-#include <phc/phcpack4c.h>
-#include <phc/solcon.h>
-#include <phc/syscon.h>
-#include <phc/unisolvers.h>
 
 #include <cassert>
 #include <cstddef>
@@ -20,6 +9,7 @@
 #include "map_factory.hpp"
 #include "mysql.hpp"
 #include "point.hpp"
+
 void TestMap(const Map& map, FunctionDatabase& db);
 int main(int argc, char* argv[])
 {
