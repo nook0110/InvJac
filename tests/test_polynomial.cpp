@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
+#include "source/map.hpp"
 #include "source/point.hpp"
-#include "source/polynomial.hpp"
 
 static const auto& x = Symbols::GetSymbol(0);
 static const auto& y = Symbols::GetSymbol(1);

@@ -59,7 +59,7 @@ class Checker
         Symbols::GetSymbolsList(map_->GetDimensions()), point.ToLst()));
   }
 
-  Map map_;
+  const Map* map_;
   Settings settings_;
 };
 

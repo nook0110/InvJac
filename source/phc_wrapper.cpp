@@ -24,6 +24,10 @@
 
 namespace phc
 {
+enum class Precision
+{
+  Standart
+};
 class PHCWrapper::PHCWrapperImplementation
 {
  public:

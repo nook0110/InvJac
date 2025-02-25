@@ -13,8 +13,8 @@
 
 Point Map::Image(const Point& point) const
 {
-  assert(point.GetDimensions() == GetDimensions() &&
-         "Point and map must have same dimension!");
+  LOG_IF(FATAL, point.GetDimensions() != GetDimensions()) 
+      << "Point and map must have same dimension!";
 
   std::vector<Complex> coords(GetDimensions());
 

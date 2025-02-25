@@ -1,12 +1,7 @@
 #include <glog/logging.h>
 #include <mysqlx/xdevapi.h>
 
-#include <complex>
 #include <cstddef>
-#include <optional>
-#include <stdexcept>
-#include <string_view>
-#include <tuple>
 #include <variant>
 
 #include "map.hpp"

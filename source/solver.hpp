@@ -35,8 +35,6 @@ class Solver
 
   Solution Solve(const Map& mapping, const Point& point) const;
 
-  ~Solver() { adafinal(); }
-
  private:
   phc::Equation CreateEquation(const Map& mapping, const Point& point) const
   {
@@ -53,7 +51,6 @@ class Solver
     return equation;
   }
 
-  Solver() { adainit(); }
   Solver(const Solver& root) = delete;
   Solver(Solver&& root) = delete;
   Solver& operator=(const Solver&) = delete;
