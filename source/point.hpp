@@ -10,7 +10,7 @@ using Complex = GiNaC::numeric;
 class Point
 {
  public:
-  explicit Point(std::vector<Complex> coords) : coords_(std::move(coords)) {}
+  explicit Point(std::vector<Complex> coords = {}) : coords_(std::move(coords)) {}
 
   size_t GetDimensions() const { return coords_.size(); }
 

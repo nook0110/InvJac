@@ -1,9 +1,11 @@
 #pragma once
 
 #include <ginac/lst.h>
+#include <ginac/parse_context.h>
 #include <ginac/registrar.h>
 #include <ginac/symbol.h>
 
+#include <cstddef>
 #include <format>
 #include <string>
 #include <vector>
@@ -30,6 +32,23 @@ class Symbols
       symbol_list.append(GetSymbol(i));
     }
     return symbol_list;
+  }
+
+  static GiNaC::symtab GetSymtable(size_t amount)
+  {
+    FitInto(amount);
+    GiNaC::symtab table;
+    for (size_t i = 0; i < amount; ++i)
+    {
+      table[GetSymbol(i).get_name()] = GetSymbol(i);
+    }
+    
+    // Ensure default symbols are included
+    table["x"] = GetSymbol(0);
+    table["y"] = GetSymbol(1);
+    table["z"] = GetSymbol(2);
+
+    return table;
   }
 
   static void FitInto(size_t i)

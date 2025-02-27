@@ -7,5 +7,5 @@
 class MapFactory
 {
  public:
-  static Map CreateMapFromInput(std::istream& input);
+  static Map CreateMapFromInput(std::istream& input, std::ostream& out);
 };
