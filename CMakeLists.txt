@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall -O3")
 add_compile_definitions(compilewgpp=1)
 
 FILE(GLOB SOURCES source/*.cpp)
-list(REMOVE_ITEM SOURCES source/main.cpp)
+list(REMOVE_ITEM SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)
 
 add_library(invjac_lib ${SOURCES})
 set(LIBRARIES phcpack_c_interface libPHCpack.so cln ginac mysql::concpp glog::glog)

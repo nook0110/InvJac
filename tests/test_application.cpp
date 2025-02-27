@@ -18,5 +18,8 @@ TEST(InvJacAppTest, RunUserInput)
   InvJacApp app(input, output);
 
   app.Run();
+
+  LOG(WARNING) << output.str();
+
   EXPECT_NE(output.str().find("Using point: (1.0, 2.0)"), std::string::npos);
 }

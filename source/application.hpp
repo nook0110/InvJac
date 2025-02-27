@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cassert>
 #include <iostream>
 #include <istream>
 #include <ostream>
@@ -8,6 +9,25 @@
 #include "map.hpp"
 #include "map_factory.hpp"
 #include "source/point_factory.hpp"
+
+class UserInputMapGenerator
+{
+ public:
+  UserInputMapGenerator(std::istream& input_stream, std::ostream& output_stream)
+      : input(input_stream), out(output_stream)
+  {}
+
+  Map Generate() const
+  {
+    out << "Input your map:\n";
+    return MapFactory::CreateMapFromInput(input, out);
+  }
+
+ private:
+  std::istream& input;
+  std::ostream& out;
+};
+
 
 class InvJacApp
 {
@@ -22,17 +42,18 @@ class InvJacApp
   void Run()
   {
     WriteWelcomeMessage();
-    if (AskForUserInput())
-    {
-      RunUserInput();
-    }
-    else
-    {
-      return;
-    }
+
+    MapGenerator map_generator = GetMapGenerator();
+    PointGenerator point_generator = GetPointGenerator();
+
+    Map map = map_generator();
+    Point point = point_generator(map);
   }
 
  private:
+  using MapGenerator = std::function<Map(void)>;
+  using PointGenerator = std::function<Point(const Map&)>;
+
   void WriteWelcomeMessage() const
   {
     out << "Welcome to the Inverse Jacobian Application!\n";
@@ -46,10 +67,18 @@ class InvJacApp
     return (user_input == 'y' || user_input == 'Y' || user_input == '\n');
   }
 
-  Map GetUserInputMap() const
+  MapGenerator GetMapGenerator() const
   {
-    out << "Input your map:\n";
-    return MapFactory::CreateMapFromInput(input, out);
+    if (AskForUserInput())
+    {
+      return [this]() -> Map
+      {
+        out << "Input your map:\n";
+        return MapFactory::CreateMapFromInput(input, out);
+      };
+    }
+
+    assert(false && "Default map generation not implemented.");
   }
 
   enum class PointType
@@ -83,37 +112,31 @@ class InvJacApp
     }
   }
 
-  Point GetPointInput(size_t dimensions) const
+  PointGenerator GetPointGenerator() const
   {
-    out << "Please enter the coordinates of the point:\n";
-    Point point = PointFactory::CreateMapFromInput(input, dimensions);
-
-    return point;
-  }
-
-  void RunUserInput() const
-  {
-    Map user_map = GetUserInputMap();
-    Point point;
     switch (AskTypeOfPoint())
     {
       using enum PointType;
       case UserInputPoint:
-        point = GetPointInput(user_map.GetDimensions());
-        break;
+        return [this](const Map& map) {
+          return PointFactory::CreatePointFromInput(input, out,
+                                                    map.GetDimensions());
+        };
       case RandomPoint:
         out << "Using random point initialization.\n";
-        point = Point::GenerateRandom(user_map.GetDimensions());
-        break;
+        return [](const Map& map)
+        { return Point::GenerateRandom(map.GetDimensions()); };
       case PointWithUnitJacobian:
         out << "Using random point with unit Jacobian initialization.\n";
-        auto random_point = Point::GenerateRandom(user_map.GetDimensions());
-        point = GeneratePointWithUnitJacobian(user_map, random_point)
-                    .value_or(random_point);
-        break;
+        return [](const Map& map)
+        {
+          auto random_point = Point::GenerateRandom(map.GetDimensions());
+          return GeneratePointWithUnitJacobian(map, random_point)
+              .value_or(random_point);
+        };
+      default:
+        LOG(FATAL) << "Invalid point type selected";
     }
-
-    out << "Using point: " << point.ToStr() << "\n";
   }
 
   std::istream& input = std::cin;

@@ -20,16 +20,16 @@ int main(int argc, char* argv[])
   bool user_input = argc > 0;
   if (user_input)
   {
-    Map map = MapFactory::CreateMapFromInput(std::cin);
+    Map map = MapFactory::CreateMapFromInput(std::cin, std::cout);
 
     LOG(INFO) << "Map has contraction: " << map.HasContraction();
 
     return 0;
 
     Point point = Point::GenerateRandom(map.GetDimensions());
-    point = map.Image(
-        GeneratePointWithUnitJacobian(map, Point::GenerateRandom(map.GetDimensions()))
-            .value_or(point));
+    point = map.Image(GeneratePointWithUnitJacobian(
+                          map, Point::GenerateRandom(map.GetDimensions()))
+                          .value_or(point));
 
     Checker checker;
     checker.SetMap(&map);

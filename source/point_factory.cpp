@@ -5,7 +5,9 @@
 
 #include "source/point.hpp"
 
-Point PointFactory::CreateMapFromInput(std::istream& stream, size_t dimensions)
+Point PointFactory::CreatePointFromInput(std::istream& input,
+                                         [[maybe_unused]] std::ostream& output,
+                                         size_t dimensions)
 {
   std::vector<Complex> coords;
   coords.reserve(dimensions);
@@ -13,7 +15,9 @@ Point PointFactory::CreateMapFromInput(std::istream& stream, size_t dimensions)
   GiNaC::parser parser;
   for (size_t i = 0; i < dimensions; ++i)
   {
-    GiNaC::ex e = parser(stream);
+    std::string input_string;
+    input >> input_string;
+    GiNaC::ex e = parser(input_string);
     coords.emplace_back(GiNaC::ex_to<Complex>(e));
   }
 

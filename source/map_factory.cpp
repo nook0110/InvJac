@@ -19,7 +19,9 @@ Map MapFactory::CreateMapFromInput(std::istream& input, std::ostream& out)
   out << "Please provide the polynomials, one per line:\n";
   for (auto& poly : polynomials)
   {
-    poly = parser(input);
+    std::string polynomial_string;
+    input >> polynomial_string;
+    poly = parser(polynomial_string);
   }
 
   return Map(std::move(polynomials));

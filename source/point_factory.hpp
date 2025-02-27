@@ -4,7 +4,9 @@
 
 #include "point.hpp"
 
-class PointFactory {
-public:
- static Point CreateMapFromInput(std::istream& stream, size_t dimensions);
+class PointFactory
+{
+ public:
+  static Point CreatePointFromInput(std::istream& input, std::ostream& output,
+                                    size_t dimensions);
 };
