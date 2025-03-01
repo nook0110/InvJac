@@ -10,7 +10,8 @@ using Complex = GiNaC::numeric;
 class Point
 {
  public:
-  explicit Point(std::vector<Complex> coords = {}) : coords_(std::move(coords)) {}
+  explicit Point(std::vector<Complex> coords = {}) : coords_(std::move(coords))
+  {}
 
   size_t GetDimensions() const { return coords_.size(); }
 
@@ -22,9 +23,8 @@ class Point
   static Point GenerateRandom(size_t dimensions)
   {
     std::vector<Complex> coords(dimensions);
-    static std::random_device rd;
     static std::mt19937 gen(80085);
-    static std::uniform_int_distribution dis(-10, 10);
+    static std::uniform_real_distribution<double> dis(-10.0, 10.0);
 
     for (auto& coord : coords)
     {

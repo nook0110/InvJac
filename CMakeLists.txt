@@ -12,8 +12,14 @@ add_compile_definitions(compilewgpp=1)
 FILE(GLOB SOURCES source/*.cpp)
 list(REMOVE_ITEM SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)
 
+set(Boost_USE_STATIC_LIBS OFF) 
+set(Boost_USE_MULTITHREADED ON)  
+set(Boost_USE_STATIC_RUNTIME OFF) 
+find_package(Boost 1.45.0 COMPONENTS program_options) 
+
+include_directories(${Boost_INCLUDE_DIRS}) 
 add_library(invjac_lib ${SOURCES})
-set(LIBRARIES phcpack_c_interface libPHCpack.so cln ginac mysql::concpp glog::glog)
+set(LIBRARIES phcpack_c_interface libPHCpack.so cln ginac mysql::concpp glog::glog ${Boost_LIBRARIES})
 target_link_libraries(invjac_lib ${LIBRARIES})
 
 add_executable(invjac source/main.cpp)    

@@ -51,7 +51,7 @@ class Map
 
   Polynomial GetJacobian() const { return GetJacobianMatrix().determinant(); }
 
-  bool HasContraction() const;
+  std::optional<Point> HasContraction() const;
 
   size_t GetDimensions() const { return polynomials_.size(); }
   const Polynomial& GetPoly(size_t i) const { return polynomials_[i]; }

@@ -4,41 +4,9 @@
 #include <cstddef>
 #include <variant>
 
+#include "checker.hpp"
 #include "map.hpp"
 #include "point.hpp"
-
-class Map;
-
-class CheckResult
-{
- public:
-  struct Error
-  {
-    std::string message;
-  };
-
-  struct Failed
-  {
-    Point point;
-    Complex value;
-  };
-
-  struct Passed
-  {
-    size_t check_amount;
-  };
-  using Result = std::variant<Error, Failed, Passed>;
-
-  CheckResult() = default;
-  CheckResult(const Map* m, Result res) : map(m), result(std::move(res)) {}
-
-  const Map* GetMap() const { return map; }
-  const Result& GetResult() const { return result; }
-
- private:
-  const Map* map;
-  Result result;
-};
 
 class FunctionDatabase
 {
@@ -89,7 +57,7 @@ class FunctionDatabase
     }
 
     auto insert_result = results_table_.insert("name", "result_type")
-                             .values(map->ToStr(), result_type)
+                             .values(map.ToStr(), result_type)
                              .execute();
     auto result_id = insert_result.getAutoIncrementValue();
 

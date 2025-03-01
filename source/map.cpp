@@ -12,7 +12,7 @@
 
 Point Map::Image(const Point& point) const
 {
-  LOG_IF(FATAL, point.GetDimensions() != GetDimensions()) 
+  LOG_IF(FATAL, point.GetDimensions() != GetDimensions())
       << "Point and map must have same dimension!";
 
   std::vector<Complex> coords(GetDimensions());
@@ -40,7 +40,7 @@ void Map::EvaluateExtensionDegree() const
   while (last_extension < extension_degree_);
 }
 
-bool Map::HasContraction() const
+std::optional<Point> Map::HasContraction() const
 {
   DLOG_IF(FATAL, GetDimensions() != 2);
   const auto jacobian_matrix = GetJacobianMatrix();
@@ -62,7 +62,7 @@ bool Map::HasContraction() const
   }
   else
   {
-    return false;
+    return {};
   }
 
   GiNaC::matrix gradient(GetDimensions(), 1);
@@ -89,9 +89,9 @@ bool Map::HasContraction() const
     if (GiNaC::abs(result_at_point(0, 0)) < epsilon &&
         GiNaC::abs(result_at_point(1, 0)) < epsilon)
     {
-      return true;
+      return root;
     }
   }
 
-  return false;
+  return {};
 }

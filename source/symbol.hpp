@@ -7,7 +7,6 @@
 
 #include <cstddef>
 #include <format>
-#include <string>
 #include <vector>
 
 using Symbol = GiNaC::symbol;
@@ -42,7 +41,7 @@ class Symbols
     {
       table[GetSymbol(i).get_name()] = GetSymbol(i);
     }
-    
+
     // Ensure default symbols are included
     table["x"] = GetSymbol(0);
     table["y"] = GetSymbol(1);
