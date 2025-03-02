@@ -1,7 +1,4 @@
 /build
-/mysql-connector
-/lib
-/.*
 *.txt
 !CMakeLists.txt
 .*

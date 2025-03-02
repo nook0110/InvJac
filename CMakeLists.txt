@@ -19,6 +19,7 @@ find_package(Boost 1.45.0 COMPONENTS program_options)
 
 include_directories(${Boost_INCLUDE_DIRS}) 
 add_library(invjac_lib ${SOURCES})
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/phc/PHCpack/lib)
 set(LIBRARIES phcpack_c_interface libPHCpack.so cln ginac mysql::concpp glog::glog ${Boost_LIBRARIES})
 target_link_libraries(invjac_lib ${LIBRARIES})
 
@@ -28,10 +29,10 @@ add_executable(invjac source/main.cpp)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_subdirectory(phc)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/phc/PHCPack/src/C)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/phc/PHCpack/src/C)
 
 
-set(mysql-concpp_DIR "mysql-connector")
+set(mysql-concpp_DIR "/usr/local/mysql-connector")
 find_package(mysql-concpp REQUIRED)
 include_directories(mysql-concpp)
 

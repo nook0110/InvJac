@@ -5,7 +5,7 @@ project(phcpack_c_interface CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-FILE(GLOB SOURCE_LIB PHCPack/src/C/*.c)
+FILE(GLOB SOURCE_LIB PHCpack/src/C/*.c)
 
 add_compile_definitions(compilewgpp=1)
 set_source_files_properties(${SOURCE_LIB} PROPERTIES LANGUAGE CXX)
