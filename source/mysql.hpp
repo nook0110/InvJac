@@ -8,22 +8,32 @@
 #include "map.hpp"
 #include "point.hpp"
 
+/**
+ * @brief Configuration for the database connection.
+ */
 struct DatabaseConfig
 {
-  std::string host = "localhost";
-  std::string user = "root";
-  std::string password = "root";
-  std::string database = "checked_functions";
-  std::string results_table = "test_results";
-  std::string passed_table = "passed_results";
-  std::string failed_table = "failed_results";
-  std::string error_table = "error_results";
-  std::string contraction_table = "contraction_results";
+  std::string host = "localhost";               ///< Database host.
+  std::string user = "root";                    ///< Database user.
+  std::string password = "root";                ///< Database password.
+  std::string database = "checked_functions";   ///< Database name.
+  std::string results_table = "test_results";   ///< Results table name.
+  std::string passed_table = "passed_results";  ///< Passed results table name.
+  std::string failed_table = "failed_results";  ///< Failed results table name.
+  std::string error_table = "error_results";    ///< Error results table name.
+  std::string contraction_table =
+      "contraction_results";  ///< Contraction results table name.
 };
 
+/**
+ * @brief Class to interact with the function database.
+ */
 class FunctionDatabase
 {
  public:
+  /**
+   * @brief Enum representing the type of result.
+   */
   enum class ResultType
   {
     Passed,
@@ -32,6 +42,10 @@ class FunctionDatabase
     Contraction
   };
 
+  /**
+   * @brief Constructs a FunctionDatabase with the given configuration.
+   * @param config Database configuration.
+   */
   FunctionDatabase(const DatabaseConfig& config)
       : session_(
             mysqlx::Session(config.host, 33060, config.user, config.password)),
@@ -43,6 +57,11 @@ class FunctionDatabase
         contraction_table_(schema_.getTable(config.contraction_table))
   {}
 
+  /**
+   * @brief Checks if a map exists in the database.
+   * @param map Map to check.
+   * @return True if the map exists, false otherwise.
+   */
   bool MapExists(const Map& map)
   {
     auto result = results_table_.select("id")
@@ -52,6 +71,10 @@ class FunctionDatabase
     return result.count() > 0;
   }
 
+  /**
+   * @brief Inserts a check result into the database.
+   * @param check_result Check result to insert.
+   */
   void InsertCheckResult(const CheckResult& check_result)
   {
     const auto& map = check_result.GetMap();
@@ -89,14 +112,19 @@ class FunctionDatabase
   }
 
  private:
-  mysqlx::Session session_;
-  mysqlx::Schema schema_;
-  mysqlx::Table results_table_;
-  mysqlx::Table passed_table_;
-  mysqlx::Table failed_table_;
-  mysqlx::Table error_table_;
-  mysqlx::Table contraction_table_;
+  mysqlx::Session session_;          ///< MySQL session.
+  mysqlx::Schema schema_;            ///< MySQL schema.
+  mysqlx::Table results_table_;      ///< Results table.
+  mysqlx::Table passed_table_;       ///< Passed results table.
+  mysqlx::Table failed_table_;       ///< Failed results table.
+  mysqlx::Table error_table_;        ///< Error results table.
+  mysqlx::Table contraction_table_;  ///< Contraction results table.
 
+  /**
+   * @brief Converts a ResultType to a string.
+   * @param result_type Result type to convert.
+   * @return String representation of the result type.
+   */
   std::string ToString(ResultType result_type)
   {
     switch (result_type)
@@ -114,6 +142,12 @@ class FunctionDatabase
     }
   }
 
+  /**
+   * @brief Inserts result details into the appropriate table.
+   * @param result_id ID of the result.
+   * @param result Result to insert.
+   * @param result_type Type of the result.
+   */
   void InsertResultDetails(std::int64_t result_id,
                            const CheckResult::Result& result,
                            ResultType result_type)

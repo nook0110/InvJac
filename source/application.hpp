@@ -12,22 +12,41 @@
 #include "map_factory.hpp"
 #include "mysql.hpp"
 
+/**
+ * @brief Strategy interface for generating maps.
+ */
 class MapGeneratorStrategy
 {
  public:
+  /**
+   * @brief Generates a map.
+   * @return Generated map.
+   */
   virtual Map Generate() const = 0;
 
   virtual ~MapGeneratorStrategy() = default;
 };
 
+/**
+ * @brief Strategy for generating maps from user input.
+ */
 class UserInputMapStrategy : public MapGeneratorStrategy
 {
  public:
+  /**
+   * @brief Constructs a UserInputMapStrategy.
+   * @param input_stream Input stream for user input.
+   * @param output_stream Output stream for messages.
+   */
   explicit UserInputMapStrategy(std::istream& input_stream,
                                 std::ostream& output_stream)
       : input(input_stream), out(output_stream)
   {}
 
+  /**
+   * @brief Generates a map from user input.
+   * @return Generated map.
+   */
   Map Generate() const override
   {
     out << "Input your map:\n";
@@ -35,15 +54,23 @@ class UserInputMapStrategy : public MapGeneratorStrategy
   }
 
  private:
-  std::istream& input;
-  std::ostream& out;
+  std::istream& input;  ///< Input stream for user input.
+  std::ostream& out;    ///< Output stream for messages.
 };
 
+/**
+ * @brief Class to check maps using a specified strategy.
+ */
 class MapChecker
 {
  public:
   using Settings = CheckerSettings;
 
+  /**
+   * @brief Constructs a MapChecker with the given settings and strategy.
+   * @param settings Settings for the checker.
+   * @param strategy Strategy for generating maps.
+   */
   explicit MapChecker(const Settings& settings = {},
                       std::unique_ptr<MapGeneratorStrategy> strategy =
                           std::make_unique<UserInputMapStrategy>(std::cin,
@@ -51,13 +78,25 @@ class MapChecker
       : checker_(settings), strategy_(std::move(strategy))
   {}
 
+  /**
+   * @brief Sets the strategy for generating maps.
+   * @param strategy New strategy for generating maps.
+   */
   void SetStrategy(std::unique_ptr<MapGeneratorStrategy> strategy)
   {
     strategy_ = std::move(strategy);
   }
 
+  /**
+   * @brief Sets the settings for the checker.
+   * @param settings New settings for the checker.
+   */
   void SetSettings(const Settings& settings) { checker_ = Checker(settings); }
 
+  /**
+   * @brief Performs the check on the generated map.
+   * @return Result of the check.
+   */
   CheckResult PerformCheck()
   {
     auto map = GenerateMap();
@@ -67,20 +106,36 @@ class MapChecker
   }
 
  private:
+  /**
+   * @brief Generates a map using the current strategy.
+   * @return Generated map.
+   */
   Map GenerateMap() const { return strategy_->Generate(); }
 
-  Checker checker_;
-  std::unique_ptr<MapGeneratorStrategy> strategy_;
+  Checker checker_;  ///< Checker instance.
+  std::unique_ptr<MapGeneratorStrategy>
+      strategy_;  ///< Strategy for generating maps.
 };
 
+/**
+ * @brief Main application class for InvJac.
+ */
 class InvJacApp
 {
  public:
+  /**
+   * @brief Constructs an InvJacApp with the given input and output streams.
+   * @param input_stream Input stream for user input.
+   * @param output_stream Output stream for messages.
+   */
   InvJacApp(std::istream& input_stream = std::cin,
             std::ostream& output_stream = std::cout)
       : input_(input_stream), out_(output_stream)
   {}
 
+  /**
+   * @brief Runs the InvJac application.
+   */
   void Run()
   {
     out_ << "Running the InvJac application...\n";
@@ -92,6 +147,12 @@ class InvJacApp
     }
   }
 
+  /**
+   * @brief Parses command line arguments.
+   * @param argc Argument count.
+   * @param argv Argument values.
+   * @return True if help message is displayed, false otherwise.
+   */
   bool ParseCommandLine(int argc, char* argv[])
   {
     namespace po = boost::program_options;
@@ -194,11 +255,11 @@ class InvJacApp
   }
 
  private:
-  std::istream& input_ = std::cin;
-  std::ostream& out_ = std::cout;
-  std::ifstream input_file_;
+  std::istream& input_ = std::cin;  ///< Input stream for user input.
+  std::ostream& out_ = std::cout;   ///< Output stream for messages.
+  std::ifstream input_file_;        ///< Input file stream.
 
-  bool use_database_ = false;
-  std::unique_ptr<FunctionDatabase> database_;
-  MapChecker map_checker_;
+  bool use_database_ = false;                   ///< Flag to use the database.
+  std::unique_ptr<FunctionDatabase> database_;  ///< Database instance.
+  MapChecker map_checker_;                      ///< Map checker instance.
 };

@@ -15,23 +15,39 @@
 #include "solver.hpp"
 #include "symbol.hpp"
 
+/**
+ * @brief Settings for the Checker class.
+ */
 struct CheckerSettings
 {
-  size_t iterations = 10;
-  double epsilon = 1e-4;
-  bool check_contraction = true;
+  size_t iterations = 10;         ///< Number of iterations to perform.
+  double epsilon = 1e-4;          ///< Tolerance for the check.
+  bool check_contraction = true;  ///< Flag to check for contraction.
 };
 
+/**
+ * @brief Result of a check operation.
+ */
 class CheckResult
 {
  public:
+  /**
+   * @brief Represents an error during the check.
+   */
   struct Error
   {
-    std::string message;
+    std::string message;  ///< Error message.
 
+    /**
+     * @brief Converts the error to a string.
+     * @return String representation of the error.
+     */
     std::string ToStr() const { return "Error. " + message; }
   };
 
+  /**
+   * @brief Represents a failed check.
+   */
   struct Failed
   {
     Failed(Point p, Complex v) : point(std::move(p)), value(std::move(v)) {}
@@ -39,41 +55,76 @@ class CheckResult
     Failed(Failed&&) noexcept = default;
     Failed& operator=(Failed&&) noexcept = default;
 
+    /**
+     * @brief Converts the failure to a string.
+     * @return String representation of the failure.
+     */
     std::string ToStr() const
     {
       return "Failed. Point: " + point.ToStr() + ", Value: " + ::ToStr(value);
     }
 
-    Point point;
-    Complex value;
+    Point point;    ///< Point where the check failed.
+    Complex value;  ///< Value at the failed point.
   };
 
+  /**
+   * @brief Represents a passed check.
+   */
   struct Passed
   {
+    /**
+     * @brief Converts the success to a string.
+     * @return String representation of the success.
+     */
     std::string ToStr() const
     {
       return "Passed. Total checks: " + std::to_string(check_amount);
     }
-    size_t check_amount;
+    size_t check_amount;  ///< Number of checks performed.
   };
 
+  /**
+   * @brief Represents a contraction found during the check.
+   */
   struct Contraction
   {
+    /**
+     * @brief Converts the contraction to a string.
+     * @return String representation of the contraction.
+     */
     std::string ToStr() const
     {
       return "Contraction. At point: " + point.ToStr();
     }
 
-    Point point;
+    Point point;  ///< Point where the contraction was found.
   };
   using Result = std::variant<Error, Failed, Passed, Contraction>;
 
+  /**
+   * @brief Constructs a CheckResult.
+   * @param m Map used for the check.
+   * @param res Result of the check.
+   */
   CheckResult(Map m, Result res) : map(std::move(m)), result(std::move(res)) {}
 
+  /**
+   * @brief Gets the map used for the check.
+   * @return Reference to the map.
+   */
   const Map& GetMap() const { return map; }
-  const Result& GetResult() const { return result; }
-  bool IsSuccessful() const { return std::holds_alternative<Passed>(result); }
 
+  /**
+   * @brief Gets the result of the check.
+   * @return Reference to the result.
+   */
+  const Result& GetResult() const { return result; }
+
+  /**
+   * @brief Converts the check result to a string.
+   * @return String representation of the check result.
+   */
   std::string ToStr() const
   {
     return "Map: " + map.ToStr() + ". Result: " +
@@ -81,25 +132,47 @@ class CheckResult
   }
 
  private:
-  Map map;
-  Result result;
+  Map map;        ///< Map used for the check.
+  Result result;  ///< Result of the check.
 };
+
+/**
+ * @brief Generates a point with a unit Jacobian.
+ * @param map Map used for the generation.
+ * @param point Initial point.
+ * @return Optional point with a unit Jacobian.
+ */
 std::optional<Point> GeneratePointWithUnitJacobian(const Map& map,
                                                    const Point& point);
 
+/**
+ * @brief Class to perform checks on a map.
+ */
 class Checker
 {
  public:
+  /**
+   * @brief Constructs a Checker with the given settings.
+   * @param settings Settings for the checker.
+   */
   explicit Checker(const CheckerSettings& settings = CheckerSettings())
       : settings_(settings), map_(nullptr)
   {}
 
+  /**
+   * @brief Sets the map to be checked.
+   * @param new_map Pointer to the new map.
+   */
   void SetMap(const Map* new_map)
   {
     VLOG(0) << "Setting new map.";
     map_ = new_map;
   }
 
+  /**
+   * @brief Performs the check on the set map.
+   * @return Result of the check.
+   */
   CheckResult::Result PerformCheck()
   {
     LOG_IF(FATAL, !map_) << "Attempting to perform a check without a map set.";
@@ -133,6 +206,11 @@ class Checker
   }
 
  private:
+  /**
+   * @brief Tests a point on the map.
+   * @param point Point to be tested.
+   * @return Optional complex value if the test fails.
+   */
   std::optional<Complex> TestPoint(const Point& point) const
   {
     VLOG(0) << "Testing point: " << point.ToStr();
@@ -156,17 +234,29 @@ class Checker
     return result ? std::nullopt : std::optional<Complex>{approximate_sum};
   }
 
+  /**
+   * @brief Substitutes the Jacobian with the given point.
+   * @param jacobian Jacobian polynomial.
+   * @param point Point to substitute.
+   * @return Complex value after substitution.
+   */
   Complex SubstituteJacobian(Polynomial jacobian, const Point& point) const
   {
     return GiNaC::ex_to<Complex>(jacobian.subs(
         Symbols::GetSymbolsList(map_->GetDimensions()), point.ToLst()));
   }
 
-  const Map* map_ = nullptr;
+  const Map* map_ = nullptr;  ///< Pointer to the map being checked.
 
-  CheckerSettings settings_;
+  CheckerSettings settings_;  ///< Settings for the checker.
 };
 
+/**
+ * @brief Generates a point with a unit Jacobian.
+ * @param map Map used for the generation.
+ * @param point Initial point.
+ * @return Optional point with a unit Jacobian.
+ */
 inline std::optional<Point> GeneratePointWithUnitJacobian(const Map& map,
                                                           const Point& point)
 {
