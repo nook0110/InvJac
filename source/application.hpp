@@ -1,8 +1,6 @@
 #pragma once
 
 #include <boost/program_options.hpp>
-#include <cassert>
-#include <cstddef>
 #include <fstream>
 #include <iostream>
 #include <istream>
@@ -101,52 +99,56 @@ class InvJacApp
     desc.add_options()
         // clang-format off
         (
-            "help", 
+            "help,h", 
             "produce help message"
         )
         (
-            "input-file", 
+            "input-file,i", 
+            po::value<std::string>(), 
             "input file"
         )
         (
-            "use-database",
-            po::value<bool>()->default_value(false),
+            "use-database,d",
+            po::bool_switch(&use_database_)->default_value(true),
             "use MySQL database"
         )
         (
-            "db-host", po::value<std::string>()->default_value("localhost"),
+            "db-host,H", 
+            po::value<std::string>()->default_value("localhost"),
             "database host"
         )
         (
-            "db-user",
+            "db-user,U",
             po::value<std::string>()->default_value("root"),
             "database user"
         )
         (
-            "db-password", po::value<std::string>()->default_value("root"),
+            "db-password,P", 
+            po::value<std::string>()->default_value("root"),
             "database password"
         )
         (
-            "db-name", po::value<std::string>()->default_value("checked_functions"),
-        "database name"
+            "db-name,N", 
+            po::value<std::string>()->default_value("checked_functions"),
+            "database name"
         )
         (
-            "results-table",
+            "results-table,R",
             po::value<std::string>()->default_value("test_results"),
             "results table"
         )
         (
-            "passed-table",
+            "passed-table,P",
             po::value<std::string>()->default_value("passed_results"),
             "passed table"
         )
         (
-            "failed-table",
+            "failed-table,F",
             po::value<std::string>()->default_value("failed_results"),
             "failed table"
         )
         (
-            "error-table", 
+            "error-table,E", 
             po::value<std::string>()->default_value("error_results"),
             "error table"
         );
@@ -172,16 +174,21 @@ class InvJacApp
       }
     }
 
-    use_database_ = vm["use-database"].as<bool>();
+    use_database_ =
+        vm.count("use-database") ? vm["use-database"].as<bool>() : false;
     if (use_database_)
     {
-      database_ = std::make_unique<FunctionDatabase>(
-          vm["db-host"].as<std::string>(), vm["db-user"].as<std::string>(),
-          vm["db-password"].as<std::string>(), vm["db-name"].as<std::string>(),
-          vm["results-table"].as<std::string>(),
-          vm["passed-table"].as<std::string>(),
-          vm["failed-table"].as<std::string>(),
-          vm["error-table"].as<std::string>());
+      DatabaseConfig config;
+      config.host = vm["db-host"].as<std::string>();
+      config.user = vm["db-user"].as<std::string>();
+      config.password = vm["db-password"].as<std::string>();
+      config.database = vm["db-name"].as<std::string>();
+      config.results_table = vm["results-table"].as<std::string>();
+      config.passed_table = vm["passed-table"].as<std::string>();
+      config.failed_table = vm["failed-table"].as<std::string>();
+      config.error_table = vm["error-table"].as<std::string>();
+
+      database_ = std::make_unique<FunctionDatabase>(config);
     }
     return false;
   }
