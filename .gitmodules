@@ -1,4 +1,4 @@
-[submodule "phc/phc"]
-	path = phc/phc
+[submodule "phc/PHCpack"]
+	path = phc/PHCpack
 	url = https://github.com/nook0110/PHCpack.git
 	branch = file-fix
