@@ -98,29 +98,59 @@ class InvJacApp
   {
     namespace po = boost::program_options;
     po::options_description desc("Allowed options");
-    desc.add_options()("help", "produce help message")(
-        "input-file", "input file")("use-database",
-                                    po::value<bool>()->default_value(false),
-                                    "use MySQL database")(
-        "db-host", po::value<std::string>()->default_value("localhost"),
-        "database host")("db-user",
-                         po::value<std::string>()->default_value("root"),
-                         "database user")(
-        "db-password", po::value<std::string>()->default_value("root"),
-        "database password")(
-        "db-name", po::value<std::string>()->default_value("checked_functions"),
-        "database name")(
-        "results-table",
-        po::value<std::string>()->default_value("test_results"),
-        "results table")(
-        "passed-table",
-        po::value<std::string>()->default_value("passed_results"),
-        "passed table")(
-        "failed-table",
-        po::value<std::string>()->default_value("failed_results"),
-        "failed table")(
-        "error-table", po::value<std::string>()->default_value("error_results"),
-        "error table");
+    desc.add_options()
+        // clang-format off
+        (
+            "help", 
+            "produce help message"
+        )
+        (
+            "input-file", 
+            "input file"
+        )
+        (
+            "use-database",
+            po::value<bool>()->default_value(false),
+            "use MySQL database"
+        )
+        (
+            "db-host", po::value<std::string>()->default_value("localhost"),
+            "database host"
+        )
+        (
+            "db-user",
+            po::value<std::string>()->default_value("root"),
+            "database user"
+        )
+        (
+            "db-password", po::value<std::string>()->default_value("root"),
+            "database password"
+        )
+        (
+            "db-name", po::value<std::string>()->default_value("checked_functions"),
+        "database name"
+        )
+        (
+            "results-table",
+            po::value<std::string>()->default_value("test_results"),
+            "results table"
+        )
+        (
+            "passed-table",
+            po::value<std::string>()->default_value("passed_results"),
+            "passed table"
+        )
+        (
+            "failed-table",
+            po::value<std::string>()->default_value("failed_results"),
+            "failed table"
+        )
+        (
+            "error-table", 
+            po::value<std::string>()->default_value("error_results"),
+            "error table"
+        );
+    // clang-format on
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
