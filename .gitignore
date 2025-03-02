@@ -1,0 +1,10 @@
+/build
+/mysql-connector
+/lib
+/.*
+*.txt
+!CMakeLists.txt
+.*
+!.gitignore
+!.gitmodules
+!.clang-format

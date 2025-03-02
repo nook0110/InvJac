@@ -2,20 +2,19 @@
 
 #include <glog/logging.h>
 // PHCPack
-#include <phc/celcon.h>
-#include <phc/phcpack.h>
-#include <phc/solcon.h>
-#include <phc/syscon.h>
+#include <celcon.h>
+#include <next_track.h>
+#include <phcpack.h>
+#include <product.h>
+#include <solcon.h>
+#include <syscon.h>
+#include <witsols.h>
 
 #include <cassert>
 #include <cstddef>
 #include <string>
 #include <string_view>
 #include <vector>
-
-#include "phc/next_track.h"
-#include "phc/product.h"
-#include "phc/witsols.h"
 
 namespace phc
 {

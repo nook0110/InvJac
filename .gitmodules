@@ -1,0 +1,4 @@
+[submodule "phc/phc"]
+	path = phc/phc
+	url = https://github.com/nook0110/PHCpack.git
+	branch = file-fix

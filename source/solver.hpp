@@ -9,18 +9,7 @@
 #include <ginac/ginac.h>
 #include <ginac/numeric.h>
 #include <glog/logging.h>
-#include <phc/phcpack.h>
-#include <phc/solcon.h>
-#include <phc/syscon.h>
-
 #include <cassert>
-#include <cstddef>
-#include <exception>
-#include <iterator>
-#include <span>
-#include <sstream>
-#include <thread>
-#include <vector>
 
 #include "equation.hpp"
 #include "map.hpp"

@@ -25,8 +25,11 @@ target_link_libraries(invjac_lib ${LIBRARIES})
 add_executable(invjac source/main.cpp)    
 
 
-include_directories(.)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_subdirectory(phc)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/phc/phc/src/C)
+
 
 set(mysql-concpp_DIR "mysql-connector")
 find_package(mysql-concpp REQUIRED)
