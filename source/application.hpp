@@ -170,7 +170,7 @@ class InvJacApp
         )
         (
             "use-database,d",
-            po::bool_switch(&use_database_)->default_value(true),
+            po::bool_switch(&use_database_)->default_value(false),
             "use MySQL database"
         )
         (
