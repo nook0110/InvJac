@@ -1,0 +1,10 @@
+FROM invjac:phc_build
+
+COPY . /root/InvJac
+
+WORKDIR /root/InvJac
+
+RUN cmake -S . -B build
+RUN cmake --build build
+
+ENTRYPOINT ["./build/invjac"]

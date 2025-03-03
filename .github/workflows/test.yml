@@ -1,0 +1,60 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Checkout submodules
+      run: |
+        git submodule update --init --recursive
+
+    - name: Set up dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcln-dev libginac-dev wget unzip sudo g++ make git cmake libboost-all-dev mysql-server libssl-dev
+
+    - name: Install MySQL Connector/C++
+      run: |
+        wget https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-9.2.0-linux-glibc2.28-x86-64bit.tar.gz
+        tar -xzf mysql-connector-c++-9.2.0-linux-glibc2.28-x86-64bit.tar.gz
+        sudo mkdir /usr/local/mysql-connector
+        sudo cp -r mysql-connector-c++-9.2.0-linux-glibc2.28-x86-64bit/* /usr/local/mysql-connector/
+
+    - name: Install Alire
+      run: |
+        wget https://github.com/alire-project/alire/releases/download/v2.0.2/alr-2.0.2-bin-x86_64-linux.zip
+        unzip alr-2.0.2-bin-x86_64-linux.zip
+        sudo mv bin/alr /usr/local/bin/
+        sudo chmod +x /usr/local/bin/alr
+        alr version
+
+    - name: Install glog
+      run: |
+        git clone https://github.com/google/glog.git
+        cd glog && cmake -S . -B build -G "Unix Makefiles"
+        cmake --build build
+        sudo cmake --build build --target install
+
+    - name: Init lib file
+      working-directory: ${{runner.workspace}}/InvJac/phc
+      run: |
+        mkdir ${{runner.workspace}}/InvJac/build
+        cp libPHCpack.so ${{runner.workspace}}/InvJac/build
+        cp libPHCpack.so PHCpack/lib/
+
+    - name: Building the project
+      working-directory: ${{runner.workspace}}/InvJac/build
+      run: |
+        cmake ..
+        cmake --build .
+
+    - name: Run tests
+      working-directory: ${{runner.workspace}}/InvJac/build
+      run: |
+        ctest

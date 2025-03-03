@@ -1,0 +1,13 @@
+FROM invjac:base
+
+COPY . /root/InvJac
+
+RUN cp /root/InvJac/phc/libPHCpack.so /root/InvJac/phc/PHCpack/lib
+
+WORKDIR /root/InvJac
+
+RUN cmake -S . -B build
+RUN cmake --build build
+
+# Run tests
+ENTRYPOINT ["./build/invjac"]

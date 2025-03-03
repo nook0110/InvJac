@@ -170,46 +170,46 @@ class InvJacApp
         )
         (
             "use-database,d",
-            po::bool_switch(&use_database_)->default_value(false),
+            po::bool_switch(&use_database_)->default_value(true),
             "use MySQL database"
         )
         (
-            "db-host,H", 
+            "db-host,h", 
             po::value<std::string>()->default_value("localhost"),
             "database host"
         )
         (
-            "db-user,U",
+            "db-user,u",
             po::value<std::string>()->default_value("root"),
             "database user"
         )
         (
-            "db-password,P", 
+            "db-password,p", 
             po::value<std::string>()->default_value("root"),
             "database password"
         )
         (
-            "db-name,N", 
+            "db-name", 
             po::value<std::string>()->default_value("checked_functions"),
             "database name"
         )
         (
-            "results-table,R",
+            "results-table",
             po::value<std::string>()->default_value("test_results"),
             "results table"
         )
         (
-            "passed-table,P",
+            "passed-table",
             po::value<std::string>()->default_value("passed_results"),
             "passed table"
         )
         (
-            "failed-table,F",
+            "failed-table",
             po::value<std::string>()->default_value("failed_results"),
             "failed table"
         )
         (
-            "error-table,E", 
+            "error-table", 
             po::value<std::string>()->default_value("error_results"),
             "error table"
         );

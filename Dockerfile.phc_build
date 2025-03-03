@@ -1,0 +1,11 @@
+FROM invjac:prog
+
+# Copy source files into the image
+COPY . /root/InvJac/phc/PHCpack
+
+# Build the PHCpack
+WORKDIR /root/InvJac/phc/PHCpack
+
+RUN alr toolchain --select gnat_native
+RUN alr toolchain --select gprbuild
+RUN alr build

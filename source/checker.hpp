@@ -179,9 +179,12 @@ class Checker
 
     try
     {
-      if (auto point = map_->HasContraction())
+      if (map_->GetDimensions() == 2)
       {
-        return CheckResult::Contraction{*point};
+        if (auto point = map_->HasContraction())
+        {
+          return CheckResult::Contraction{*point};
+        }
       }
 
       for (size_t iteration = 0; iteration < settings_.iterations; ++iteration)

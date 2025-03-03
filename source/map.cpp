@@ -42,7 +42,7 @@ void Map::EvaluateExtensionDegree() const
 
 std::optional<Point> Map::HasContraction() const
 {
-  DLOG_IF(FATAL, GetDimensions() != 2);
+  DLOG_IF(FATAL, GetDimensions() != 2) << "Map must be 2-dimensional!";
   const auto jacobian_matrix = GetJacobianMatrix();
   const auto jacobian = jacobian_matrix.determinant();
 
