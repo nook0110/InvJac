@@ -1,7 +1,6 @@
 #include <glog/logging.h>
 #include <mysqlx/xdevapi.h>
 
-#include <cstddef>
 #include <variant>
 
 #include "checker.hpp"

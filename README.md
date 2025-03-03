@@ -50,12 +50,12 @@ The application will prompt you for input to generate and check polynomial maps.
 You can also run the application using Docker. The Docker image is hosted on Docker Hub and will be pulled automatically. Use the following command:
 
 ```sh
-docker run --pull always --rm --name invjac -i invjac:prog
+docker run --pull always --rm --name invjac -i nook0110/invjac:prog
 ```
 If you want to use a locally hosted MySQL database, you should add the following commands at the end: `-d --db-host host.docker.internal`
 
 ```sh
-docker run --pull always --rm --name invjac -i invjac:prog -d --db-host host.docker.internal
+docker run --pull always --rm --name invjac -i nook0110/invjac:prog -d --db-host host.docker.internal
 ```
 
 ## Usage
@@ -76,7 +76,6 @@ The application supports several command line options:
 - `--failed-table`: Specify the failed results table name.
 - `--error-table`: Specify the error results table name.
 
-
 ### MySQL Database Setup
 
 To use the MySQL database, you need to create the necessary tables. Here is the SQL script to create the required tables:
@@ -86,7 +85,7 @@ To use the MySQL database, you need to create the necessary tables. Here is the 
 CREATE TABLE test_results (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    result_type ENUM('Passed', 'Failed', 'Error') NOT NULL,
+    result_type ENUM('Passed', 'Failed', 'Error', 'Contraction') NOT NULL,
     run_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
@@ -122,7 +121,6 @@ CREATE TABLE contraction_results (
 
 You can execute this script in your MySQL database to create the necessary tables.
 
-
 ### Example
 
 To run the application with an input file and use a database, you might use:
@@ -130,6 +128,10 @@ To run the application with an input file and use a database, you might use:
 ```sh
 ./invjac -i input.txt -d --db-host localhost --db-user root --db-password root --db-name checked_functions
 ```
+
+## Documentation
+
+For detailed documentation, please visit: [InvJac Documentation](https://nook0110.github.io/InvJac/html/index.html)
 
 ## Contributing
 

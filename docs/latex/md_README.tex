@@ -1,0 +1,137 @@
+\chapter{Inv\+Jac Project}
+\hypertarget{md_README}{}\label{md_README}\index{InvJac Project@{InvJac Project}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+ \hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Overview}{Overview}}\label{md_README_autotoc_md1}
+The Inv\+Jac project is a sophisticated mathematical software application developed to test a hypothesis concerning the sum of the reciprocals of the Jacobian of polynomial maps. The application is capable of verifying contractions and generating points that possess a unit Jacobian.\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{md_README_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{Gi\+NaC}}\+: A C++ library for symbolic mathematical calculations.
+\item {\bfseries{Glog}}\+: A C++ logging library.
+\item {\bfseries{Boost}}\+: Used for program options parsing.
+\item {\bfseries{My\+SQL Connector/\+C++}}\+: A My\+SQL database connector for C++.
+\item {\bfseries{PHCpack}}\+: A software package for solving polynomial systems by homotopy continuation. {\itshape Note\+: The PHCpack library required some fixes, so I am using a forked version. You can find the forked repository here\+: \href{https://github.com/nook0110/PHCpack/tree/file-fix}{\texttt{ https\+://github.\+com/nook0110/\+PHCpack/tree/file-\/fix}}}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Building the Project}{Building the Project}}\label{md_README_autotoc_md3}
+To build the project, ensure you have the necessary dependencies installed. Then, use CMake to configure and build the project. Here are the steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Create a build directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+
+\end{DoxyCode}
+
+\item Run CMake to configure the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+\item Build the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md4}{}\doxysection{\texorpdfstring{Running the Application}{Running the Application}}\label{md_README_autotoc_md4}
+\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{Running Locally}{Running Locally}}\label{md_README_autotoc_md5}
+After building the project, you can run the application using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./invjac}
+
+\end{DoxyCode}
+
+
+The application will prompt you for input to generate and check polynomial maps.\hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{Running via Docker}{Running via Docker}}\label{md_README_autotoc_md6}
+You can also run the application using Docker. The Docker image is hosted on Docker Hub and will be pulled automatically. Use the following command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{docker\ run\ -\/-\/pull\ always\ -\/-\/rm\ -\/-\/name\ invjac\ -\/i\ invjac:prog}
+
+\end{DoxyCode}
+ If you want to use a locally hosted My\+SQL database, you should add the following commands at the end\+: {\ttfamily -\/d -\/-\/db-\/host host.\+docker.\+internal}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{docker\ run\ -\/-\/pull\ always\ -\/-\/rm\ -\/-\/name\ invjac\ -\/i\ invjac:prog\ -\/d\ -\/-\/db-\/host\ host.docker.internal}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md7}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md_README_autotoc_md7}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{Command Line Options}{Command Line Options}}\label{md_README_autotoc_md8}
+The application supports several command line options\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/h, -\/-\/help}\+: Display the help message.
+\item {\ttfamily -\/i, -\/-\/input-\/file}\+: Specify an input file for the map data.
+\item {\ttfamily -\/d, -\/-\/use-\/database}\+: Use a My\+SQL database to store results.
+\item {\ttfamily -\/-\/db-\/host}\+: Specify the database host.
+\item {\ttfamily -\/-\/db-\/user}\+: Specify the database user.
+\item {\ttfamily -\/-\/db-\/password}\+: Specify the database password.
+\item {\ttfamily -\/-\/db-\/name}\+: Specify the database name.
+\item {\ttfamily -\/-\/results-\/table}\+: Specify the results table name.
+\item {\ttfamily -\/-\/passed-\/table}\+: Specify the passed results table name.
+\item {\ttfamily -\/-\/failed-\/table}\+: Specify the failed results table name.
+\item {\ttfamily -\/-\/error-\/table}\+: Specify the error results table name.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md9}{}\doxysubsection{\texorpdfstring{My\+SQL Database Setup}{MySQL Database Setup}}\label{md_README_autotoc_md9}
+To use the My\+SQL database, you need to create the necessary tables. Here is the SQL script to create the required tables\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{-\/-\/\ Main\ table\ for\ all\ test\ results}}
+\DoxyCodeLine{\textcolor{keyword}{CREATE}\ \textcolor{keyword}{TABLE}\ test\_results\ (}
+\DoxyCodeLine{\ \ \ \ id\ \textcolor{keywordtype}{INT}\ AUTO\_INCREMENT\ \textcolor{keyword}{PRIMARY}\ KEY,}
+\DoxyCodeLine{\ \ \ \ name\ \textcolor{keywordtype}{VARCHAR}(\textcolor{stringliteral}{255})\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ result\_type\ ENUM(\textcolor{stringliteral}{'Passed'},\ \textcolor{stringliteral}{'Failed'},\ \textcolor{stringliteral}{'Error'})\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ run\_time\ \textcolor{keywordtype}{TIMESTAMP}\ \textcolor{keyword}{DEFAULT}\ \textcolor{keyword}{CURRENT\_TIMESTAMP}}
+\DoxyCodeLine{)\ ENGINE=InnoDB;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{-\/-\/\ Table\ for\ Passed\ results}}
+\DoxyCodeLine{\textcolor{keyword}{CREATE}\ \textcolor{keyword}{TABLE}\ passed\_results\ (}
+\DoxyCodeLine{\ \ \ \ result\_id\ \textcolor{keywordtype}{INT}\ \textcolor{keyword}{PRIMARY}\ KEY,}
+\DoxyCodeLine{\ \ \ \ amount\_of\_tests\ \textcolor{keywordtype}{INT}\ UNSIGNED\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{FOREIGN}\ KEY\ (result\_id)\ \textcolor{keyword}{REFERENCES}\ test\_results(id)\ \textcolor{keyword}{ON}\ \textcolor{keyword}{DELETE}\ CASCADE}
+\DoxyCodeLine{)\ ENGINE=InnoDB;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{-\/-\/\ Table\ for\ Failed\ results}}
+\DoxyCodeLine{\textcolor{keyword}{CREATE}\ \textcolor{keyword}{TABLE}\ failed\_results\ (}
+\DoxyCodeLine{\ \ \ \ result\_id\ \textcolor{keywordtype}{INT}\ \textcolor{keyword}{PRIMARY}\ KEY,}
+\DoxyCodeLine{\ \ \ \ test\ TEXT\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{result}\ TEXT\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{FOREIGN}\ KEY\ (result\_id)\ \textcolor{keyword}{REFERENCES}\ test\_results(id)\ \textcolor{keyword}{ON}\ \textcolor{keyword}{DELETE}\ CASCADE}
+\DoxyCodeLine{)\ ENGINE=InnoDB;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{-\/-\/\ Table\ for\ Error\ results}}
+\DoxyCodeLine{\textcolor{keyword}{CREATE}\ \textcolor{keyword}{TABLE}\ error\_results\ (}
+\DoxyCodeLine{\ \ \ \ result\_id\ \textcolor{keywordtype}{INT}\ \textcolor{keyword}{PRIMARY}\ KEY,}
+\DoxyCodeLine{\ \ \ \ error\ TEXT\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{FOREIGN}\ KEY\ (result\_id)\ \textcolor{keyword}{REFERENCES}\ test\_results(id)\ \textcolor{keyword}{ON}\ \textcolor{keyword}{DELETE}\ CASCADE}
+\DoxyCodeLine{)\ ENGINE=InnoDB;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{-\/-\/\ Table\ for\ Contraction\ results}}
+\DoxyCodeLine{\textcolor{keyword}{CREATE}\ \textcolor{keyword}{TABLE}\ contraction\_results\ (}
+\DoxyCodeLine{\ \ \ \ result\_id\ \textcolor{keywordtype}{INT}\ \textcolor{keyword}{PRIMARY}\ KEY,}
+\DoxyCodeLine{\ \ \ \ contraction\_point\ TEXT\ \textcolor{keyword}{NOT}\ \textcolor{stringliteral}{NULL},}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{FOREIGN}\ KEY\ (result\_id)\ \textcolor{keyword}{REFERENCES}\ test\_results(id)\ \textcolor{keyword}{ON}\ \textcolor{keyword}{DELETE}\ CASCADE}
+\DoxyCodeLine{)\ ENGINE=InnoDB;}
+
+\end{DoxyCode}
+
+
+You can execute this script in your My\+SQL database to create the necessary tables.\hypertarget{md_README_autotoc_md10}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{md_README_autotoc_md10}
+To run the application with an input file and use a database, you might use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./invjac\ -\/i\ input.txt\ -\/d\ -\/-\/db-\/host\ localhost\ -\/-\/db-\/user\ root\ -\/-\/db-\/password\ root\ -\/-\/db-\/name\ checked\_functions}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md11}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md_README_autotoc_md11}
+For detailed documentation, please visit\+: \href{https://nook0110.github.io/InvJac/html/index.html}{\texttt{ Inv\+Jac Documentation}}\hypertarget{md_README_autotoc_md12}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md_README_autotoc_md12}
+Contributions to the project are welcome. Please fork the repository and submit pull requests with your changes.\hypertarget{md_README_autotoc_md13}{}\doxysection{\texorpdfstring{License}{License}}\label{md_README_autotoc_md13}
+This project is licensed under the MIT License. See the LICENSE file for details. 
