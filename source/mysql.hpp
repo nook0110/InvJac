@@ -180,7 +180,7 @@ class FunctionDatabase
       case ResultType::Contraction:
       {
         const auto& contraction = std::get<CheckResult::Contraction>(result);
-        contraction_table_.insert("result_id", "point")
+        contraction_table_.insert("result_id", "contraction_point")
             .values(result_id, contraction.point.ToStr())
             .execute();
         break;
