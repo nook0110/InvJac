@@ -1,0 +1,102 @@
+\doxysection{Inv\+Jac\+App Class Reference}
+\hypertarget{classInvJacApp}{}\label{classInvJacApp}\index{InvJacApp@{InvJacApp}}
+
+
+Main application class for Inv\+Jac.  
+
+
+
+
+{\ttfamily \#include $<$application.\+hpp$>$}
+
+
+
+Collaboration diagram for Inv\+Jac\+App\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInvJacApp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInvJacApp_a717d88f4381a589718518700ef23cc74}{Inv\+Jac\+App}} (std\+::istream \&input\+\_\+stream=std\+::cin, std\+::ostream \&output\+\_\+stream=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classInvJacApp}{Inv\+Jac\+App} with the given input and output streams. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e}\label{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e} 
+void {\bfseries Run} ()
+\begin{DoxyCompactList}\small\item\em Runs the Inv\+Jac application. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42}{Parse\+Command\+Line}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parses command line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}\label{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980} 
+std\+::istream \& {\bfseries input\+\_\+} = std\+::cin
+\begin{DoxyCompactList}\small\item\em Input stream for user input. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}\label{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220} 
+std\+::ostream \& {\bfseries out\+\_\+} = std\+::cout
+\begin{DoxyCompactList}\small\item\em Output stream for messages. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}\label{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160} 
+std\+::ifstream {\bfseries input\+\_\+file\+\_\+}
+\begin{DoxyCompactList}\small\item\em Input file stream. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}\label{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2} 
+bool {\bfseries use\+\_\+database\+\_\+} = false
+\begin{DoxyCompactList}\small\item\em Flag to use the database. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}\label{classInvJacApp_a627b99477adb458183e4c126e14bf0f3} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classFunctionDatabase}{Function\+Database}} $>$ {\bfseries database\+\_\+}
+\begin{DoxyCompactList}\small\item\em Database instance. \end{DoxyCompactList}\item 
+\Hypertarget{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}\label{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28} 
+\mbox{\hyperlink{classMapChecker}{Map\+Checker}} {\bfseries map\+\_\+checker\+\_\+}
+\begin{DoxyCompactList}\small\item\em \doxylink{classMap}{Map} checker instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main application class for Inv\+Jac. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classInvJacApp_a717d88f4381a589718518700ef23cc74}\label{classInvJacApp_a717d88f4381a589718518700ef23cc74} 
+\index{InvJacApp@{InvJacApp}!InvJacApp@{InvJacApp}}
+\index{InvJacApp@{InvJacApp}!InvJacApp@{InvJacApp}}
+\doxysubsubsection{\texorpdfstring{InvJacApp()}{InvJacApp()}}
+{\footnotesize\ttfamily Inv\+Jac\+App\+::\+Inv\+Jac\+App (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream = {\ttfamily std\+:\+:cin},  }\item[{std\+::ostream \&}]{output\+\_\+stream = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{classInvJacApp}{Inv\+Jac\+App} with the given input and output streams. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+stream} & Input stream for user input. \\
+\hline
+{\em output\+\_\+stream} & Output stream for messages. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42}\label{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42} 
+\index{InvJacApp@{InvJacApp}!ParseCommandLine@{ParseCommandLine}}
+\index{ParseCommandLine@{ParseCommandLine}!InvJacApp@{InvJacApp}}
+\doxysubsubsection{\texorpdfstring{ParseCommandLine()}{ParseCommandLine()}}
+{\footnotesize\ttfamily bool Inv\+Jac\+App\+::\+Parse\+Command\+Line (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parses command line arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if help message is displayed, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/application.\+hpp\end{DoxyCompactItemize}

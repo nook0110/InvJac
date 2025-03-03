@@ -1,0 +1,6 @@
+<map id="FunctionDatabase::MapExists" name="FunctionDatabase::MapExists">
+<area shape="rect" id="Node000001" title="Checks if a map exists in the database." alt="" coords="5,29,220,55"/>
+<area shape="rect" id="Node000002" href="$classMap.html#ad683c9c4a552bc98ff71f19b74315ac1" title="Converts the map to a string representation." alt="" coords="268,29,359,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,39,254,39,254,45,221,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="280,31,273,21,277,11,291,5,313,3,341,6,352,16,349,20,339,11,313,8,292,10,281,15,279,20,285,28"/>
+</map>

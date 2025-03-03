@@ -1,0 +1,11 @@
+<map id="CheckResult" name="CheckResult">
+<area shape="rect" id="Node000001" title="Result of a check operation." alt="" coords="266,521,386,647"/>
+<area shape="rect" id="Node000002" href="$classMap.html" title="Class representing a mathematical map." alt="" coords="67,133,273,459"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,457,287,506,282,508,256,460"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,164,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,70,113,117,108,118,93,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="188,5,323,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="247,72,232,118,227,117,242,70"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="297,256,459,336"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="374,337,343,506,338,505,368,336"/>
+</map>

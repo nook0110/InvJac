@@ -1,0 +1,76 @@
+\doxysection{Database\+Config Struct Reference}
+\hypertarget{structDatabaseConfig}{}\label{structDatabaseConfig}\index{DatabaseConfig@{DatabaseConfig}}
+
+
+Configuration for the database connection.  
+
+
+
+
+{\ttfamily \#include $<$mysql.\+hpp$>$}
+
+
+
+Collaboration diagram for Database\+Config\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{structDatabaseConfig__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structDatabaseConfig_afb231b9431e7b3ac9f7059c461b3828e}\label{structDatabaseConfig_afb231b9431e7b3ac9f7059c461b3828e} 
+std\+::string {\bfseries host} = "{}localhost"{}
+\begin{DoxyCompactList}\small\item\em Database host. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_ab7bd486d9aefad6a550e07bfe7579860}\label{structDatabaseConfig_ab7bd486d9aefad6a550e07bfe7579860} 
+std\+::string {\bfseries user} = "{}root"{}
+\begin{DoxyCompactList}\small\item\em Database user. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_aa17e906c33a2f1c2d1508afa50957b35}\label{structDatabaseConfig_aa17e906c33a2f1c2d1508afa50957b35} 
+std\+::string {\bfseries password} = "{}root"{}
+\begin{DoxyCompactList}\small\item\em Database password. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_a6d8841402f11c6f9406871b3b93f9363}\label{structDatabaseConfig_a6d8841402f11c6f9406871b3b93f9363} 
+std\+::string {\bfseries database} = "{}checked\+\_\+functions"{}
+\begin{DoxyCompactList}\small\item\em Database name. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_aa2faab03c4cdebcf63c6c7e11cf04e4b}\label{structDatabaseConfig_aa2faab03c4cdebcf63c6c7e11cf04e4b} 
+std\+::string {\bfseries results\+\_\+table} = "{}test\+\_\+results"{}
+\begin{DoxyCompactList}\small\item\em Results table name. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_a7a3bd952183374c00d1e35307c8c40b4}\label{structDatabaseConfig_a7a3bd952183374c00d1e35307c8c40b4} 
+std\+::string {\bfseries passed\+\_\+table} = "{}passed\+\_\+results"{}
+\begin{DoxyCompactList}\small\item\em Passed results table name. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_aa1f13028b8759398bb51f458aef821c6}\label{structDatabaseConfig_aa1f13028b8759398bb51f458aef821c6} 
+std\+::string {\bfseries failed\+\_\+table} = "{}failed\+\_\+results"{}
+\begin{DoxyCompactList}\small\item\em Failed results table name. \end{DoxyCompactList}\item 
+\Hypertarget{structDatabaseConfig_a5aca0375470a5e5b65fc5798ade0f305}\label{structDatabaseConfig_a5aca0375470a5e5b65fc5798ade0f305} 
+std\+::string {\bfseries error\+\_\+table} = "{}error\+\_\+results"{}
+\begin{DoxyCompactList}\small\item\em Error results table name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structDatabaseConfig_a5446ce8c0e1d0c5497d9094e91c04ce8}{contraction\+\_\+table}}
+\begin{DoxyCompactList}\small\item\em Contraction results table name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration for the database connection. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structDatabaseConfig_a5446ce8c0e1d0c5497d9094e91c04ce8}\label{structDatabaseConfig_a5446ce8c0e1d0c5497d9094e91c04ce8} 
+\index{DatabaseConfig@{DatabaseConfig}!contraction\_table@{contraction\_table}}
+\index{contraction\_table@{contraction\_table}!DatabaseConfig@{DatabaseConfig}}
+\doxysubsubsection{\texorpdfstring{contraction\_table}{contraction\_table}}
+{\footnotesize\ttfamily std\+::string Database\+Config\+::contraction\+\_\+table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{stringliteral}{"{}contraction\_results"{}}}
+
+\end{DoxyCode}
+
+
+Contraction results table name. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/mysql.\+hpp\end{DoxyCompactItemize}

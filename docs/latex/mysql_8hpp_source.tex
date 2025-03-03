@@ -1,0 +1,167 @@
+\doxysection{mysql.\+hpp}
+\hypertarget{mysql_8hpp_source}{}\label{mysql_8hpp_source}\index{source/mysql.hpp@{source/mysql.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <glog/logging.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <mysqlx/xdevapi.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}checker.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDatabaseConfig}{DatabaseConfig}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_afb231b9431e7b3ac9f7059c461b3828e}{host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_ab7bd486d9aefad6a550e07bfe7579860}{user}}\ =\ \textcolor{stringliteral}{"{}root"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_aa17e906c33a2f1c2d1508afa50957b35}{password}}\ =\ \textcolor{stringliteral}{"{}root"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_a6d8841402f11c6f9406871b3b93f9363}{database}}\ =\ \textcolor{stringliteral}{"{}checked\_functions"{}};\ \ \ }
+\DoxyCodeLine{00020\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_aa2faab03c4cdebcf63c6c7e11cf04e4b}{results\_table}}\ =\ \textcolor{stringliteral}{"{}test\_results"{}};\ \ \ }
+\DoxyCodeLine{00021\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_a7a3bd952183374c00d1e35307c8c40b4}{passed\_table}}\ =\ \textcolor{stringliteral}{"{}passed\_results"{}};\ \ }
+\DoxyCodeLine{00022\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_aa1f13028b8759398bb51f458aef821c6}{failed\_table}}\ =\ \textcolor{stringliteral}{"{}failed\_results"{}};\ \ }
+\DoxyCodeLine{00023\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_a5aca0375470a5e5b65fc5798ade0f305}{error\_table}}\ =\ \textcolor{stringliteral}{"{}error\_results"{}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ std::string\ \mbox{\hyperlink{structDatabaseConfig_a5446ce8c0e1d0c5497d9094e91c04ce8}{contraction\_table}}\ =}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}contraction\_results"{}};\ \ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunctionDatabase}{FunctionDatabase}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{ResultType}}}
+\DoxyCodeLine{00038\ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ Passed,}
+\DoxyCodeLine{00040\ \ \ \ \ Failed,}
+\DoxyCodeLine{00041\ \ \ \ \ Error,}
+\DoxyCodeLine{00042\ \ \ \ \ Contraction}
+\DoxyCodeLine{00043\ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05}{FunctionDatabase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structDatabaseConfig}{DatabaseConfig}}\&\ config)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classFunctionDatabase_a06e7d832a80a36b9e6da4b3b7f0a55ae}{session\_}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ mysqlx::Session(config.host,\ 33060,\ config.user,\ config.password)),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}(\mbox{\hyperlink{classFunctionDatabase_a06e7d832a80a36b9e6da4b3b7f0a55ae}{session\_}}.getSchema(config.database)),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d}{results\_table\_}}(\mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}.getTable(config.results\_table)),}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a7ded93d582df2d93878ba8d8142cb8ad}{passed\_table\_}}(\mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}.getTable(config.passed\_table)),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a9fa7846d97bb3069ac9cf75aeef342ea}{failed\_table\_}}(\mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}.getTable(config.failed\_table)),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_af99d3d3abea5f69592ae5346a914599e}{error\_table\_}}(\mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}.getTable(config.error\_table)),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701}{contraction\_table\_}}(\mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}}.getTable(config.contraction\_table))}
+\DoxyCodeLine{00058\ \ \ \{\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFunctionDatabase_a27bb6cb5f7a69df442c90d379bd30a60}{MapExists}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ map)}
+\DoxyCodeLine{00066\ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d}{results\_table\_}}.select(\textcolor{stringliteral}{"{}id"{}})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .where(\textcolor{stringliteral}{"{}name\ =\ :map\_name"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .bind(\textcolor{stringliteral}{"{}map\_name"{}},\ map.\mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{ToStr}}())}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ result.count()\ >\ 0;}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFunctionDatabase_ab02cb65a9009ad0fc61f68c24f3fdc45}{InsertCheckResult}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classCheckResult}{CheckResult}}\&\ check\_result)}
+\DoxyCodeLine{00079\ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ map\ =\ check\_result.\mbox{\hyperlink{classCheckResult_ab914d3312511dc356af31e43ed7b1cf5}{GetMap}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ result\ =\ check\_result.\mbox{\hyperlink{classCheckResult_abb344684e272ccd953b9577bcdcda039}{GetResult}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{ResultType}}\ result\_type;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::holds\_alternative<CheckResult::Passed>(result))}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ result\_type\ =\ ResultType::Passed;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (std::holds\_alternative<CheckResult::Failed>(result))}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ result\_type\ =\ ResultType::Failed;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (std::holds\_alternative<CheckResult::Error>(result))}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ result\_type\ =\ ResultType::Error;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (std::holds\_alternative<CheckResult::Contraction>(result))}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ result\_type\ =\ ResultType::Contraction;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ LOG(ERROR)\ <<\ \textcolor{stringliteral}{"{}Unhandled\ result\ variant\ in\ InsertCheckResult."{}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{auto}\ insert\_result\ =\ \mbox{\hyperlink{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d}{results\_table\_}}.insert(\textcolor{stringliteral}{"{}name"{}},\ \textcolor{stringliteral}{"{}result\_type"{}})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .values(map.ToStr(),\ \mbox{\hyperlink{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05}{ToString}}(result\_type))}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{auto}\ result\_id\ =\ insert\_result.getAutoIncrementValue();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697}{InsertResultDetails}}(result\_id,\ result,\ result\_type);}
+\DoxyCodeLine{00112\ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ mysqlx::Session\ \mbox{\hyperlink{classFunctionDatabase_a06e7d832a80a36b9e6da4b3b7f0a55ae}{session\_}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ mysqlx::Schema\ \mbox{\hyperlink{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}{schema\_}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ mysqlx::Table\ \mbox{\hyperlink{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d}{results\_table\_}};\ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ mysqlx::Table\ \mbox{\hyperlink{classFunctionDatabase_a7ded93d582df2d93878ba8d8142cb8ad}{passed\_table\_}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ mysqlx::Table\ \mbox{\hyperlink{classFunctionDatabase_a9fa7846d97bb3069ac9cf75aeef342ea}{failed\_table\_}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ mysqlx::Table\ \mbox{\hyperlink{classFunctionDatabase_af99d3d3abea5f69592ae5346a914599e}{error\_table\_}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ mysqlx::Table\ \mbox{\hyperlink{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701}{contraction\_table\_}};\ \ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ std::string\ \mbox{\hyperlink{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05}{ToString}}(\mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{ResultType}}\ result\_type)}
+\DoxyCodeLine{00129\ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{switch}\ (result\_type)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Passed:}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Passed"{}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Failed:}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Failed"{}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Error:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Error"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Contraction:}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Contraction"{}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697}{InsertResultDetails}}(std::int64\_t\ result\_id,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CheckResult::Result\&\ result,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{ResultType}}\ result\_type)}
+\DoxyCodeLine{00154\ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{switch}\ (result\_type)}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Passed:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ passed\ =\ std::get<CheckResult::Passed>(result);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a7ded93d582df2d93878ba8d8142cb8ad}{passed\_table\_}}.insert(\textcolor{stringliteral}{"{}result\_id"{}},\ \textcolor{stringliteral}{"{}amount\_of\_tests"{}})}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ .values(result\_id,\ passed.check\_amount)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Failed:}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ failed\ =\ std::get<CheckResult::Failed>(result);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a9fa7846d97bb3069ac9cf75aeef342ea}{failed\_table\_}}.insert(\textcolor{stringliteral}{"{}result\_id"{}},\ \textcolor{stringliteral}{"{}test"{}},\ \textcolor{stringliteral}{"{}result"{}})}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ .values(result\_id,\ failed.point.ToStr(),\ ToStr(failed.value))}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Error:}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ error\ =\ std::get<CheckResult::Error>(result);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_af99d3d3abea5f69592ae5346a914599e}{error\_table\_}}.insert(\textcolor{stringliteral}{"{}result\_id"{}},\ \textcolor{stringliteral}{"{}error"{}})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ .values(result\_id,\ error.message)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ResultType::Contraction:}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ contraction\ =\ std::get<CheckResult::Contraction>(result);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701}{contraction\_table\_}}.insert(\textcolor{stringliteral}{"{}result\_id"{}},\ \textcolor{stringliteral}{"{}point"{}})}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ .values(result\_id,\ contraction.point.ToStr())}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ .execute();}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ LOG(ERROR)\ <<\ \textcolor{stringliteral}{"{}Unhandled\ result\ type\ in\ InsertResultDetails."{}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \}}
+\DoxyCodeLine{00194\ \};}
+
+\end{DoxyCode}

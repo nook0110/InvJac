@@ -1,0 +1,7 @@
+<map id="Map::Image" name="Map::Image">
+<area shape="rect" id="Node000001" title="Applies the map to a point." alt="" coords="5,31,104,56"/>
+<area shape="rect" id="Node000002" href="$classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="152,5,311,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,34,138,29,138,34,104,39"/>
+<area shape="rect" id="Node000003" href="$classMap.html#abcf03601f4d3b46d9fcf38dd1b0f20d7" title="Gets the polynomial at the specified index." alt="" coords="177,55,286,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,47,164,55,163,61,104,53"/>
+</map>

@@ -1,0 +1,68 @@
+\doxysection{equation.\+hpp}
+\hypertarget{equation_8hpp_source}{}\label{equation_8hpp_source}\index{source/equation.hpp@{source/equation.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEquation}{Equation}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEquation_1_1Root}{Root}}}
+\DoxyCodeLine{00016\ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structEquation_1_1Root_afc56862788af6fb3216077cdd92fb172}{multiplicity}};\ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structEquation_1_1Root_a9aafb3fb2277f5bfb635b15c52f0cfed}{point}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEquation_1_1Solution}{Solution}}}
+\DoxyCodeLine{00025\ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ multiplicity\ =\ true>}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classEquation_1_1Solution_a66ef1b5e93e4a9c909620b53218df55a}{GetRootCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<Root>::iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.begin();\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<Root>::iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.end();\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<Root>::const\_iterator\ begin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.cbegin();\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<Root>::const\_iterator\ end()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.cend();\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classEquation}{Equation}};}
+\DoxyCodeLine{00043\ \ \ \ \ Solution()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_1_1Solution_ad846c8ff497fb25a85a195214ceed7ae}{Append}}(\textcolor{keywordtype}{size\_t}\ multiplicity,\ \mbox{\hyperlink{classPoint}{Point}}\ point)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.emplace\_back(multiplicity,\ std::move(point));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_1_1Solution_ae18c7373473f299782964936de1e6a8a}{Reserve}}(\textcolor{keywordtype}{size\_t}\ n)\ \{\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}}.reserve(n);\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<Root>\ \mbox{\hyperlink{classEquation_1_1Solution_ab69949ee2b75453aaf9d0b8c6ef2dcbf}{roots\_}};\ \ }
+\DoxyCodeLine{00062\ \ \ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{keywordtype}{size\_t}\ amount\_of\_equations\ =\ 0);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009}{IsSquare}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classEquation_1_1Solution}{Solution}}\ \mbox{\hyperlink{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149}{Solve}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_ab9bdba95839686a8c9e8f4fcd40c2d60}{ReserveAmountOfEquations}}(\textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(\textcolor{keyword}{const}\ Polynomial\&\ poly);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(std::string\ equation);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEquation_aa930858b3d6f67de245f85569d446463}{LoadEquations}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ std::vector<std::string>\ \mbox{\hyperlink{classEquation_a1c5dc8cb993a3477762fd16879445b2a}{polynomials\_}};\ \ }
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{size\_t}\ Equation::Solution::GetRootCount<true>()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{size\_t}\ Equation::Solution::GetRootCount<false>()\ \textcolor{keyword}{const};}
+
+\end{DoxyCode}

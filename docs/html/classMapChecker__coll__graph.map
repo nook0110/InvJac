@@ -1,0 +1,21 @@
+<map id="MapChecker" name="MapChecker">
+<area shape="rect" id="Node000001" title="Class to check maps using a specified strategy." alt="" coords="382,729,513,875"/>
+<area shape="rect" id="Node000002" href="$classChecker.html" title="Class to perform checks on a map." alt="" coords="267,521,427,667"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="385,666,408,713,403,716,380,668"/>
+<area shape="rect" id="Node000003" href="$classMap.html" title="Class representing a mathematical map." alt="" coords="152,133,359,459"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,458,323,505,318,506,303,460"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,164,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,70,145,124,140,127,104,73"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="188,5,323,71"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="258,71,258,117,253,117,253,71"/>
+<area shape="rect" id="Node000006" href="$structCheckerSettings.html" title="Settings for the Checker class." alt="" coords="425,263,544,329"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="472,330,390,507,385,505,468,328"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="393,5,445,71"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="427,70,435,109,473,247,468,248,430,110,422,71"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="498,5,557,71"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="525,72,495,248,490,247,519,71"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="599,5,642,71"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="607,72,587,111,512,250,507,248,582,108,602,70"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="452,554,643,634"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="531,636,492,716,487,714,526,633"/>
+</map>

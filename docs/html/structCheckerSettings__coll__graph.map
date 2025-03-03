@@ -1,0 +1,9 @@
+<map id="CheckerSettings" name="CheckerSettings">
+<area shape="rect" id="Node000001" title="Settings for the Checker class." alt="" coords="80,133,199,199"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,57,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,70,48,90,59,108,71,121,67,125,55,111,43,92,36,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,5,169,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,71,142,117,137,117,137,71"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="211,5,254,71"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,72,206,111,195,123,191,120,201,108,221,70"/>
+</map>

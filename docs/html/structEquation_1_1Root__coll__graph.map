@@ -1,0 +1,9 @@
+<map id="Equation::Root" name="Equation::Root">
+<area shape="rect" id="Node000001" title="Struct representing a root of the equation." alt="" coords="38,461,147,527"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,233,57,299"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="28,299,24,365,27,401,38,436,44,447,39,450,33,438,22,402,18,365,23,299"/>
+<area shape="rect" id="Node000003" href="$classPoint.html" title=" " alt="" coords="81,133,235,399"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,400,127,438,123,447,118,445,122,436,134,398"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="87,5,229,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="161,71,161,117,155,117,155,71"/>
+</map>

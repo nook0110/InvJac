@@ -1,0 +1,129 @@
+\doxysection{map.\+hpp}
+\hypertarget{map_8hpp_source}{}\label{map_8hpp_source}\index{source/map.hpp@{source/map.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <ginac/ginac.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <ginac/matrix.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ginac/power.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glog/logging.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}symbol.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }Polynomial\ =\ GiNaC::ex;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{inline}\ std::string\ ToStr(\textcolor{keyword}{const}\ Polynomial\&\ poly)}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00022\ \ \ ss\ <<\ poly;}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMap}{Map}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{using\ }PolyMatrix\ =\ GiNaC::matrix;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMap_ad2f5c98261d6e71703a1aa27c17b5514}{Map}}(std::vector<Polynomial>\ polynomials)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}(std::move(polynomials))}
+\DoxyCodeLine{00040\ \ \ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{classMap_a292bbf3fa2ba781d16c404491f6e0725}{Image}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ PolyMatrix\ \mbox{\hyperlink{classMap_a5e541877bbd65e1a30b4d0ab63a1630d}{GetJacobianMatrix}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ PolyMatrix\ jacobian\_mat(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()));}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}();\ ++i)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}();\ ++j)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ jacobian\_mat(i,\ j)\ =\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}[i].diff(Symbols::GetSymbol(j));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ jacobian\_mat;}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ Polynomial\ \mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a5e541877bbd65e1a30b4d0ab63a1630d}{GetJacobianMatrix}}().determinant();\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ std::optional<Point>\ \mbox{\hyperlink{classMap_a96bb87aa86af7d89988c619cd0fa59d5}{HasContraction}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.size();\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{const}\ Polynomial\&\ \mbox{\hyperlink{classMap_abcf03601f4d3b46d9fcf38dd1b0f20d7}{GetPoly}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}[i];\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classMap_a6966029610d6d01a0ff49372f642fc7a}{GetExtensionDegree}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classMap_ab88ba9c00e78e632c2dfba4441581373}{extension\_degree\_}})}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \mbox{\hyperlink{classMap_a3495abb2416426db3f9eff6d5832fb17}{EvaluateExtensionDegree}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_ab88ba9c00e78e632c2dfba4441581373}{extension\_degree\_}}.value();}
+\DoxyCodeLine{00104\ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ std::string\ \mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00111\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ std::accumulate(std::next(\mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.begin()),\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.end(),}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{::ToStr}}(\mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.front()),}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](std::string\ str,\ \textcolor{keyword}{const}\ Polynomial\&\ poly)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ return\ std::move(str)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ ::ToStr(poly);\ \});}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ std::vector<Polynomial>::iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.begin();\ \}}
+\DoxyCodeLine{00119\ \ \ std::vector<Polynomial>::const\_iterator\ begin()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00120\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.begin();}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ \ \ std::vector<Polynomial>::iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.end();\ \}}
+\DoxyCodeLine{00124\ \ \ std::vector<Polynomial>::const\_iterator\ end()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}}.end();}
+\DoxyCodeLine{00127\ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMap_a3495abb2416426db3f9eff6d5832fb17}{EvaluateExtensionDegree}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ std::vector<Polynomial>\ \mbox{\hyperlink{classMap_a6004f374898df3a6b025ea07cc64aa95}{polynomials\_}};\ \ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{mutable}\ std::optional<size\_t>\ \mbox{\hyperlink{classMap_ab88ba9c00e78e632c2dfba4441581373}{extension\_degree\_}}\ =}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \{\};\ \ }
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{inline}\ Polynomial\ GenerateMonomial(std::vector<size\_t>\ degrees)}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ Polynomial\ result\ =\ 1;}
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ symbol\ =\ 0;\ symbol\ <\ degrees.size();\ ++symbol)}
+\DoxyCodeLine{00149\ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ result\ *=\ GiNaC::pow(Symbols::GetSymbol(symbol),\ degrees[symbol]);}
+\DoxyCodeLine{00151\ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00153\ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{inline}\ Polynomial\ GeneratePolynomial(\textcolor{keyword}{const}\ std::vector<Polynomial>\&\ monomials,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Complex>\&\ coefficients,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx)}
+\DoxyCodeLine{00165\ \{}
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordflow}{if}\ (coefficients.empty())}
+\DoxyCodeLine{00167\ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00169\ \ \ \}}
+\DoxyCodeLine{00170\ \ \ Polynomial\ result\ =\ 0;}
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordtype}{size\_t}\ monomial\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \textcolor{keywordflow}{while}\ (idx\ >\ 0\ \&\&\ monomial\ <\ monomials.size())}
+\DoxyCodeLine{00173\ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ result\ +=\ monomials[monomial++]\ *\ coefficients[idx\ \%\ coefficients.size()];}
+\DoxyCodeLine{00175\ \ \ \ \ idx\ /=\ coefficients.size();}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00179\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,204 @@
+\doxysection{Equation Class Reference}
+\hypertarget{classEquation}{}\label{classEquation}\index{Equation@{Equation}}
+
+
+Class representing an equation.  
+
+
+
+
+{\ttfamily \#include $<$equation.\+hpp$>$}
+
+
+
+Collaboration diagram for Equation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classEquation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEquation_1_1Root}{Root}}
+\begin{DoxyCompactList}\small\item\em Struct representing a root of the equation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEquation_1_1Solution}{Solution}}
+\begin{DoxyCompactList}\small\item\em Class representing the solution of the equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEquation_aa482c4069e842a458943b8f8a0cff355}{Equation}} (size\+\_\+t amount\+\_\+of\+\_\+equations=0)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEquation}{Equation}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009}{Is\+Square}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the equation system is square. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEquation_1_1Solution}{Solution}} \mbox{\hyperlink{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149}{Solve}} () const
+\begin{DoxyCompactList}\small\item\em Solves the equation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEquation_ab9bdba95839686a8c9e8f4fcd40c2d60}{Reserve\+Amount\+Of\+Equations}} (size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Reserves space for a number of equations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{Append\+Equation}} (const Polynomial \&poly)
+\begin{DoxyCompactList}\small\item\em Appends an equation to the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEquation_af4a73cde0464da9fdc97e0e89d0bdf59}{Append\+Equation}} (std\+::string equation)
+\begin{DoxyCompactList}\small\item\em Appends an equation to the system. \end{DoxyCompactList}\item 
+\Hypertarget{classEquation_aa930858b3d6f67de245f85569d446463}\label{classEquation_aa930858b3d6f67de245f85569d446463} 
+void {\bfseries Load\+Equations} () const
+\begin{DoxyCompactList}\small\item\em Loads the equations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEquation_a1c5dc8cb993a3477762fd16879445b2a}\label{classEquation_a1c5dc8cb993a3477762fd16879445b2a} 
+std\+::vector$<$ std\+::string $>$ {\bfseries polynomials\+\_\+}
+\begin{DoxyCompactList}\small\item\em Vector of polynomial equations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing an equation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEquation_aa482c4069e842a458943b8f8a0cff355}\label{classEquation_aa482c4069e842a458943b8f8a0cff355} 
+\index{Equation@{Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{Equation()}{Equation()}}
+{\footnotesize\ttfamily Equation\+::\+Equation (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{amount\+\_\+of\+\_\+equations = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an \doxylink{classEquation}{Equation}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount\+\_\+of\+\_\+equations} & Number of equations. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquation_aa482c4069e842a458943b8f8a0cff355_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}\label{classEquation_a28f78a59c69dfdc27b505afc1263e3cc} 
+\index{Equation@{Equation}!AppendEquation@{AppendEquation}}
+\index{AppendEquation@{AppendEquation}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{AppendEquation()}{AppendEquation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Equation\+::\+Append\+Equation (\begin{DoxyParamCaption}\item[{const Polynomial \&}]{poly }\end{DoxyParamCaption})}
+
+
+
+Appends an equation to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly} & Polynomial representing the equation. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classEquation_a28f78a59c69dfdc27b505afc1263e3cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquation_a28f78a59c69dfdc27b505afc1263e3cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEquation_af4a73cde0464da9fdc97e0e89d0bdf59}\label{classEquation_af4a73cde0464da9fdc97e0e89d0bdf59} 
+\index{Equation@{Equation}!AppendEquation@{AppendEquation}}
+\index{AppendEquation@{AppendEquation}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{AppendEquation()}{AppendEquation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Equation\+::\+Append\+Equation (\begin{DoxyParamCaption}\item[{std\+::string}]{equation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appends an equation to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equation} & String representing the equation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009}\label{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009} 
+\index{Equation@{Equation}!IsSquare@{IsSquare}}
+\index{IsSquare@{IsSquare}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{IsSquare()}{IsSquare()}}
+{\footnotesize\ttfamily bool Equation\+::\+Is\+Square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the equation system is square. 
+
+\begin{DoxyReturn}{Returns}
+True if the system is square, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEquation_ab9bdba95839686a8c9e8f4fcd40c2d60}\label{classEquation_ab9bdba95839686a8c9e8f4fcd40c2d60} 
+\index{Equation@{Equation}!ReserveAmountOfEquations@{ReserveAmountOfEquations}}
+\index{ReserveAmountOfEquations@{ReserveAmountOfEquations}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{ReserveAmountOfEquations()}{ReserveAmountOfEquations()}}
+{\footnotesize\ttfamily void Equation\+::\+Reserve\+Amount\+Of\+Equations (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Reserves space for a number of equations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of equations to reserve space for. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquation_ab9bdba95839686a8c9e8f4fcd40c2d60_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149}\label{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149} 
+\index{Equation@{Equation}!Solve@{Solve}}
+\index{Solve@{Solve}!Equation@{Equation}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEquation_1_1Solution}{Equation\+::\+Solution}} Equation\+::\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the equation. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classEquation_1_1Solution}{Solution} of the equation. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/equation.\+hpp\item 
+source/equation.\+cpp\end{DoxyCompactItemize}

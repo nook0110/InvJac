@@ -1,0 +1,68 @@
+\doxysection{point.\+hpp}
+\hypertarget{point_8hpp_source}{}\label{point_8hpp_source}\index{source/point.hpp@{source/point.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <ginac/ginac.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }Complex\ =\ GiNaC::numeric;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPoint}{Point}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPoint}{Point}}(std::vector<Complex>\ coords\ =\ \{\})\ :\ coords\_(std::move(coords))}
+\DoxyCodeLine{00014\ \ \ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{size\_t}\ GetDimensions()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.size();\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{const}\ Complex\&\ GetCoord(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_[i];\ \}}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{const}\ Complex\&\ operator[](\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetCoord(i);\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ GiNaC::lst\ ToLst()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classPoint}{Point}}\ GenerateRandom(\textcolor{keywordtype}{size\_t}\ dimensions)}
+\DoxyCodeLine{00024\ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<Complex>\ coords(dimensions);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(80085);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ dis(-\/10.0,\ 10.0);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ coord\ :\ coords)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ coord\ =\ dis(gen)\ +\ GiNaC::I\ *\ dis(gen);}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint}{Point}}(std::move(coords));}
+\DoxyCodeLine{00034\ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ std::string\ ToStr()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00039\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}("{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ coords\_.size();\ ++i)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ oss\ <<\ coords\_[i].evalf();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ coords\_.size()\ -\/\ 1)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ std::vector<Complex>::iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ coords\_.begin();\ \}}
+\DoxyCodeLine{00053\ \ \ std::vector<Complex>::const\_iterator\ begin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.begin();\ \}}
+\DoxyCodeLine{00054\ \ \ std::vector<Complex>::iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ coords\_.end();\ \}}
+\DoxyCodeLine{00055\ \ \ std::vector<Complex>::const\_iterator\ end()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.end();\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ std::vector<Complex>\ coords\_;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{static\_assert}(std::ranges::range<Point>);}
+\DoxyCodeLine{00062\ \textcolor{keyword}{static\_assert}(std::ranges::constant\_range<const\ Point>);}
+
+\end{DoxyCode}

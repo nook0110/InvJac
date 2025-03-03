@@ -1,0 +1,189 @@
+\doxysection{Checker Class Reference}
+\hypertarget{classChecker}{}\label{classChecker}\index{Checker@{Checker}}
+
+
+Class to perform checks on a map.  
+
+
+
+
+{\ttfamily \#include $<$checker.\+hpp$>$}
+
+
+
+Collaboration diagram for Checker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChecker_adabcd3158c464f241edf4255631b73c7}{Checker}} (const \mbox{\hyperlink{structCheckerSettings}{Checker\+Settings}} \&settings=\mbox{\hyperlink{structCheckerSettings}{Checker\+Settings}}())
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classChecker}{Checker} with the given settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{Set\+Map}} (const \mbox{\hyperlink{classMap}{Map}} \texorpdfstring{$\ast$}{*}new\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Sets the map to be checked. \end{DoxyCompactList}\item 
+Check\+Result\+::\+Result \mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{Perform\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Performs the check on the set map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ Complex $>$ \mbox{\hyperlink{classChecker_a5557d50dbd898a42629d367321fa4d7c}{Test\+Point}} (const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Tests a point on the map. \end{DoxyCompactList}\item 
+Complex \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{Substitute\+Jacobian}} (Polynomial jacobian, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Substitutes the Jacobian with the given point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classChecker_ae26b39a416dd85f851ed2cf616e570b4}\label{classChecker_ae26b39a416dd85f851ed2cf616e570b4} 
+const \mbox{\hyperlink{classMap}{Map}} \texorpdfstring{$\ast$}{*} {\bfseries map\+\_\+} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the map being checked. \end{DoxyCompactList}\item 
+\Hypertarget{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}\label{classChecker_ab16a97490660fb8fc649c1a7c3eb3321} 
+\mbox{\hyperlink{structCheckerSettings}{Checker\+Settings}} {\bfseries settings\+\_\+}
+\begin{DoxyCompactList}\small\item\em Settings for the checker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to perform checks on a map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classChecker_adabcd3158c464f241edf4255631b73c7}\label{classChecker_adabcd3158c464f241edf4255631b73c7} 
+\index{Checker@{Checker}!Checker@{Checker}}
+\index{Checker@{Checker}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{Checker()}{Checker()}}
+{\footnotesize\ttfamily Checker\+::\+Checker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCheckerSettings}{Checker\+Settings}} \&}]{settings = {\ttfamily \mbox{\hyperlink{structCheckerSettings}{Checker\+Settings}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classChecker}{Checker} with the given settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings} & Settings for the checker. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}\label{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2} 
+\index{Checker@{Checker}!PerformCheck@{PerformCheck}}
+\index{PerformCheck@{PerformCheck}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{PerformCheck()}{PerformCheck()}}
+{\footnotesize\ttfamily Check\+Result\+::\+Result Checker\+::\+Perform\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs the check on the set map. 
+
+\begin{DoxyReturn}{Returns}
+Result of the check. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}\label{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a} 
+\index{Checker@{Checker}!SetMap@{SetMap}}
+\index{SetMap@{SetMap}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{SetMap()}{SetMap()}}
+{\footnotesize\ttfamily void Checker\+::\+Set\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \texorpdfstring{$\ast$}{*}}]{new\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the map to be checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+map} & Pointer to the new map. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classChecker_ad27c68388778a2a37c7a9589bc58c78e}\label{classChecker_ad27c68388778a2a37c7a9589bc58c78e} 
+\index{Checker@{Checker}!SubstituteJacobian@{SubstituteJacobian}}
+\index{SubstituteJacobian@{SubstituteJacobian}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{SubstituteJacobian()}{SubstituteJacobian()}}
+{\footnotesize\ttfamily Complex Checker\+::\+Substitute\+Jacobian (\begin{DoxyParamCaption}\item[{Polynomial}]{jacobian,  }\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Substitutes the Jacobian with the given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jacobian} & Jacobian polynomial. \\
+\hline
+{\em point} & \doxylink{classPoint}{Point} to substitute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex value after substitution. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_ad27c68388778a2a37c7a9589bc58c78e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_ad27c68388778a2a37c7a9589bc58c78e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classChecker_a5557d50dbd898a42629d367321fa4d7c}\label{classChecker_a5557d50dbd898a42629d367321fa4d7c} 
+\index{Checker@{Checker}!TestPoint@{TestPoint}}
+\index{TestPoint@{TestPoint}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{TestPoint()}{TestPoint()}}
+{\footnotesize\ttfamily std\+::optional$<$ Complex $>$ Checker\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Tests a point on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \doxylink{classPoint}{Point} to be tested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Optional complex value if the test fails. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_a5557d50dbd898a42629d367321fa4d7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classChecker_a5557d50dbd898a42629d367321fa4d7c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/checker.\+hpp\end{DoxyCompactItemize}

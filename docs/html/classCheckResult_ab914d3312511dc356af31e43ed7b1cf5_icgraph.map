@@ -1,0 +1,5 @@
+<map id="CheckResult::GetMap" name="CheckResult::GetMap">
+<area shape="rect" id="Node000001" title="Gets the map used for the check." alt="" coords="237,13,400,38"/>
+<area shape="rect" id="Node000002" href="$classFunctionDatabase.html#ab02cb65a9009ad0fc61f68c24f3fdc45" title="Inserts a check result into the database." alt="" coords="5,5,189,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,28,190,28,190,23,224,23"/>
+</map>

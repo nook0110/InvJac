@@ -1,0 +1,327 @@
+\doxysection{Map Class Reference}
+\hypertarget{classMap}{}\label{classMap}\index{Map@{Map}}
+
+
+Class representing a mathematical map.  
+
+
+
+
+{\ttfamily \#include $<$map.\+hpp$>$}
+
+
+
+Collaboration diagram for Map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMap_a1b64fac73018de14684c204ea5af60ca}\label{classMap_a1b64fac73018de14684c204ea5af60ca} 
+using {\bfseries Poly\+Matrix} = Gi\+Na\+C\+::matrix
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMap_ad2f5c98261d6e71703a1aa27c17b5514}{Map}} (std\+::vector$<$ Polynomial $>$ polynomials)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMap}{Map} with the given polynomials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classMap_a292bbf3fa2ba781d16c404491f6e0725}{Image}} (const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Applies the map to a point. \end{DoxyCompactList}\item 
+Poly\+Matrix \mbox{\hyperlink{classMap_a5e541877bbd65e1a30b4d0ab63a1630d}{Get\+Jacobian\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Jacobian matrix of the map. \end{DoxyCompactList}\item 
+Polynomial \mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{Get\+Jacobian}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Jacobian of the map. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classMap_a96bb87aa86af7d89988c619cd0fa59d5}{Has\+Contraction}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the map has a contraction. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{Get\+Dimensions}} () const
+\begin{DoxyCompactList}\small\item\em Gets the dimensions of the map. \end{DoxyCompactList}\item 
+const Polynomial \& \mbox{\hyperlink{classMap_abcf03601f4d3b46d9fcf38dd1b0f20d7}{Get\+Poly}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Gets the polynomial at the specified index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMap_a6966029610d6d01a0ff49372f642fc7a}{Get\+Extension\+Degree}} () const
+\begin{DoxyCompactList}\small\item\em Gets the extension degree of the map. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{To\+Str}} () const
+\begin{DoxyCompactList}\small\item\em Converts the map to a string representation. \end{DoxyCompactList}\item 
+\Hypertarget{classMap_ae713e61e712e3f61b65a0ed9b737fd70}\label{classMap_ae713e61e712e3f61b65a0ed9b737fd70} 
+std\+::vector$<$ Polynomial $>$\+::iterator {\bfseries begin} ()
+\item 
+\Hypertarget{classMap_a787c2a9574c1cd5c23287a93051a97bf}\label{classMap_a787c2a9574c1cd5c23287a93051a97bf} 
+std\+::vector$<$ Polynomial $>$\+::const\+\_\+iterator {\bfseries begin} () const
+\item 
+\Hypertarget{classMap_aa6c8346ff837995bf0191b1882acce53}\label{classMap_aa6c8346ff837995bf0191b1882acce53} 
+std\+::vector$<$ Polynomial $>$\+::iterator {\bfseries end} ()
+\item 
+\Hypertarget{classMap_a80278c50fba9fdbe7c9fa3f70e6c2cd1}\label{classMap_a80278c50fba9fdbe7c9fa3f70e6c2cd1} 
+std\+::vector$<$ Polynomial $>$\+::const\+\_\+iterator {\bfseries end} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMap_a3495abb2416426db3f9eff6d5832fb17}\label{classMap_a3495abb2416426db3f9eff6d5832fb17} 
+void {\bfseries Evaluate\+Extension\+Degree} () const
+\begin{DoxyCompactList}\small\item\em Evaluates the extension degree of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMap_a6004f374898df3a6b025ea07cc64aa95}\label{classMap_a6004f374898df3a6b025ea07cc64aa95} 
+std\+::vector$<$ Polynomial $>$ {\bfseries polynomials\+\_\+}
+\begin{DoxyCompactList}\small\item\em Polynomials representing the map. \end{DoxyCompactList}\item 
+std\+::optional$<$ size\+\_\+t $>$ \mbox{\hyperlink{classMap_ab88ba9c00e78e632c2dfba4441581373}{extension\+\_\+degree\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Extension degree of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a mathematical map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMap_ad2f5c98261d6e71703a1aa27c17b5514}\label{classMap_ad2f5c98261d6e71703a1aa27c17b5514} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Polynomial $>$}]{polynomials }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classMap}{Map} with the given polynomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polynomials} & Vector of polynomials representing the map. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMap_ac534b0030b33c463764d453a50bc1949}\label{classMap_ac534b0030b33c463764d453a50bc1949} 
+\index{Map@{Map}!GetDimensions@{GetDimensions}}
+\index{GetDimensions@{GetDimensions}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{GetDimensions()}{GetDimensions()}}
+{\footnotesize\ttfamily size\+\_\+t Map\+::\+Get\+Dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the dimensions of the map. 
+
+\begin{DoxyReturn}{Returns}
+Number of dimensions. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_ac534b0030b33c463764d453a50bc1949_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_a6966029610d6d01a0ff49372f642fc7a}\label{classMap_a6966029610d6d01a0ff49372f642fc7a} 
+\index{Map@{Map}!GetExtensionDegree@{GetExtensionDegree}}
+\index{GetExtensionDegree@{GetExtensionDegree}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{GetExtensionDegree()}{GetExtensionDegree()}}
+{\footnotesize\ttfamily size\+\_\+t Map\+::\+Get\+Extension\+Degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the extension degree of the map. 
+
+\begin{DoxyReturn}{Returns}
+Extension degree. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a6966029610d6d01a0ff49372f642fc7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}\label{classMap_ae2c291f4f24e65f7c5c841843f14e8e1} 
+\index{Map@{Map}!GetJacobian@{GetJacobian}}
+\index{GetJacobian@{GetJacobian}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{GetJacobian()}{GetJacobian()}}
+{\footnotesize\ttfamily Polynomial Map\+::\+Get\+Jacobian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Jacobian of the map. 
+
+\begin{DoxyReturn}{Returns}
+Polynomial representing the Jacobian. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_ae2c291f4f24e65f7c5c841843f14e8e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_ae2c291f4f24e65f7c5c841843f14e8e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_a5e541877bbd65e1a30b4d0ab63a1630d}\label{classMap_a5e541877bbd65e1a30b4d0ab63a1630d} 
+\index{Map@{Map}!GetJacobianMatrix@{GetJacobianMatrix}}
+\index{GetJacobianMatrix@{GetJacobianMatrix}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{GetJacobianMatrix()}{GetJacobianMatrix()}}
+{\footnotesize\ttfamily Poly\+Matrix Map\+::\+Get\+Jacobian\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Jacobian matrix of the map. 
+
+\begin{DoxyReturn}{Returns}
+Matrix representing the Jacobian. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a5e541877bbd65e1a30b4d0ab63a1630d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a5e541877bbd65e1a30b4d0ab63a1630d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_abcf03601f4d3b46d9fcf38dd1b0f20d7}\label{classMap_abcf03601f4d3b46d9fcf38dd1b0f20d7} 
+\index{Map@{Map}!GetPoly@{GetPoly}}
+\index{GetPoly@{GetPoly}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{GetPoly()}{GetPoly()}}
+{\footnotesize\ttfamily const Polynomial \& Map\+::\+Get\+Poly (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the polynomial at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of the polynomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Polynomial at the specified index. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_abcf03601f4d3b46d9fcf38dd1b0f20d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_a96bb87aa86af7d89988c619cd0fa59d5}\label{classMap_a96bb87aa86af7d89988c619cd0fa59d5} 
+\index{Map@{Map}!HasContraction@{HasContraction}}
+\index{HasContraction@{HasContraction}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{HasContraction()}{HasContraction()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ Map\+::\+Has\+Contraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the map has a contraction. 
+
+\begin{DoxyReturn}{Returns}
+Optional point where the contraction occurs. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a96bb87aa86af7d89988c619cd0fa59d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a96bb87aa86af7d89988c619cd0fa59d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_a292bbf3fa2ba781d16c404491f6e0725}\label{classMap_a292bbf3fa2ba781d16c404491f6e0725} 
+\index{Map@{Map}!Image@{Image}}
+\index{Image@{Image}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Map\+::\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Applies the map to a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \doxylink{classPoint}{Point} to apply the map to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New point after applying the map. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classMap_a292bbf3fa2ba781d16c404491f6e0725_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_a292bbf3fa2ba781d16c404491f6e0725_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classMap_ad683c9c4a552bc98ff71f19b74315ac1}\label{classMap_ad683c9c4a552bc98ff71f19b74315ac1} 
+\index{Map@{Map}!ToStr@{ToStr}}
+\index{ToStr@{ToStr}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{ToStr()}{ToStr()}}
+{\footnotesize\ttfamily std\+::string Map\+::\+To\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts the map to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+String representation of the map. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classMap_ad683c9c4a552bc98ff71f19b74315ac1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMap_ad683c9c4a552bc98ff71f19b74315ac1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMap_ab88ba9c00e78e632c2dfba4441581373}\label{classMap_ab88ba9c00e78e632c2dfba4441581373} 
+\index{Map@{Map}!extension\_degree\_@{extension\_degree\_}}
+\index{extension\_degree\_@{extension\_degree\_}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{extension\_degree\_}{extension\_degree\_}}
+{\footnotesize\ttfamily std\+::optional$<$size\+\_\+t$>$ Map\+::extension\+\_\+degree\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \{\}}
+
+\end{DoxyCode}
+
+
+Extension degree of the map. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/map.\+hpp\item 
+source/map.\+cpp\end{DoxyCompactItemize}

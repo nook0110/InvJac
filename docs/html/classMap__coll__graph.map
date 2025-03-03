@@ -1,0 +1,7 @@
+<map id="Map" name="Map">
+<area shape="rect" id="Node000001" title="Class representing a mathematical map." alt="" coords="67,133,273,459"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,164,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,70,113,117,108,118,93,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="188,5,323,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,72,232,118,227,117,242,70"/>
+</map>

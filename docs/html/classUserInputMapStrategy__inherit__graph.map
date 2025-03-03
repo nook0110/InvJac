@@ -1,0 +1,5 @@
+<map id="UserInputMapStrategy" name="UserInputMapStrategy">
+<area shape="rect" id="Node000001" title="Strategy for generating maps from user input." alt="" coords="11,139,197,244"/>
+<area shape="rect" id="Node000002" href="$classMapGeneratorStrategy.html" title="Strategy interface for generating maps." alt="" coords="5,5,203,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,104,107,138,101,138,101,104"/>
+</map>

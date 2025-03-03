@@ -1,0 +1,5 @@
+<map id="Equation::IsSquare" name="Equation::IsSquare">
+<area shape="rect" id="Node000001" title="Checks if the equation system is square." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="Node000002" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="196,5,379,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+</map>

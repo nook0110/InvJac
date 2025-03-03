@@ -1,0 +1,197 @@
+\doxysection{Function\+Database Class Reference}
+\hypertarget{classFunctionDatabase}{}\label{classFunctionDatabase}\index{FunctionDatabase@{FunctionDatabase}}
+
+
+Class to interact with the function database.  
+
+
+
+
+{\ttfamily \#include $<$mysql.\+hpp$>$}
+
+
+
+Collaboration diagram for Function\+Database\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classFunctionDatabase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFunctionDatabase_a818f96f69008173a3792f99be6584038}\label{classFunctionDatabase_a818f96f69008173a3792f99be6584038} 
+enum class \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}} \{ {\bfseries Passed}
+, {\bfseries Failed}
+, {\bfseries Error}
+, {\bfseries Contraction}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the type of result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05}{Function\+Database}} (const \mbox{\hyperlink{structDatabaseConfig}{Database\+Config}} \&config)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classFunctionDatabase}{Function\+Database} with the given configuration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFunctionDatabase_a27bb6cb5f7a69df442c90d379bd30a60}{Map\+Exists}} (const \mbox{\hyperlink{classMap}{Map}} \&map)
+\begin{DoxyCompactList}\small\item\em Checks if a map exists in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFunctionDatabase_ab02cb65a9009ad0fc61f68c24f3fdc45}{Insert\+Check\+Result}} (const \mbox{\hyperlink{classCheckResult}{Check\+Result}} \&check\+\_\+result)
+\begin{DoxyCompactList}\small\item\em Inserts a check result into the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05}{To\+String}} (\mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}} result\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Converts a Result\+Type to a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697}{Insert\+Result\+Details}} (std\+::int64\+\_\+t result\+\_\+id, const Check\+Result\+::\+Result \&result, \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}} result\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Inserts result details into the appropriate table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFunctionDatabase_a06e7d832a80a36b9e6da4b3b7f0a55ae}\label{classFunctionDatabase_a06e7d832a80a36b9e6da4b3b7f0a55ae} 
+mysqlx\+::\+Session {\bfseries session\+\_\+}
+\begin{DoxyCompactList}\small\item\em My\+SQL session. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57}\label{classFunctionDatabase_a93f65eca7a23bb16146101c7d0918f57} 
+mysqlx\+::\+Schema {\bfseries schema\+\_\+}
+\begin{DoxyCompactList}\small\item\em My\+SQL schema. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d}\label{classFunctionDatabase_ac23a46a29eac4ed462c90a39e3f05e0d} 
+mysqlx\+::\+Table {\bfseries results\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Results table. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_a7ded93d582df2d93878ba8d8142cb8ad}\label{classFunctionDatabase_a7ded93d582df2d93878ba8d8142cb8ad} 
+mysqlx\+::\+Table {\bfseries passed\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Passed results table. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_a9fa7846d97bb3069ac9cf75aeef342ea}\label{classFunctionDatabase_a9fa7846d97bb3069ac9cf75aeef342ea} 
+mysqlx\+::\+Table {\bfseries failed\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Failed results table. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_af99d3d3abea5f69592ae5346a914599e}\label{classFunctionDatabase_af99d3d3abea5f69592ae5346a914599e} 
+mysqlx\+::\+Table {\bfseries error\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Error results table. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701}\label{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701} 
+mysqlx\+::\+Table {\bfseries contraction\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Contraction results table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to interact with the function database. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05}\label{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05} 
+\index{FunctionDatabase@{FunctionDatabase}!FunctionDatabase@{FunctionDatabase}}
+\index{FunctionDatabase@{FunctionDatabase}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{FunctionDatabase()}{FunctionDatabase()}}
+{\footnotesize\ttfamily Function\+Database\+::\+Function\+Database (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structDatabaseConfig}{Database\+Config}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classFunctionDatabase}{Function\+Database} with the given configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Database configuration. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFunctionDatabase_ab02cb65a9009ad0fc61f68c24f3fdc45}\label{classFunctionDatabase_ab02cb65a9009ad0fc61f68c24f3fdc45} 
+\index{FunctionDatabase@{FunctionDatabase}!InsertCheckResult@{InsertCheckResult}}
+\index{InsertCheckResult@{InsertCheckResult}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{InsertCheckResult()}{InsertCheckResult()}}
+{\footnotesize\ttfamily void Function\+Database\+::\+Insert\+Check\+Result (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCheckResult}{Check\+Result}} \&}]{check\+\_\+result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts a check result into the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check\+\_\+result} & Check result to insert. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFunctionDatabase_ab02cb65a9009ad0fc61f68c24f3fdc45_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697}\label{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697} 
+\index{FunctionDatabase@{FunctionDatabase}!InsertResultDetails@{InsertResultDetails}}
+\index{InsertResultDetails@{InsertResultDetails}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{InsertResultDetails()}{InsertResultDetails()}}
+{\footnotesize\ttfamily void Function\+Database\+::\+Insert\+Result\+Details (\begin{DoxyParamCaption}\item[{std\+::int64\+\_\+t}]{result\+\_\+id,  }\item[{const Check\+Result\+::\+Result \&}]{result,  }\item[{\mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}}}]{result\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Inserts result details into the appropriate table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result\+\_\+id} & ID of the result. \\
+\hline
+{\em result} & Result to insert. \\
+\hline
+{\em result\+\_\+type} & Type of the result. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFunctionDatabase_af96fd17832dacf34186ea31b7bb74697_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classFunctionDatabase_a27bb6cb5f7a69df442c90d379bd30a60}\label{classFunctionDatabase_a27bb6cb5f7a69df442c90d379bd30a60} 
+\index{FunctionDatabase@{FunctionDatabase}!MapExists@{MapExists}}
+\index{MapExists@{MapExists}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{MapExists()}{MapExists()}}
+{\footnotesize\ttfamily bool Function\+Database\+::\+Map\+Exists (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a map exists in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \doxylink{classMap}{Map} to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the map exists, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classFunctionDatabase_a27bb6cb5f7a69df442c90d379bd30a60_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05}\label{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05} 
+\index{FunctionDatabase@{FunctionDatabase}!ToString@{ToString}}
+\index{ToString@{ToString}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string Function\+Database\+::\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}}}]{result\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts a Result\+Type to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result\+\_\+type} & Result type to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the result type. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFunctionDatabase_a728aaf92c5942634644b52fe99f73c05_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/mysql.\+hpp\end{DoxyCompactItemize}
