@@ -223,10 +223,15 @@ class Checker
 
     for (const auto& [multiplicity, solution] : solutions)
     {
+      VLOG(3) << "Multiplicity: " << multiplicity
+              << " Solution: " << solution.ToStr();
+
       auto jacobian = map_->GetJacobian();
       auto term =
           multiplicity / SubstituteJacobian(std::move(jacobian), solution);
       sum_reciprocals += term;
+
+      VLOG(3) << "Term: " << term.evalf();
     }
 
     auto approximate_sum = GiNaC::abs(sum_reciprocals).to_double();

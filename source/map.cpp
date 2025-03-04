@@ -12,6 +12,8 @@
 
 Point Map::Image(const Point& point) const
 {
+  VLOG(4) << "Computing image for point: " << point.ToStr();
+
   LOG_IF(FATAL, point.GetDimensions() != GetDimensions())
       << "Point and map must have same dimension!";
 
@@ -23,7 +25,9 @@ Point Map::Image(const Point& point) const
         Symbols::GetSymbolsList(GetDimensions()), point.ToLst()));
   }
 
-  return Point(std::move(coords));
+  auto ans = Point(std::move(coords));
+  VLOG(4) << "Image: " << ans.ToStr();
+  return ans;
 }
 
 void Map::EvaluateExtensionDegree() const

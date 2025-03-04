@@ -139,6 +139,7 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
   {
     LOG(DFATAL) << "Failed to solve system";
   }
+  solcon_number_of_standard_solutions(&root_count);
 
   std::vector<PHCWrapper::Root> ans;
   ans.reserve(root_count);
@@ -150,7 +151,7 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
                                           static_cast<int>(i + 1),
                                           &multiplicity, solution.data()))
     {
-      // LOG(DFATAL) << "Failed to retrieve solution for index: " << i;
+      LOG(DFATAL) << "Failed to retrieve solution for index: " << i;
     }
 
     ans.emplace_back(static_cast<size_t>(multiplicity), std::move(solution));
