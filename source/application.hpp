@@ -1,5 +1,6 @@
 #pragma once
 
+#include <boost/iostreams/stream.hpp>
 #include <boost/program_options.hpp>
 #include <fstream>
 #include <iostream>
@@ -138,13 +139,18 @@ class InvJacApp
    */
   void Run()
   {
-    out_ << "Running the InvJac application...\n";
-    auto result = map_checker_.PerformCheck();
-    out_ << result.ToStr() << "\n";
-    if (use_database_)
+    while (!input_.eof())
     {
-      database_->InsertCheckResult(result);
+      out_ << "Running the InvJac application...\n";
+      auto result = map_checker_.PerformCheck();
+      out_ << result.ToStr() << "\n";
+      if (use_database_)
+      {
+        database_->InsertCheckResult(result);
+      }
+      input_ >> std::ws;
     }
+    out_ << "Application finished.\n";
   }
 
   /**
@@ -233,6 +239,9 @@ class InvJacApp
         out_ << "Error opening input file.\n";
         return false;
       }
+
+      map_checker_.SetStrategy(
+          std::make_unique<UserInputMapStrategy>(input_file_, onullstream));
     }
 
     use_database_ =
@@ -258,6 +267,8 @@ class InvJacApp
   std::istream& input_ = std::cin;  ///< Input stream for user input.
   std::ostream& out_ = std::cout;   ///< Output stream for messages.
   std::ifstream input_file_;        ///< Input file stream.
+  boost::iostreams::stream<boost::iostreams::null_sink> onullstream{
+      boost::iostreams::null_sink()};  ///< Null output stream.
 
   bool use_database_ = false;                   ///< Flag to use the database.
   std::unique_ptr<FunctionDatabase> database_;  ///< Database instance.

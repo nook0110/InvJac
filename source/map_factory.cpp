@@ -3,6 +3,7 @@
 #include <ginac/parse_context.h>
 
 #include <ostream>
+#include <string>
 
 #include "symbol.hpp"
 
@@ -20,7 +21,7 @@ Map MapFactory::CreateMapFromInput(std::istream& input, std::ostream& out)
   for (auto& poly : polynomials)
   {
     std::string polynomial_string;
-    input >> polynomial_string;
+    std::getline(input >> std::ws, polynomial_string);
     poly = parser(polynomial_string);
   }
 
