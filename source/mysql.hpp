@@ -22,6 +22,7 @@ struct DatabaseConfig
   std::string error_table = "error_results";    ///< Error results table name.
   std::string contraction_table =
       "contraction_results";  ///< Contraction results table name.
+  std::string keller_table = "keller_results";  ///< Keller results table name.
 };
 
 /**
@@ -38,7 +39,8 @@ class FunctionDatabase
     Passed,
     Failed,
     Error,
-    Contraction
+    Contraction,
+    Keller  ///< New Keller result type
   };
 
   /**
@@ -53,7 +55,8 @@ class FunctionDatabase
         passed_table_(schema_.getTable(config.passed_table)),
         failed_table_(schema_.getTable(config.failed_table)),
         error_table_(schema_.getTable(config.error_table)),
-        contraction_table_(schema_.getTable(config.contraction_table))
+        contraction_table_(schema_.getTable(config.contraction_table)),
+        keller_table_(schema_.getTable(config.keller_table))
   {}
 
   /**
@@ -96,6 +99,10 @@ class FunctionDatabase
     {
       result_type = ResultType::Contraction;
     }
+    else if (std::holds_alternative<CheckResult::Keller>(result))
+    {
+      result_type = ResultType::Keller;
+    }
     else
     {
       LOG(ERROR) << "Unhandled result variant in InsertCheckResult.";
@@ -118,6 +125,7 @@ class FunctionDatabase
   mysqlx::Table failed_table_;       ///< Failed results table.
   mysqlx::Table error_table_;        ///< Error results table.
   mysqlx::Table contraction_table_;  ///< Contraction results table.
+  mysqlx::Table keller_table_;       ///< Keller results table.
 
   /**
    * @brief Converts a ResultType to a string.
@@ -136,6 +144,8 @@ class FunctionDatabase
         return "Error";
       case ResultType::Contraction:
         return "Contraction";
+      case ResultType::Keller:
+        return "Keller";
       default:
         return "Unknown";
     }
@@ -182,6 +192,14 @@ class FunctionDatabase
         const auto& contraction = std::get<CheckResult::Contraction>(result);
         contraction_table_.insert("result_id", "contraction_point")
             .values(result_id, contraction.point.ToStr())
+            .execute();
+        break;
+      }
+      case ResultType::Keller:
+      {
+        const auto& keller = std::get<CheckResult::Keller>(result);
+        keller_table_.insert("result_id", "jacobian")
+            .values(result_id, ToStr(keller.jacobian))
             .execute();
         break;
       }

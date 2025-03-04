@@ -46,9 +46,14 @@ void Map::EvaluateExtensionDegree() const
 
 std::optional<Point> Map::HasContraction() const
 {
+  VLOG(4) << "Checking for contraction in the map.";
   DLOG_IF(FATAL, GetDimensions() != 2) << "Map must be 2-dimensional!";
+
   const auto jacobian_matrix = GetJacobianMatrix();
+  VLOG(4) << "Jacobian matrix: " << jacobian_matrix;
+
   const auto jacobian = jacobian_matrix.determinant();
+  VLOG(4) << "Jacobian determinant: " << jacobian;
 
   static std::random_device rd;
   static std::mt19937 gen(80085);
@@ -66,6 +71,7 @@ std::optional<Point> Map::HasContraction() const
   }
   else
   {
+    VLOG(4) << "Jacobian is const!";
     return {};
   }
 
@@ -75,9 +81,13 @@ std::optional<Point> Map::HasContraction() const
     gradient(row, 0) = jacobian.diff(Symbols::GetSymbol(row));
   }
 
+  VLOG(4) << "Gradient: " << gradient;
+
   const auto normal = GiNaC::matrix({{gradient(1, 0)}, {-gradient(0, 0)}});
+  VLOG(4) << "Normal: " << normal;
 
   const auto result = jacobian_matrix.mul(normal);
+  VLOG(4) << "Result matrix: " << result;
 
   for (const auto& [multiplicity, root] : equation.Solve())
   {
@@ -88,14 +98,18 @@ std::optional<Point> Map::HasContraction() const
           Symbols::GetSymbolsList(GetDimensions()), root.ToLst());
     }
 
+    VLOG(4) << "Result at point: " << result_at_point;
+
     const auto epsilon = 1e-4;
 
     if (GiNaC::abs(result_at_point(0, 0)) < epsilon &&
         GiNaC::abs(result_at_point(1, 0)) < epsilon)
     {
+      VLOG(4) << "Contraction found at point: " << root.ToStr();
       return root;
     }
   }
 
+  VLOG(4) << "No contraction found.";
   return {};
 }
