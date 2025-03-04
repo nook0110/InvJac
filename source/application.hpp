@@ -25,6 +25,8 @@ class MapGeneratorStrategy
    */
   virtual Map Generate() const = 0;
 
+  virtual bool CanGenerateMore() const = 0;
+
   virtual ~MapGeneratorStrategy() = default;
 };
 
@@ -53,6 +55,8 @@ class UserInputMapStrategy : public MapGeneratorStrategy
     out << "Input your map:\n";
     return MapFactory::CreateMapFromInput(input, out);
   }
+
+  bool CanGenerateMore() const override { return !input.eof(); }
 
  private:
   std::istream& input;  ///< Input stream for user input.
@@ -88,6 +92,8 @@ class MapChecker
     strategy_ = std::move(strategy);
   }
 
+  bool CanCheckMore() const { return strategy_->CanGenerateMore(); }
+
   /**
    * @brief Sets the settings for the checker.
    * @param settings New settings for the checker.
@@ -100,6 +106,8 @@ class MapChecker
    */
   CheckResult PerformCheck()
   {
+    DLOG_IF(FATAL, !CanCheckMore())
+        << "PerformCheck called when no more checks can be performed.";
     auto map = GenerateMap();
     checker_.SetMap(&map);
     auto result = checker_.PerformCheck();
@@ -111,7 +119,12 @@ class MapChecker
    * @brief Generates a map using the current strategy.
    * @return Generated map.
    */
-  Map GenerateMap() const { return strategy_->Generate(); }
+  Map GenerateMap() const
+  {
+    DLOG_IF(FATAL, !strategy_->CanGenerateMore())
+        << "GenerateMap called when no more maps can be generated.";
+    return strategy_->Generate();
+  }
 
   Checker checker_;  ///< Checker instance.
   std::unique_ptr<MapGeneratorStrategy>
@@ -139,7 +152,7 @@ class InvJacApp
    */
   void Run()
   {
-    while (!input_.eof())
+    while (map_checker_.CanCheckMore())
     {
       out_ << "Running the InvJac application...\n";
       auto result = map_checker_.PerformCheck();
@@ -148,7 +161,6 @@ class InvJacApp
       {
         database_->InsertCheckResult(result);
       }
-      input_ >> std::ws;
     }
     out_ << "Application finished.\n";
   }
