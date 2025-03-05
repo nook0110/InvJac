@@ -3,7 +3,10 @@
 #include <cln/cln.h>
 #include <ginac/ginac.h>
 
+#include <vector>
+
 #include "phc_wrapper.hpp"
+#include "source/point.hpp"
 
 bool Equation::IsSquare() const
 {
@@ -36,15 +39,13 @@ Equation::Solution Equation::Solve() const
   solution.Reserve(solution_data.size());
   for (const auto& [multiplicity, point_data] : solution_data)
   {
-    auto dimensions = (point_data.size() - 5) / 2;
     std::vector<Complex> coords;
-    coords.reserve(dimensions);
-    for (size_t i = 0; i < dimensions; ++i)
+    coords.reserve(point_data.size());
+    for (size_t i = 0; i < point_data.size(); ++i)
     {
-      auto real = point_data[i * 2 + 2];
-      auto im = point_data[i * 2 + 3];
       coords.emplace_back(
-          cln::complex(cln::rationalize(real), cln::rationalize(im)));
+          cln::complex(cln::rationalize(point_data[i].real.data()),
+                       cln::rationalize(point_data[i].imag.data())));
     }
     solution.Append(multiplicity, Point(std::move(coords)));
   }

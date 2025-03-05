@@ -20,8 +20,17 @@ class PHCWrapper
   struct Root
   {
     size_t multiplicity;
-    std::vector<double> data;
+    struct Complex
+    {
+      std::string real;
+      std::string imag;
+      bool operator==(const Complex&) const = default;
+    };
+    std::vector<Complex> data;
+
+    bool operator==(const Root&) const = default;
   };
+  Root ParseRoot(std::string root_string) const;
   std::vector<Root> Solve() const;
   size_t GetTotalDegree() const;
   size_t GetBezoutNumber() const;
