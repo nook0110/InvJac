@@ -10,7 +10,8 @@
 
 namespace phc
 {
-
+namespace base
+{
 int SystemContainerFunctions::ClearSymbolTable()
 {
   return syscon_clear_symbol_table();
@@ -25,6 +26,7 @@ int SystemContainerFunctions::NumberOfSymbols(int* n)
 {
   return syscon_number_of_symbols(n);
 }
+}  // namespace base
 
 int SystemContainerTraits<Precision::Standard>::ClearSystem()
 {
@@ -45,6 +47,12 @@ int SystemContainerTraits<Precision::Standard>::StorePolynomial(
       polynomial_string);
 }
 
+int SystemContainerTraits<Precision::Standard>::InitializeNumberOfPolynomials(
+    int n)
+{
+  return syscon_initialize_number_of_standard_polynomials(n);
+}
+
 int SolutionContainerTraits<Precision::Standard>::ClearSolutions()
 {
   return solcon_clear_standard_solutions();
@@ -61,7 +69,19 @@ int SolutionContainerTraits<Precision::Standard>::LengthSolutionString(
   return solcon_length_standard_solution_string(solution_number, length);
 }
 
+int SolutionContainerTraits<Precision::Standard>::WriteSolutionString(
+    int solution_number, int solution_string_length, char* solution_string)
+{
+  return solcon_write_standard_solution_string(
+      solution_number, solution_string_length, solution_string);
+}
+
+namespace base
+{
+void PHCPackFunctions::AdaInit() { return adainit(); }
+void PHCPackFunctions::AdaFinal() { return adafinal(); }
 int PHCPackFunctions::ClearData() { return clear_data(); }
+}  // namespace base
 
 int PHCPackTraits<Precision::Standard>::SolveSystem(int* root_count, int silent,
                                                     int* nrcs, char* rocos,

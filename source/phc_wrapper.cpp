@@ -1,14 +1,6 @@
 #include "phc_wrapper.hpp"
 
 #include <glog/logging.h>
-// PHCPack
-#include <celcon.h>
-#include <next_track.h>
-#include <phcpack.h>
-#include <product.h>
-#include <solcon.h>
-#include <syscon.h>
-#include <witsols.h>
 
 #include <algorithm>
 #include <cassert>
@@ -18,8 +10,11 @@
 #include <string_view>
 #include <vector>
 
+#include "phc_traits.hpp"
+
 namespace phc
 {
+template <Precision P>
 class PHCWrapper::PHCWrapperImplementation
 {
  public:
@@ -32,10 +27,11 @@ class PHCWrapper::PHCWrapperImplementation
   void InitializeNumberOfPolynomials(size_t n) const;
   void SetSymbols(const std::vector<std::string>& symbols) const
   {
-    syscon_clear_symbol_table();
+    SystemContainerTraits<P>::ClearSymbolTable();
     for (const auto& symbol : symbols)
     {
-      syscon_add_symbol(static_cast<int>(symbol.size()), symbol.data());
+      SystemContainerTraits<P>::AddSymbol(static_cast<int>(symbol.size()),
+                                          symbol.data());
     }
   }
 
@@ -59,6 +55,25 @@ class PHCWrapper::PHCWrapperImplementation
     == err :  1.233E-32 = rco :  3.127E-02 = res :  5.065E-32 =
     */
     // clang-format on
+
+    auto strip_number = [](std::string_view str)
+    {
+      size_t e_pos = str.find_first_of("Ee");
+
+      if (e_pos == std::string_view::npos)
+      {
+        return std::string(str);
+      }
+
+      std::string_view mantissa = str.substr(0, e_pos);
+      size_t dot_pos = mantissa.find('.');
+      if (dot_pos != std::string_view::npos)
+      {
+        size_t end_pos = std::min(dot_pos + 10, mantissa.size());
+        mantissa = mantissa.substr(0, end_pos);
+      }
+      return std::string(mantissa) + std::string(str.substr(e_pos));
+    };
     PHCWrapper::Root root;
     root.data.resize(std::ranges::count(solution_string, '\n') - 3);
     std::stringstream ss(std::move(solution_string));
@@ -72,6 +87,8 @@ class PHCWrapper::PHCWrapperImplementation
     for (auto& complex : root.data)
     {
       ss >> skip >> skip >> complex.real >> complex.imag;
+      complex.real = strip_number(complex.real);
+      complex.imag = strip_number(complex.imag);
     }
 
     return root;
@@ -80,39 +97,40 @@ class PHCWrapper::PHCWrapperImplementation
   ~PHCWrapperImplementation();
 };
 
-PHCWrapper::PHCWrapperImplementation::PHCWrapperImplementation()
+template <Precision P>
+PHCWrapper::PHCWrapperImplementation<P>::PHCWrapperImplementation()
 {
-  adainit();
+  PHCPackTraits<P>::AdaInit();
   VLOG(0) << "PHCWrapper initialized.";
 }
 
-void PHCWrapper::PHCWrapperImplementation::Clear() const
+template <Precision P>
+void PHCWrapper::PHCWrapperImplementation<P>::Clear() const
 {
-  syscon_clear_standard_system();
-  clear_data();
-  clear_homotopy();
-  clear_set_structure();
-  clear_standard_tracker();
-  solcon_clear_standard_solutions();
-  syscon_clear_symbol_table();
-  clear_standard_witsols();
+  PHCPackTraits<P>::ClearData();
+  SystemContainerTraits<P>::ClearSystem();
+  SystemContainerTraits<P>::ClearSymbolTable();
+  SolutionContainerTraits<P>::ClearSolutions();
 }
 
-void PHCWrapper::PHCWrapperImplementation::InitializeNumberOfPolynomials(
+template <Precision P>
+void PHCWrapper::PHCWrapperImplementation<P>::InitializeNumberOfPolynomials(
     size_t n) const
 {
   Clear();
-  if (syscon_initialize_number_of_standard_polynomials(static_cast<int>(n)))
+  if (SystemContainerTraits<P>::InitializeNumberOfPolynomials(
+          static_cast<int>(n)))
   {
     LOG(DFATAL) << "Failed to initialize number of standard polynomials.";
   }
   VLOG(0) << "Initialized number of standard polynomials: " << n;
 }
 
-size_t PHCWrapper::PHCWrapperImplementation::GetAmountOfSymbols() const
+template <Precision P>
+size_t PHCWrapper::PHCWrapperImplementation<P>::GetAmountOfSymbols() const
 {
   int n;
-  if (syscon_number_of_symbols(&n))
+  if (SystemContainerTraits<P>::NumberOfSymbols(&n))
   {
     LOG(DFATAL) << "Failed to retrieve number of symbols.";
     return 0;
@@ -120,10 +138,11 @@ size_t PHCWrapper::PHCWrapperImplementation::GetAmountOfSymbols() const
   return n;
 }
 
-size_t PHCWrapper::PHCWrapperImplementation::GetAmountOfEquations() const
+template <Precision P>
+size_t PHCWrapper::PHCWrapperImplementation<P>::GetAmountOfEquations() const
 {
   int n;
-  if (syscon_number_of_standard_polynomials(&n))
+  if (SystemContainerTraits<P>::NumberOfPolynomials(&n))
   {
     LOG(DFATAL) << "Failed to retrieve number of equations.";
     return 0;
@@ -131,21 +150,23 @@ size_t PHCWrapper::PHCWrapperImplementation::GetAmountOfEquations() const
   return n;
 }
 
-bool PHCWrapper::PHCWrapperImplementation::IsSquare() const
+template <Precision P>
+bool PHCWrapper::PHCWrapperImplementation<P>::IsSquare() const
 {
   return GetAmountOfSymbols() == GetAmountOfEquations();
 }
 
-void PHCWrapper::PHCWrapperImplementation::InsertPolynomial(
+template <Precision P>
+void PHCWrapper::PHCWrapperImplementation<P>::InsertPolynomial(
     std::string_view polynomial, size_t idx) const
 {
   DLOG_IF(FATAL, polynomial.back() != ';')
       << "Polynomial should end with ';', you tried to insert: " << polynomial;
 
-  if (syscon_store_standard_polynomial(static_cast<int>(polynomial.size()),
-                                       static_cast<int>(GetAmountOfEquations()),
-                                       static_cast<int>(idx + 1),
-                                       polynomial.data()))
+  if (SystemContainerTraits<P>::StorePolynomial(
+          static_cast<int>(polynomial.size()),
+          static_cast<int>(GetAmountOfEquations()), static_cast<int>(idx + 1),
+          polynomial.data()))
   {
     LOG(DFATAL) << "Failed to store standard polynomial for equation: "
                 << polynomial;
@@ -153,18 +174,19 @@ void PHCWrapper::PHCWrapperImplementation::InsertPolynomial(
   VLOG(0) << "Inserted polynomial at index " << idx << ": " << polynomial;
 }
 
-std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
+template <Precision P>
+std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation<P>::Solve()
     const
 {
   DLOG_IF(FATAL, !IsSquare()) << "System is not square!";
   size_t length = GetAmountOfEquations();
 
   int root_count;
-  if (solve_standard_system(&root_count, 1, nullptr, nullptr, 1, 0, 0))
+  if (PHCPackTraits<P>::SolveSystem(&root_count, 1, nullptr, nullptr, 1, 0))
   {
     LOG(DFATAL) << "Failed to solve system";
   }
-  solcon_number_of_standard_solutions(&root_count);
+  SolutionContainerTraits<P>::NumberOfSolutions(&root_count);
 
   std::vector<PHCWrapper::Root> ans;
   ans.reserve(root_count);
@@ -174,10 +196,10 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
     PHCWrapper::Root root;
     std::string solution_string;
     int n;
-    solcon_length_standard_solution_string(solution_number, &n);
+    SolutionContainerTraits<P>::LengthSolutionString(solution_number, &n);
     solution_string.resize(n);
-    if (solcon_write_standard_solution_string(solution_number, n,
-                                              solution_string.data()))
+    if (SolutionContainerTraits<P>::WriteSolutionString(solution_number, n,
+                                                        solution_string.data()))
     {
       LOG(DFATAL) << "Failed to retrieve solution for index: " << i;
     }
@@ -189,14 +211,16 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation::Solve()
   return ans;
 }
 
-PHCWrapper::PHCWrapperImplementation::~PHCWrapperImplementation()
+template <Precision P>
+PHCWrapper::PHCWrapperImplementation<P>::~PHCWrapperImplementation()
 {
-  adafinal();
+  PHCPackTraits<P>::AdaFinal();
   VLOG(0) << "PHCWrapper finalized.";
 }
 
 PHCWrapper::PHCWrapper()
-    : implementation_(std::make_unique<PHCWrapperImplementation>())
+    : implementation_(
+          std::make_unique<PHCWrapperImplementation<Precision::Standard>>())
 {}
 
 void PHCWrapper::Clear() const { implementation_->Clear(); }

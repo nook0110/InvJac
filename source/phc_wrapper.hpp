@@ -1,9 +1,10 @@
 #pragma once
 
-#include <cstddef>
 #include <memory>
 #include <string_view>
 #include <vector>
+
+#include "phc_traits.hpp"
 
 namespace phc
 {
@@ -45,8 +46,10 @@ class PHCWrapper
   PHCWrapper& operator=(const PHCWrapper&) = delete;
   ~PHCWrapper();
 
+  template <Precision P>
   class PHCWrapperImplementation;
-  std::unique_ptr<PHCWrapperImplementation> implementation_;
+  std::unique_ptr<PHCWrapperImplementation<Precision::Standard>>
+      implementation_;
 };
 
 }  // namespace phc
