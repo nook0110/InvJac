@@ -6,7 +6,7 @@ RUN cp /root/InvJac/phc/libPHCpack.so /root/InvJac/phc/PHCpack/lib
 
 WORKDIR /root/InvJac
 
-RUN cmake -S . -B build
+RUN cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
 RUN cmake --build build
 
 # Run tests

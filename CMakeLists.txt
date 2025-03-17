@@ -5,7 +5,7 @@ project(invjac CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_DEBUG_INIT "-Wall")
-set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall -O3")
+set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall -Ofast -mtune=native -march=native -flto -frename-registers -funroll-loops")
 
 add_compile_definitions(compilewgpp=1)
 

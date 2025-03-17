@@ -32,6 +32,6 @@ RUN alr version
 
 # Install glog
 RUN git clone https://github.com/google/glog.git
-RUN cd glog && cmake -S . -B build -G "Unix Makefiles"
+RUN cd glog && cmake -DCMAKE_BUILD_TYPE=Release -S . -B build -G "Unix Makefiles"
 RUN cd glog && cmake --build build
 RUN cd glog && cmake --build build --target install
