@@ -12,7 +12,6 @@ for coeffs in itertools.product([-2, -1, 0, 1, 2], repeat=len(monomials)):
 
 for i, poly1 in enumerate(polynomials):
     for j, poly2 in enumerate(polynomials):
-        if i < j:
             print(2)
             print(str(x + poly1).replace('**', '^'))
             print(str(y + poly2).replace('**', '^'))

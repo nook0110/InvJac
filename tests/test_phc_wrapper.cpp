@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
 
-#include <algorithm>
-
 #include "source/phc_wrapper.hpp"
 
 TEST(PHCWrapperTest, InitializeNumberOfPolynomials)
@@ -56,7 +54,7 @@ TEST(PHCWrapperTest, ParseRoot)
        {"1.15374259155635172650000000000000E+00",
         "-1.07774252644852808200000000000001E+00"}}};
 
-  auto parsed_root = wrapper.ParseRoot(solution_string);
+  auto parsed_root = wrapper.ParseRoot(solution_string, 100);
   ASSERT_EQ(answer, parsed_root);
 }
 

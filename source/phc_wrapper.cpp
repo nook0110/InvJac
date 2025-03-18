@@ -27,11 +27,17 @@ class PHCWrapper::PHCWrapperImplementation
   void InitializeNumberOfPolynomials(size_t n) const;
   void SetSymbols(const std::vector<std::string>& symbols) const
   {
-    SystemContainerTraits<P>::ClearSymbolTable();
+    if (SystemContainerTraits<P>::ClearSymbolTable())
+    {
+      LOG(DFATAL) << "Failed to clear symbol table!";
+    }
     for (const auto& symbol : symbols)
     {
-      SystemContainerTraits<P>::AddSymbol(static_cast<int>(symbol.size()),
-                                          symbol.data());
+      if (SystemContainerTraits<P>::AddSymbol(static_cast<int>(symbol.size()),
+                                              symbol.data()))
+      {
+        LOG(DFATAL) << "Failed to add a symbol: " << symbol;
+      }
     }
   }
 
@@ -43,7 +49,8 @@ class PHCWrapper::PHCWrapperImplementation
 
   std::vector<PHCWrapper::Root> Solve() const;
 
-  PHCWrapper::Root ParseRoot(std::string solution_string) const
+  PHCWrapper::Root ParseRoot(std::string solution_string,
+                             size_t max_precision = 10) const
   {
     // clang-format off
     /*
@@ -56,7 +63,7 @@ class PHCWrapper::PHCWrapperImplementation
     */
     // clang-format on
 
-    auto strip_number = [](std::string_view str)
+    auto strip_number = [max_precision](std::string_view str)
     {
       size_t e_pos = str.find_first_of("Ee");
 
@@ -69,7 +76,7 @@ class PHCWrapper::PHCWrapperImplementation
       size_t dot_pos = mantissa.find('.');
       if (dot_pos != std::string_view::npos)
       {
-        size_t end_pos = std::min(dot_pos + 10, mantissa.size());
+        size_t end_pos = std::min(dot_pos + max_precision, mantissa.size());
         mantissa = mantissa.substr(0, end_pos);
       }
       return std::string(mantissa) + std::string(str.substr(e_pos));
@@ -107,10 +114,18 @@ PHCWrapper::PHCWrapperImplementation<P>::PHCWrapperImplementation()
 template <Precision P>
 void PHCWrapper::PHCWrapperImplementation<P>::Clear() const
 {
-  PHCPackTraits<P>::ClearData();
-  SystemContainerTraits<P>::ClearSystem();
-  SystemContainerTraits<P>::ClearSymbolTable();
-  SolutionContainerTraits<P>::ClearSolutions();
+  if (PHCPackTraits<P>::ClearData())
+  {
+    LOG(DFATAL) << "Error while clearing data!";
+  }
+  if (SystemContainerTraits<P>::ClearSymbolTable())
+  {
+    LOG(DFATAL) << "Error while clearing symbol table!";
+  }
+  if (SolutionContainerTraits<P>::ClearSolutions())
+  {
+    LOG(DFATAL) << "Error while clearing solutions!";
+  }
 }
 
 template <Precision P>
@@ -186,7 +201,10 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation<P>::Solve()
   {
     LOG(DFATAL) << "Failed to solve system";
   }
-  SolutionContainerTraits<P>::NumberOfSolutions(&root_count);
+  if (SolutionContainerTraits<P>::NumberOfSolutions(&root_count))
+  {
+    LOG(DFATAL) << "Failed to get number of solutions";
+  }
 
   std::vector<PHCWrapper::Root> ans;
   ans.reserve(root_count);
@@ -196,7 +214,11 @@ std::vector<PHCWrapper::Root> PHCWrapper::PHCWrapperImplementation<P>::Solve()
     PHCWrapper::Root root;
     std::string solution_string;
     int n;
-    SolutionContainerTraits<P>::LengthSolutionString(solution_number, &n);
+    if (SolutionContainerTraits<P>::LengthSolutionString(solution_number, &n))
+    {
+      LOG(DFATAL) << "Failed to retrieve length of solution string for index: "
+                  << i;
+    }
     solution_string.resize(n);
     if (SolutionContainerTraits<P>::WriteSolutionString(solution_number, n,
                                                         solution_string.data()))
@@ -247,9 +269,10 @@ void PHCWrapper::SetSymbols(const std::vector<std::string>& symbols)
   implementation_->SetSymbols(symbols);
 }
 
-PHCWrapper::Root PHCWrapper::ParseRoot(std::string root_string) const
+PHCWrapper::Root PHCWrapper::ParseRoot(std::string root_string,
+                                       size_t max_precision) const
 {
-  return implementation_->ParseRoot(std::move(root_string));
+  return implementation_->ParseRoot(std::move(root_string), max_precision);
 }
 
 std::vector<PHCWrapper::Root> PHCWrapper::Solve() const

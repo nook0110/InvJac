@@ -31,7 +31,7 @@ class PHCWrapper
 
     bool operator==(const Root&) const = default;
   };
-  Root ParseRoot(std::string root_string) const;
+  Root ParseRoot(std::string root_string, size_t max_precision = 10) const;
   std::vector<Root> Solve() const;
   size_t GetTotalDegree() const;
   size_t GetBezoutNumber() const;
