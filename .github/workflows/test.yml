@@ -60,6 +60,7 @@ jobs:
         ctest
         
     - name: Generate coverage report
+      working-directory: ${{runner.workspace}}/InvJac/build
       run: |
         make coverage
 

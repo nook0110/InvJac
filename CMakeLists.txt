@@ -62,7 +62,7 @@ add_custom_target(coverage
     COMMAND lcov --capture --directory . --output-file coverage.info --ignore-errors mismatch
     COMMAND lcov --remove coverage.info '/usr/*' '*/tests/*' --output-file coverage.info
     COMMAND lcov --extract coverage.info '${CMAKE_SOURCE_DIR}/source/*' --output-file coverage.info
-    COMMAND genhtml coverage.info --output-directory coverage_report
+    COMMAND genhtml coverage.info --output-directory ${CMAKE_SOURCE_DIR}/docs/coverage_report
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Generating code coverage report"
 )
