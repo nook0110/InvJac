@@ -35,7 +35,7 @@ class Map
    * @brief Constructs a Map with the given polynomials.
    * @param polynomials Vector of polynomials representing the map.
    */
-  explicit Map(std::vector<Polynomial> polynomials)
+  explicit Map(std::vector<Polynomial> polynomials = {})
       : polynomials_(std::move(polynomials))
   {}
 

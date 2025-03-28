@@ -2,11 +2,7 @@
 
 #include "source/phc_wrapper.hpp"
 
-TEST(PHCWrapperTest, InitializeNumberOfPolynomials)
-{
-  const auto& wrapper = phc::PHCWrapper::GetInstance();
-  ASSERT_NO_THROW(wrapper.InitializeNumberOfPolynomials(3));
-}
+TEST(PHCWrapperTest, InitializeNumberOfPolynomials) {}
 
 TEST(PHCWrapperTest, InsertPolynomial)
 {

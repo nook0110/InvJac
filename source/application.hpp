@@ -76,10 +76,8 @@ class MapChecker
    * @param settings Settings for the checker.
    * @param strategy Strategy for generating maps.
    */
-  explicit MapChecker(const Settings& settings = {},
-                      std::unique_ptr<MapGeneratorStrategy> strategy =
-                          std::make_unique<UserInputMapStrategy>(std::cin,
-                                                                 std::cout))
+  explicit MapChecker(const Settings& settings,
+                      std::unique_ptr<MapGeneratorStrategy> strategy)
       : checker_(settings), strategy_(std::move(strategy))
   {}
 
@@ -142,9 +140,10 @@ class InvJacApp
    * @param input_stream Input stream for user input.
    * @param output_stream Output stream for messages.
    */
-  InvJacApp(std::istream& input_stream = std::cin,
-            std::ostream& output_stream = std::cout)
-      : input_(input_stream), out_(output_stream)
+  InvJacApp(std::istream& input_stream, std::ostream& output_stream)
+      : input_(input_stream),
+        out_(output_stream),
+        map_checker_({}, std::make_unique<UserInputMapStrategy>(input_, out_))
   {}
 
   /**
@@ -276,9 +275,9 @@ class InvJacApp
   }
 
  private:
-  std::istream& input_ = std::cin;  ///< Input stream for user input.
-  std::ostream& out_ = std::cout;   ///< Output stream for messages.
-  std::ifstream input_file_;        ///< Input file stream.
+  std::istream& input_;       ///< Input stream for user input.
+  std::ostream& out_;         ///< Output stream for messages.
+  std::ifstream input_file_;  ///< Input file stream.
   boost::iostreams::stream<boost::iostreams::null_sink> onullstream{
       boost::iostreams::null_sink()};  ///< Null output stream.
 
