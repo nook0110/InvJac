@@ -17,7 +17,7 @@ jobs:
     - name: Set up dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libcln-dev libginac-dev wget unzip sudo g++ make git cmake libboost-all-dev mysql-server libssl-dev
+        sudo apt-get install -y lcov libcln-dev libginac-dev wget unzip sudo g++ make git cmake libboost-all-dev mysql-server libssl-dev
 
     - name: Install MySQL Connector/C++
       run: |
