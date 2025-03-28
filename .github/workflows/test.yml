@@ -51,8 +51,8 @@ jobs:
     - name: Building the project
       working-directory: ${{runner.workspace}}/InvJac/build
       run: |
-        cmake ..
-        cmake --build .
+        cmake -DCMAKE_BUILD_TYPE=Debug ..
+        make invjac_test
 
     - name: Run tests
       working-directory: ${{runner.workspace}}/InvJac/build
