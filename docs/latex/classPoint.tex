@@ -2,6 +2,15 @@
 \hypertarget{classPoint}{}\label{classPoint}\index{Point@{Point}}
 
 
+Represents a point in a multidimensional complex space.  
+
+
+
+
+{\ttfamily \#include $<$point.\+hpp$>$}
+
+
+
 Collaboration diagram for Point\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,48 +21,248 @@ Collaboration diagram for Point\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classPoint_a57cb67ce8efdc82e6ea579cc05835292}\label{classPoint_a57cb67ce8efdc82e6ea579cc05835292} 
-{\bfseries Point} (std\+::vector$<$ Complex $>$ coords=\{\})
-\item 
-\Hypertarget{classPoint_a8807f48794da645588a9b92c7aff4789}\label{classPoint_a8807f48794da645588a9b92c7aff4789} 
-size\+\_\+t {\bfseries Get\+Dimensions} () const
-\item 
-\Hypertarget{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b}\label{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b} 
-const Complex \& {\bfseries Get\+Coord} (size\+\_\+t i) const
-\item 
-\Hypertarget{classPoint_a92326ddb107faaaf6385000d00826af5}\label{classPoint_a92326ddb107faaaf6385000d00826af5} 
-const Complex \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
-\item 
-\Hypertarget{classPoint_aba67c2dc4c850255af08f6ef7b53cffc}\label{classPoint_aba67c2dc4c850255af08f6ef7b53cffc} 
-Gi\+Na\+C\+::lst {\bfseries To\+Lst} () const
-\item 
-\Hypertarget{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}\label{classPoint_abf5a8bfc0d842b5a98b1292babb09da0} 
-std\+::string {\bfseries To\+Str} () const
-\item 
-\Hypertarget{classPoint_ad943e966b387776d9c76f233ea14737e}\label{classPoint_ad943e966b387776d9c76f233ea14737e} 
-std\+::vector$<$ Complex $>$\+::iterator {\bfseries begin} ()
-\item 
-\Hypertarget{classPoint_a69d149a65b910a28995401163864595d}\label{classPoint_a69d149a65b910a28995401163864595d} 
-std\+::vector$<$ Complex $>$\+::const\+\_\+iterator {\bfseries begin} () const
-\item 
-\Hypertarget{classPoint_a36b7dcab233f15bc5d2a9df36132cca7}\label{classPoint_a36b7dcab233f15bc5d2a9df36132cca7} 
-std\+::vector$<$ Complex $>$\+::iterator {\bfseries end} ()
-\item 
-\Hypertarget{classPoint_a94230d609d1a493ff411218ab08e65ce}\label{classPoint_a94230d609d1a493ff411218ab08e65ce} 
-std\+::vector$<$ Complex $>$\+::const\+\_\+iterator {\bfseries end} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPoint_a57cb67ce8efdc82e6ea579cc05835292}{Point}} (std\+::vector$<$ Complex $>$ coords=\{\})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPoint}{Point} with the given coordinates. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classPoint_a8807f48794da645588a9b92c7aff4789}{Get\+Dimensions}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of dimensions of the point. \end{DoxyCompactList}\item 
+const Complex \& \mbox{\hyperlink{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b}{Get\+Coord}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Gets the coordinate at the specified index. \end{DoxyCompactList}\item 
+const Complex \& \mbox{\hyperlink{classPoint_a92326ddb107faaaf6385000d00826af5}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Accesses the coordinate at the specified index. \end{DoxyCompactList}\item 
+Gi\+Na\+C\+::lst \mbox{\hyperlink{classPoint_aba67c2dc4c850255af08f6ef7b53cffc}{To\+Lst}} () const
+\begin{DoxyCompactList}\small\item\em Converts the point to a Gi\+Na\+C\+::lst object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{To\+Str}} () const
+\begin{DoxyCompactList}\small\item\em Converts the point to a string representation. \end{DoxyCompactList}\item 
+std\+::vector$<$ Complex $>$\+::iterator \mbox{\hyperlink{classPoint_ad943e966b387776d9c76f233ea14737e}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Gets an iterator to the beginning of the coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ Complex $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPoint_a69d149a65b910a28995401163864595d}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Gets a constant iterator to the beginning of the coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ Complex $>$\+::iterator \mbox{\hyperlink{classPoint_a36b7dcab233f15bc5d2a9df36132cca7}{end}} ()
+\begin{DoxyCompactList}\small\item\em Gets an iterator to the end of the coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ Complex $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPoint_a94230d609d1a493ff411218ab08e65ce}{end}} () const
+\begin{DoxyCompactList}\small\item\em Gets a constant iterator to the end of the coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classPoint_a1be7479354600505f20653a55a74343b}\label{classPoint_a1be7479354600505f20653a55a74343b} 
-static \mbox{\hyperlink{classPoint}{Point}} {\bfseries Generate\+Random} (size\+\_\+t dimensions)
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a1be7479354600505f20653a55a74343b}{Generate\+Random}} (size\+\_\+t dimensions)
+\begin{DoxyCompactList}\small\item\em Generates a random point with the specified number of dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classPoint_a82035f0ce989a54a69d7c318ebeb4335}\label{classPoint_a82035f0ce989a54a69d7c318ebeb4335} 
 std\+::vector$<$ Complex $>$ {\bfseries coords\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The coordinates of the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a point in a multidimensional complex space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPoint_a57cb67ce8efdc82e6ea579cc05835292}\label{classPoint_a57cb67ce8efdc82e6ea579cc05835292} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Complex $>$}]{coords = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classPoint}{Point} with the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coords} & A vector of complex coordinates. Defaults to an empty vector. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPoint_ad943e966b387776d9c76f233ea14737e}\label{classPoint_ad943e966b387776d9c76f233ea14737e} 
+\index{Point@{Point}!begin@{begin}}
+\index{begin@{begin}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ Complex $>$\+::iterator Point\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets an iterator to the beginning of the coordinates. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the beginning of the coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classPoint_a69d149a65b910a28995401163864595d}\label{classPoint_a69d149a65b910a28995401163864595d} 
+\index{Point@{Point}!begin@{begin}}
+\index{begin@{begin}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ Complex $>$\+::const\+\_\+iterator Point\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a constant iterator to the beginning of the coordinates. 
+
+\begin{DoxyReturn}{Returns}
+A constant iterator to the beginning of the coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classPoint_a36b7dcab233f15bc5d2a9df36132cca7}\label{classPoint_a36b7dcab233f15bc5d2a9df36132cca7} 
+\index{Point@{Point}!end@{end}}
+\index{end@{end}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ Complex $>$\+::iterator Point\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets an iterator to the end of the coordinates. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the end of the coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classPoint_a94230d609d1a493ff411218ab08e65ce}\label{classPoint_a94230d609d1a493ff411218ab08e65ce} 
+\index{Point@{Point}!end@{end}}
+\index{end@{end}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ Complex $>$\+::const\+\_\+iterator Point\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a constant iterator to the end of the coordinates. 
+
+\begin{DoxyReturn}{Returns}
+A constant iterator to the end of the coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classPoint_a1be7479354600505f20653a55a74343b}\label{classPoint_a1be7479354600505f20653a55a74343b} 
+\index{Point@{Point}!GenerateRandom@{GenerateRandom}}
+\index{GenerateRandom@{GenerateRandom}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{GenerateRandom()}{GenerateRandom()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classPoint}{Point}} Point\+::\+Generate\+Random (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates a random point with the specified number of dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & The number of dimensions for the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A randomly generated \doxylink{classPoint}{Point}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a1be7479354600505f20653a55a74343b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b}\label{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b} 
+\index{Point@{Point}!GetCoord@{GetCoord}}
+\index{GetCoord@{GetCoord}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{GetCoord()}{GetCoord()}}
+{\footnotesize\ttfamily const Complex \& Point\+::\+Get\+Coord (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the coordinate at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the complex coordinate. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPoint_a8807f48794da645588a9b92c7aff4789}\label{classPoint_a8807f48794da645588a9b92c7aff4789} 
+\index{Point@{Point}!GetDimensions@{GetDimensions}}
+\index{GetDimensions@{GetDimensions}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{GetDimensions()}{GetDimensions()}}
+{\footnotesize\ttfamily size\+\_\+t Point\+::\+Get\+Dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of dimensions of the point. 
+
+\begin{DoxyReturn}{Returns}
+The number of dimensions. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_a8807f48794da645588a9b92c7aff4789_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPoint_a92326ddb107faaaf6385000d00826af5}\label{classPoint_a92326ddb107faaaf6385000d00826af5} 
+\index{Point@{Point}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const Complex \& Point\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesses the coordinate at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the complex coordinate. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classPoint_a92326ddb107faaaf6385000d00826af5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPoint_aba67c2dc4c850255af08f6ef7b53cffc}\label{classPoint_aba67c2dc4c850255af08f6ef7b53cffc} 
+\index{Point@{Point}!ToLst@{ToLst}}
+\index{ToLst@{ToLst}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{ToLst()}{ToLst()}}
+{\footnotesize\ttfamily Gi\+Na\+C\+::lst Point\+::\+To\+Lst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Converts the point to a Gi\+Na\+C\+::lst object. 
+
+\begin{DoxyReturn}{Returns}
+A Gi\+Na\+C\+::lst representation of the point. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_aba67c2dc4c850255af08f6ef7b53cffc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}\label{classPoint_abf5a8bfc0d842b5a98b1292babb09da0} 
+\index{Point@{Point}!ToStr@{ToStr}}
+\index{ToStr@{ToStr}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{ToStr()}{ToStr()}}
+{\footnotesize\ttfamily std\+::string Point\+::\+To\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts the point to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the point. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPoint_abf5a8bfc0d842b5a98b1292babb09da0_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

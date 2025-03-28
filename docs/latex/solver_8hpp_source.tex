@@ -13,42 +13,46 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ginac/ginac.h>}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ginac/numeric.h>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <glog/logging.h>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cassert>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}equation.hpp"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSolver}{Solver}}}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structEquation_1_1Root}{Root}}\ =\ \mbox{\hyperlink{structEquation_1_1Root}{Equation::Root}};}
-\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classEquation_1_1Solution}{Solution}}\ =\ \mbox{\hyperlink{classEquation_1_1Solution}{Equation::Solution}};}
-\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSolver}{Solver}}\&\ GetInstance();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classEquation_1_1Solution}{Solution}}\ Solve(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ mapping,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ CreateEquation(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ mapping,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00029\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00030\ \ \ \ \ LOG\_IF(DFATAL,\ mapping.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()\ !=\ point.GetDimensions())}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Mapping\ and\ point\ dimensions\ are\ incompatible!"{}};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation(mapping.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}());}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}equation.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSolver}{Solver}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structEquation_1_1Root}{Root}}\ =\ \mbox{\hyperlink{structEquation_1_1Root}{Equation::Root}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classEquation_1_1Solution}{Solution}}\ =\ \mbox{\hyperlink{classEquation_1_1Solution}{Equation::Solution}};\ \ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSolver}{Solver}}\&\ \mbox{\hyperlink{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed}{GetInstance}}();}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [polynomial,\ coordinate]\ :\ std::views::zip(mapping,\ point))}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(polynomial\ -\/\ coordinate);}
-\DoxyCodeLine{00038\ \ \ \ \ \}}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ equation;}
-\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classEquation_1_1Solution}{Solution}}\ \mbox{\hyperlink{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044}{Solve}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ mapping,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classSolver}{Solver}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classSolver}{Solver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSolver}{Solver}}\&\ root)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classSolver}{Solver}}(\mbox{\hyperlink{classSolver}{Solver}}\&\&\ root)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classSolver}{Solver}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSolver}{Solver}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classSolver}{Solver}}\&\ operator=(\mbox{\hyperlink{classSolver}{Solver}}\&\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ \mbox{\hyperlink{classSolver_a83b673900078afb56d459e75295b0d43}{CreateEquation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ mapping,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ LOG\_IF(DFATAL,\ mapping.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()\ !=\ point.\mbox{\hyperlink{classPoint_a8807f48794da645588a9b92c7aff4789}{GetDimensions}}())}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Mapping\ and\ point\ dimensions\ are\ incompatible!"{}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation(mapping.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}());}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [polynomial,\ coordinate]\ :\ std::views::zip(mapping,\ point))}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(polynomial\ -\/\ coordinate);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ equation;}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classSolver_a7808b466eaac88fb9f73b8064b087c1d}{Solver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classSolver_a6bf90e6f8029839d603352dfe72f8b74}{Solver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSolver}{Solver}}\&\ root)\ =\ \textcolor{keyword}{delete};\ \ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classSolver_a86f1bd1aa8586e758ca927a16cbc1fc7}{Solver}}(\mbox{\hyperlink{classSolver}{Solver}}\&\&\ root)\ =\ \textcolor{keyword}{delete};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{classSolver}{Solver}}\&\ \mbox{\hyperlink{classSolver_a722ad83fa56dd52e4399ab8689b3120b}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSolver}{Solver}}\&)\ =}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{delete};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{classSolver}{Solver}}\&\ \mbox{\hyperlink{classSolver_a82c1ab43fb01f7797338701b4d7480e1}{operator=}}(\mbox{\hyperlink{classSolver}{Solver}}\&\&)\ =\ \textcolor{keyword}{delete};\ \ }
+\DoxyCodeLine{00075\ \};}
 
 \end{DoxyCode}

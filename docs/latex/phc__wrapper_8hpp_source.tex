@@ -4,46 +4,71 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstddef>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string\_view>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }phc}
-\DoxyCodeLine{00009\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}phc\_traits.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }phc}
 \DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{void}\ Clear()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{void}\ InitializeNumberOfPolynomials(\textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{void}\ InsertPolynomial(std::string\_view\ polynomial,\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{size\_t}\ GetAmountOfSymbols()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{bool}\ IsSquare()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ SetSymbols(\textcolor{keyword}{const}\ std::vector<std::string>\&\ symbols);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}}}
-\DoxyCodeLine{00021\ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ multiplicity;}
-\DoxyCodeLine{00023\ \ \ \ \ std::vector<double>\ data;}
-\DoxyCodeLine{00024\ \ \ \};}
-\DoxyCodeLine{00025\ \ \ std::vector<Root>\ Solve()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{size\_t}\ GetTotalDegree()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{size\_t}\ GetBezoutNumber()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ GetInstance();}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a98bddaa58924c8cc07fbcd47512490b7}{Clear}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25}{InitializeNumberOfPolynomials}}(\textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}();}
-\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}(\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ operator=(\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{\string~PHCWrapper}}();}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classphc_1_1PHCWrapper_1_1PHCWrapperImplementation}{PHCWrapperImplementation}};}
-\DoxyCodeLine{00040\ \ \ std::unique\_ptr<PHCWrapperImplementation>\ implementation\_;}
-\DoxyCodeLine{00041\ \};}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \}\ \ \textcolor{comment}{//\ namespace\ phc}}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773}{InsertPolynomial}}(std::string\_view\ polynomial,\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec}{GetAmountOfSymbols}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4}{IsSquare}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1}{SetSymbols}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ symbols);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}}}
+\DoxyCodeLine{00062\ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_a3ff77533860c643e7ac29280ee42f240}{multiplicity}};\ \ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_1_1Complex}{Complex}}}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_1_1Complex_aa84334590fd8f97a2c6d0045ab45bafb}{real}};\ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_1_1Complex_a351b660f4fb5300912781accd11b5bd8}{imag}};\ \ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_1_1Complex_a086a18c253c497f6b95fb52fda4e46af}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_1_1Complex}{Complex}}\&)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00080\ \ \ \ \ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ std::vector<Complex>\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_ac3051140a00b7069a0fbc601ee2902e4}{data}};\ \ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root_af5bf686c634be0153dcaf2cb8f4fba56}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}}\&)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00090\ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a06fadfb600971a44543041d12a07233a}{ParseRoot}}(std::string\ root\_string,\ \textcolor{keywordtype}{size\_t}\ max\_precision\ =\ 10)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ std::vector<Root>\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94}{Solve}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb}{GetTotalDegree}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3}{GetBezoutNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ \mbox{\hyperlink{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a}{GetInstance}}();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper_a1a9bf0479f47e90e0cd34e1606082dee}{PHCWrapper}}();}
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper_a1a9bf0479f47e90e0cd34e1606082dee}{PHCWrapper}}(\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper_a1a9bf0479f47e90e0cd34e1606082dee}{PHCWrapper}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ operator=(\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper}{\string~PHCWrapper}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \textcolor{keyword}{template}\ <Precision\ P>}
+\DoxyCodeLine{00140\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classphc_1_1PHCWrapper_1_1PHCWrapperImplementation}{PHCWrapperImplementation}};}
+\DoxyCodeLine{00141\ \ \ std::unique\_ptr<PHCWrapperImplementation<Precision::Standard>>}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \mbox{\hyperlink{classphc_1_1PHCWrapper_a28e0ce319b55dd537ba3725f04ed00d5}{implementation\_}};\ \ }
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \}\ \ \textcolor{comment}{//\ namespace\ phc}}
 
 \end{DoxyCode}

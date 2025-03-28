@@ -18,6 +18,15 @@ Collaboration diagram for Checker\+:\nopagebreak
 \includegraphics[width=350pt]{classChecker__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structChecker_1_1NonZeroJacobian}{Non\+Zero\+Jacobian}}
+\begin{DoxyCompactList}\small\item\em Tests a point on the map. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structChecker_1_1SingularPoint}{Singular\+Point}}
+\item 
+struct \mbox{\hyperlink{structChecker_1_1ZeroJacobian}{Zero\+Jacobian}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,11 +36,18 @@ void \mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{Set\+Map}}
 \begin{DoxyCompactList}\small\item\em Sets the map to be checked. \end{DoxyCompactList}\item 
 Check\+Result\+::\+Result \mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{Perform\+Check}} ()
 \begin{DoxyCompactList}\small\item\em Performs the check on the set map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classChecker_a28bb62ca1039db653cd9f0ef786322b7}\label{classChecker_a28bb62ca1039db653cd9f0ef786322b7} 
+using {\bfseries Test\+Result} = std\+::variant$<$ \mbox{\hyperlink{structChecker_1_1NonZeroJacobian}{Non\+Zero\+Jacobian}}, \mbox{\hyperlink{structChecker_1_1ZeroJacobian}{Zero\+Jacobian}}, \mbox{\hyperlink{structChecker_1_1SingularPoint}{Singular\+Point}} $>$
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::optional$<$ Complex $>$ \mbox{\hyperlink{classChecker_a5557d50dbd898a42629d367321fa4d7c}{Test\+Point}} (const \mbox{\hyperlink{classPoint}{Point}} \&point) const
-\begin{DoxyCompactList}\small\item\em Tests a point on the map. \end{DoxyCompactList}\item 
+\Hypertarget{classChecker_a780b04285af7ac6eee481806692cfe2a}\label{classChecker_a780b04285af7ac6eee481806692cfe2a} 
+Test\+Result {\bfseries Test\+Point} (const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\item 
 Complex \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{Substitute\+Jacobian}} (Polynomial jacobian, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
 \begin{DoxyCompactList}\small\item\em Substitutes the Jacobian with the given point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -141,45 +157,6 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classChecker_ad27c68388778a2a37c7a9589bc58c78e_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classChecker_ad27c68388778a2a37c7a9589bc58c78e_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classChecker_a5557d50dbd898a42629d367321fa4d7c}\label{classChecker_a5557d50dbd898a42629d367321fa4d7c} 
-\index{Checker@{Checker}!TestPoint@{TestPoint}}
-\index{TestPoint@{TestPoint}!Checker@{Checker}}
-\doxysubsubsection{\texorpdfstring{TestPoint()}{TestPoint()}}
-{\footnotesize\ttfamily std\+::optional$<$ Complex $>$ Checker\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Tests a point on the map. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em point} & \doxylink{classPoint}{Point} to be tested. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Optional complex value if the test fails. 
-\end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classChecker_a5557d50dbd898a42629d367321fa4d7c_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classChecker_a5557d50dbd898a42629d367321fa4d7c_icgraph}
 \end{center}
 \end{figure}
 

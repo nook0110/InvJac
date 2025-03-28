@@ -4,208 +4,230 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <boost/program\_options.hpp>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <istream>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ostream>}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}checker.hpp"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}map\_factory.hpp"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}mysql.hpp"{}}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMapGeneratorStrategy}{MapGeneratorStrategy}}}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classMapGeneratorStrategy_a6d0af3a5597dff2f24c6d798e4841f61}{Generate}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMapGeneratorStrategy}{\string~MapGeneratorStrategy}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <boost/iostreams/stream.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <boost/program\_options.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}checker.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}map\_factory.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}mysql.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMapGeneratorStrategy}{MapGeneratorStrategy}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classMapGeneratorStrategy_a6d0af3a5597dff2f24c6d798e4841f61}{Generate}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CanGenerateMore()\ \textcolor{keyword}{const}\ =\ 0;}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUserInputMapStrategy}{UserInputMapStrategy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMapGeneratorStrategy}{MapGeneratorStrategy}}}
-\DoxyCodeLine{00034\ \{}
-\DoxyCodeLine{00035\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classUserInputMapStrategy_a40a9158a0ed8d70e8a963d3067156b03}{UserInputMapStrategy}}(std::istream\&\ input\_stream,}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\ output\_stream)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}}(input\_stream),\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}}(output\_stream)}
-\DoxyCodeLine{00044\ \ \ \{\}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classUserInputMapStrategy_a8dde28067d43f3e1da6ad009e39b46f2}{Generate}}()\textcolor{keyword}{\ const\ override}}
-\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}}\ <<\ \textcolor{stringliteral}{"{}Input\ your\ map:\(\backslash\)n"{}};}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMapFactory_a1cd44708e018f555e7b27ff338fcf5e8}{MapFactory::CreateMapFromInput}}(\mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}},\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}});}
-\DoxyCodeLine{00054\ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00057\ \ \ std::istream\&\ \mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}};\ \ }
-\DoxyCodeLine{00058\ \ \ std::ostream\&\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}};\ \ \ \ }
-\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMapGeneratorStrategy}{\string~MapGeneratorStrategy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUserInputMapStrategy}{UserInputMapStrategy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMapGeneratorStrategy}{MapGeneratorStrategy}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classUserInputMapStrategy_a40a9158a0ed8d70e8a963d3067156b03}{UserInputMapStrategy}}(std::istream\&\ input\_stream,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\ output\_stream)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}}(input\_stream),\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}}(output\_stream)}
+\DoxyCodeLine{00047\ \ \ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classUserInputMapStrategy_a8dde28067d43f3e1da6ad009e39b46f2}{Generate}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}}\ <<\ \textcolor{stringliteral}{"{}Input\ your\ map:\(\backslash\)n"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMapFactory_a1cd44708e018f555e7b27ff338fcf5e8}{MapFactory::CreateMapFromInput}}(\mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}},\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}});}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{bool}\ CanGenerateMore()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ !\mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}}.eof();\ \}}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMapChecker}{MapChecker}}}
-\DoxyCodeLine{00065\ \{}
-\DoxyCodeLine{00066\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structCheckerSettings}{Settings}}\ =\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMapChecker_abadcd9d4e61aa5d9a342209253fb9bf5}{MapChecker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{Settings}}\&\ settings\ =\ \{\},}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<MapGeneratorStrategy>\ strategy\ =}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_unique<UserInputMapStrategy>(std::cin,}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout))}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}(settings),\ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}(std::move(strategy))}
-\DoxyCodeLine{00079\ \ \ \{\}}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMapChecker_a90933f190a71db31e86aee55f36822c5}{SetStrategy}}(std::unique\_ptr<MapGeneratorStrategy>\ strategy)}
-\DoxyCodeLine{00086\ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}\ =\ std::move(strategy);}
-\DoxyCodeLine{00088\ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMapChecker_ab598ff6168d7002486d60e359c364315}{SetSettings}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{Settings}}\&\ settings)\ \{\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}\ =\ \mbox{\hyperlink{classChecker}{Checker}}(settings);\ \}}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{classCheckResult}{CheckResult}}\ \mbox{\hyperlink{classMapChecker_ac37359c66ceb1ce7e5f1d16240bfc3ac}{PerformCheck}}()}
-\DoxyCodeLine{00101\ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{auto}\ map\ =\ \mbox{\hyperlink{classMapChecker_a944e4df960fa48bf3d64ea7ccfea128e}{GenerateMap}}();}
-\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}.\mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{SetMap}}(\&map);}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}.\mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{PerformCheck}}();}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult}{CheckResult}}(std::move(map),\ std::move(result));}
-\DoxyCodeLine{00106\ \ \ \}}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classMapChecker_a944e4df960fa48bf3d64ea7ccfea128e}{GenerateMap}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}-\/>Generate();\ \}}
+\DoxyCodeLine{00061\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ std::istream\&\ \mbox{\hyperlink{classUserInputMapStrategy_a32f79509baf8980dc785813aab1e6579}{input}};\ \ }
+\DoxyCodeLine{00063\ \ \ std::ostream\&\ \mbox{\hyperlink{classUserInputMapStrategy_ae0f0e96ed11bcbd84c9b894ec79b5e07}{out}};\ \ \ \ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMapChecker}{MapChecker}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structCheckerSettings}{Settings}}\ =\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMapChecker_aea4df67457696d93d46e0d916841473e}{MapChecker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{Settings}}\&\ settings,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<MapGeneratorStrategy>\ strategy)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}(settings),\ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}(std::move(strategy))}
+\DoxyCodeLine{00082\ \ \ \{\}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMapChecker_a90933f190a71db31e86aee55f36822c5}{SetStrategy}}(std::unique\_ptr<MapGeneratorStrategy>\ strategy)}
+\DoxyCodeLine{00089\ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}\ =\ std::move(strategy);}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{bool}\ CanCheckMore()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}-\/>CanGenerateMore();\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMapChecker_ab598ff6168d7002486d60e359c364315}{SetSettings}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{Settings}}\&\ settings)\ \{\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}\ =\ \mbox{\hyperlink{classChecker}{Checker}}(settings);\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{classCheckResult}{CheckResult}}\ \mbox{\hyperlink{classMapChecker_ac37359c66ceb1ce7e5f1d16240bfc3ac}{PerformCheck}}()}
+\DoxyCodeLine{00106\ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ DLOG\_IF(FATAL,\ !CanCheckMore())}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}PerformCheck\ called\ when\ no\ more\ checks\ can\ be\ performed."{}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{auto}\ map\ =\ \mbox{\hyperlink{classMapChecker_a944e4df960fa48bf3d64ea7ccfea128e}{GenerateMap}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}.\mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{SetMap}}(\&map);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}}.\mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{PerformCheck}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult}{CheckResult}}(std::move(map),\ std::move(result));}
+\DoxyCodeLine{00113\ \ \ \}}
 \DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{classChecker}{Checker}}\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}};\ \ }
-\DoxyCodeLine{00116\ \ \ std::unique\_ptr<MapGeneratorStrategy>}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}};\ \ }
-\DoxyCodeLine{00118\ \};}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00123\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInvJacApp}{InvJacApp}}}
-\DoxyCodeLine{00124\ \{}
-\DoxyCodeLine{00125\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{classInvJacApp_a717d88f4381a589718518700ef23cc74}{InvJacApp}}(std::istream\&\ input\_stream\ =\ std::cin,}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\ output\_stream\ =\ std::cout)}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}{input\_}}(input\_stream),\ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}(output\_stream)}
-\DoxyCodeLine{00134\ \ \ \{\}}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00139\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e}{Run}}()}
-\DoxyCodeLine{00140\ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ \textcolor{stringliteral}{"{}Running\ the\ InvJac\ application...\(\backslash\)n"{}};}
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}}.\mbox{\hyperlink{classMapChecker_ac37359c66ceb1ce7e5f1d16240bfc3ac}{PerformCheck}}();}
-\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ result.\mbox{\hyperlink{classCheckResult_aba9dd5b6ed1fea5631b6b2721f0c1f39}{ToStr}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})}
-\DoxyCodeLine{00145\ \ \ \ \ \{}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}}-\/>InsertCheckResult(result);}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
-\DoxyCodeLine{00148\ \ \ \}}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42}{ParseCommandLine}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])}
-\DoxyCodeLine{00157\ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{namespace\ }po\ =\ boost::program\_options;}
-\DoxyCodeLine{00159\ \ \ \ \ po::options\_description\ desc(\textcolor{stringliteral}{"{}Allowed\ options"{}});}
-\DoxyCodeLine{00160\ \ \ \ \ desc.add\_options()}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ clang-\/format\ off}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}help,h"{}},\ }
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}produce\ help\ message"{}}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}input-\/file,i"{}},\ }
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>(),\ }
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}input\ file"{}}}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}use-\/database,d"{}},}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ po::bool\_switch(\&\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})-\/>default\_value(\textcolor{keyword}{false}),}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}use\ MySQL\ database"{}}}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/host,h"{}},\ }
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}localhost"{}}),}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ host"{}}}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/user,u"{}},}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}root"{}}),}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ user"{}}}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/password,p"{}},\ }
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}root"{}}),}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ password"{}}}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/name"{}},\ }
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}checked\_functions"{}}),}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ name"{}}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}results-\/table"{}},}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}test\_results"{}}),}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}results\ table"{}}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}passed-\/table"{}},}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}passed\_results"{}}),}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}passed\ table"{}}}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}failed-\/table"{}},}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}failed\_results"{}}),}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}failed\ table"{}}}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error-\/table"{}},\ }
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}error\_results"{}}),}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error\ table"{}}}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00216\ \ \ \ \ \textcolor{comment}{//\ clang-\/format\ on}}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00218\ \ \ \ \ po::variables\_map\ vm;}
-\DoxyCodeLine{00219\ \ \ \ \ po::store(po::parse\_command\_line(argc,\ argv,\ desc),\ vm);}
-\DoxyCodeLine{00220\ \ \ \ \ po::notify(vm);}
-\DoxyCodeLine{00221\ }
-\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (vm.count(\textcolor{stringliteral}{"{}help"{}}))}
-\DoxyCodeLine{00223\ \ \ \ \ \{}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ desc\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00226\ \ \ \ \ \}}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (vm.count(\textcolor{stringliteral}{"{}input-\/file"{}}))}
-\DoxyCodeLine{00229\ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}}.open(vm[\textcolor{stringliteral}{"{}input-\/file"{}}].as<std::string>());}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}})}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ input\ file.\(\backslash\)n"{}};}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00236\ \ \ \ \ \}}
-\DoxyCodeLine{00237\ }
-\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}}\ =}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ vm.count(\textcolor{stringliteral}{"{}use-\/database"{}})\ ?\ vm[\textcolor{stringliteral}{"{}use-\/database"{}}].as<\textcolor{keywordtype}{bool}>()\ :\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})}
-\DoxyCodeLine{00241\ \ \ \ \ \{}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \mbox{\hyperlink{structDatabaseConfig}{DatabaseConfig}}\ config;}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_afb231b9431e7b3ac9f7059c461b3828e}{host}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/host"{}}].as<std::string>();}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_ab7bd486d9aefad6a550e07bfe7579860}{user}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/user"{}}].as<std::string>();}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa17e906c33a2f1c2d1508afa50957b35}{password}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/password"{}}].as<std::string>();}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a6d8841402f11c6f9406871b3b93f9363}{database}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/name"{}}].as<std::string>();}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa2faab03c4cdebcf63c6c7e11cf04e4b}{results\_table}}\ =\ vm[\textcolor{stringliteral}{"{}results-\/table"{}}].as<std::string>();}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a7a3bd952183374c00d1e35307c8c40b4}{passed\_table}}\ =\ vm[\textcolor{stringliteral}{"{}passed-\/table"{}}].as<std::string>();}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa1f13028b8759398bb51f458aef821c6}{failed\_table}}\ =\ vm[\textcolor{stringliteral}{"{}failed-\/table"{}}].as<std::string>();}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a5aca0375470a5e5b65fc5798ade0f305}{error\_table}}\ =\ vm[\textcolor{stringliteral}{"{}error-\/table"{}}].as<std::string>();}
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}}\ =\ std::make\_unique<FunctionDatabase>(config);}
-\DoxyCodeLine{00253\ \ \ \ \ \}}
-\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00255\ \ \ \}}
-\DoxyCodeLine{00256\ }
-\DoxyCodeLine{00257\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00258\ \ \ std::istream\&\ \mbox{\hyperlink{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}{input\_}}\ =\ std::cin;\ \ }
-\DoxyCodeLine{00259\ \ \ std::ostream\&\ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ =\ std::cout;\ \ \ }
-\DoxyCodeLine{00260\ \ \ std::ifstream\ \mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00261\ }
-\DoxyCodeLine{00262\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00263\ \ \ std::unique\_ptr<FunctionDatabase>\ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}};\ \ }
-\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{classMapChecker}{MapChecker}}\ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00265\ \};}
+\DoxyCodeLine{00115\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classMapChecker_a944e4df960fa48bf3d64ea7ccfea128e}{GenerateMap}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ DLOG\_IF(FATAL,\ !\mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}-\/>CanGenerateMore())}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}GenerateMap\ called\ when\ no\ more\ maps\ can\ be\ generated."{}};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}}-\/>Generate();}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{classChecker}{Checker}}\ \mbox{\hyperlink{classMapChecker_aeb4302e59744aaa2d1afa800dff190b1}{checker\_}};\ \ }
+\DoxyCodeLine{00128\ \ \ std::unique\_ptr<MapGeneratorStrategy>}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \mbox{\hyperlink{classMapChecker_a6aecc7b21752dabbe65260e09e8e4418}{strategy\_}};\ \ }
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInvJacApp}{InvJacApp}}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{classInvJacApp_ad26604c3b9481dec28c63aaed3329461}{InvJacApp}}(std::istream\&\ input\_stream,\ std::ostream\&\ output\_stream)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}{input\_}}(input\_stream),}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}(output\_stream),}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}}(\{\},\ std::make\_unique<UserInputMapStrategy>(\mbox{\hyperlink{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}{input\_}},\ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}))}
+\DoxyCodeLine{00147\ \ \ \{\}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e}{Run}}()}
+\DoxyCodeLine{00153\ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}}.CanCheckMore())}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ \textcolor{stringliteral}{"{}Running\ the\ InvJac\ application...\(\backslash\)n"{}};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}}.\mbox{\hyperlink{classMapChecker_ac37359c66ceb1ce7e5f1d16240bfc3ac}{PerformCheck}}();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ result.\mbox{\hyperlink{classCheckResult_aba9dd5b6ed1fea5631b6b2721f0c1f39}{ToStr}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}}-\/>InsertCheckResult(result);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ \textcolor{stringliteral}{"{}Application\ finished.\(\backslash\)n"{}};}
+\DoxyCodeLine{00165\ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00173\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42}{ParseCommandLine}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])}
+\DoxyCodeLine{00174\ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{namespace\ }po\ =\ boost::program\_options;}
+\DoxyCodeLine{00176\ \ \ \ \ po::options\_description\ desc(\textcolor{stringliteral}{"{}Allowed\ options"{}});}
+\DoxyCodeLine{00177\ \ \ \ \ desc.add\_options()}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}help,h"{}},\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}produce\ help\ message"{}}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}input-\/file,i"{}},\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>(),\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}input\ file"{}}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}use-\/database,d"{}},}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ po::bool\_switch(\&\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})-\/>default\_value(\textcolor{keyword}{false}),}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}use\ MySQL\ database"{}}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/host,h"{}},\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}localhost"{}}),}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ host"{}}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/user,u"{}},}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}root"{}}),}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ user"{}}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/password,p"{}},\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}root"{}}),}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ password"{}}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}db-\/name"{}},\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}checked\_functions"{}}),}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}database\ name"{}}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}results-\/table"{}},}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}test\_results"{}}),}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}results\ table"{}}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}passed-\/table"{}},}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}passed\_results"{}}),}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}passed\ table"{}}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}failed-\/table"{}},}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}failed\_results"{}}),}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}failed\ table"{}}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error-\/table"{}},\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ po::value<std::string>()-\/>default\_value(\textcolor{stringliteral}{"{}error\_results"{}}),}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error\ table"{}}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ po::variables\_map\ vm;}
+\DoxyCodeLine{00236\ \ \ \ \ po::store(po::parse\_command\_line(argc,\ argv,\ desc),\ vm);}
+\DoxyCodeLine{00237\ \ \ \ \ po::notify(vm);}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{if}\ (vm.count(\textcolor{stringliteral}{"{}help"{}}))}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ desc\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{if}\ (vm.count(\textcolor{stringliteral}{"{}input-\/file"{}}))}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}}.open(vm[\textcolor{stringliteral}{"{}input-\/file"{}}].as<std::string>());}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}})}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}}\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ input\ file.\(\backslash\)n"{}};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}}.\mbox{\hyperlink{classMapChecker_a90933f190a71db31e86aee55f36822c5}{SetStrategy}}(}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ std::make\_unique<UserInputMapStrategy>(\mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}},\ \mbox{\hyperlink{classInvJacApp_a7ca3d8b67380615960c988d30cea1871}{onullstream}}));}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}}\ =}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ vm.count(\textcolor{stringliteral}{"{}use-\/database"{}})\ ?\ vm[\textcolor{stringliteral}{"{}use-\/database"{}}].as<\textcolor{keywordtype}{bool}>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}})}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \mbox{\hyperlink{structDatabaseConfig}{DatabaseConfig}}\ config;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_afb231b9431e7b3ac9f7059c461b3828e}{host}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/host"{}}].as<std::string>();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_ab7bd486d9aefad6a550e07bfe7579860}{user}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/user"{}}].as<std::string>();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa17e906c33a2f1c2d1508afa50957b35}{password}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/password"{}}].as<std::string>();}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a6d8841402f11c6f9406871b3b93f9363}{database}}\ =\ vm[\textcolor{stringliteral}{"{}db-\/name"{}}].as<std::string>();}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa2faab03c4cdebcf63c6c7e11cf04e4b}{results\_table}}\ =\ vm[\textcolor{stringliteral}{"{}results-\/table"{}}].as<std::string>();}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a7a3bd952183374c00d1e35307c8c40b4}{passed\_table}}\ =\ vm[\textcolor{stringliteral}{"{}passed-\/table"{}}].as<std::string>();}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_aa1f13028b8759398bb51f458aef821c6}{failed\_table}}\ =\ vm[\textcolor{stringliteral}{"{}failed-\/table"{}}].as<std::string>();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ config.\mbox{\hyperlink{structDatabaseConfig_a5aca0375470a5e5b65fc5798ade0f305}{error\_table}}\ =\ vm[\textcolor{stringliteral}{"{}error-\/table"{}}].as<std::string>();}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}}\ =\ std::make\_unique<FunctionDatabase>(config);}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00275\ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00278\ \ \ std::istream\&\ \mbox{\hyperlink{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}{input\_}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00279\ \ \ std::ostream\&\ \mbox{\hyperlink{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}{out\_}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00280\ \ \ std::ifstream\ \mbox{\hyperlink{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}{input\_file\_}};\ \ }
+\DoxyCodeLine{00281\ \ \ boost::iostreams::stream<boost::iostreams::null\_sink>\ \mbox{\hyperlink{classInvJacApp_a7ca3d8b67380615960c988d30cea1871}{onullstream}}\{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ boost::iostreams::null\_sink()\};\ \ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}{use\_database\_}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00285\ \ \ std::unique\_ptr<FunctionDatabase>\ \mbox{\hyperlink{classInvJacApp_a627b99477adb458183e4c126e14bf0f3}{database\_}};\ \ }
+\DoxyCodeLine{00286\ \ \ \mbox{\hyperlink{classMapChecker}{MapChecker}}\ \mbox{\hyperlink{classInvJacApp_ac036a457cdbe7eae27c3cae604728f28}{map\_checker\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00287\ \};}
 
 \end{DoxyCode}

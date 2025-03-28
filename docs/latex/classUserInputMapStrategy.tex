@@ -33,7 +33,9 @@ Collaboration diagram for User\+Input\+Map\+Strategy\+:\nopagebreak
 \mbox{\hyperlink{classUserInputMapStrategy_a40a9158a0ed8d70e8a963d3067156b03}{User\+Input\+Map\+Strategy}} (std\+::istream \&input\+\_\+stream, std\+::ostream \&output\+\_\+stream)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classUserInputMapStrategy}{User\+Input\+Map\+Strategy}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMap}{Map}} \mbox{\hyperlink{classUserInputMapStrategy_a8dde28067d43f3e1da6ad009e39b46f2}{Generate}} () const override
-\begin{DoxyCompactList}\small\item\em Generates a map from user input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a map from user input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUserInputMapStrategy_a6362862668b4c7195e08754f5b8b1ad9}{Can\+Generate\+More}} () const override
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,6 +71,16 @@ Constructs a \doxylink{classUserInputMapStrategy}{User\+Input\+Map\+Strategy}.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classUserInputMapStrategy_a6362862668b4c7195e08754f5b8b1ad9}\label{classUserInputMapStrategy_a6362862668b4c7195e08754f5b8b1ad9} 
+\index{UserInputMapStrategy@{UserInputMapStrategy}!CanGenerateMore@{CanGenerateMore}}
+\index{CanGenerateMore@{CanGenerateMore}!UserInputMapStrategy@{UserInputMapStrategy}}
+\doxysubsubsection{\texorpdfstring{CanGenerateMore()}{CanGenerateMore()}}
+{\footnotesize\ttfamily bool User\+Input\+Map\+Strategy\+::\+Can\+Generate\+More (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}}.
+
 \Hypertarget{classUserInputMapStrategy_a8dde28067d43f3e1da6ad009e39b46f2}\label{classUserInputMapStrategy_a8dde28067d43f3e1da6ad009e39b46f2} 
 \index{UserInputMapStrategy@{UserInputMapStrategy}!Generate@{Generate}}
 \index{Generate@{Generate}!UserInputMapStrategy@{UserInputMapStrategy}}

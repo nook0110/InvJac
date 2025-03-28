@@ -88,12 +88,17 @@ $(function() {
   <div class="headertitle"><div class="title">Solver Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class for solving equations defined by mappings and points.  
+ <a href="classSolver.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="solver_8hpp_source.html">solver.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Solver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSolver__coll__graph.png" border="0" usemap="#aSolver_coll__map" alt="Collaboration graph"/></div>
 <map name="aSolver_coll__map" id="aSolver_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,144,211"/>
+<area shape="rect" title="A class for solving equations defined by mappings and points." alt="" coords="5,5,144,211"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -101,41 +106,239 @@ Collaboration diagram for Solver:</div>
 Public Types</h2></td></tr>
 <tr class="memitem:a2f890d59082c2c520bc0b8d496c12182" id="r_a2f890d59082c2c520bc0b8d496c12182"><td class="memItemLeft" align="right" valign="top"><a id="a2f890d59082c2c520bc0b8d496c12182" name="a2f890d59082c2c520bc0b8d496c12182"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>Root</b> = <a class="el" href="structEquation_1_1Root.html">Equation::Root</a></td></tr>
+<tr class="memdesc:a2f890d59082c2c520bc0b8d496c12182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the root type. <br /></td></tr>
 <tr class="separator:a2f890d59082c2c520bc0b8d496c12182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7fc4e45a2339e17585dd2c31a06fa0c" id="r_aa7fc4e45a2339e17585dd2c31a06fa0c"><td class="memItemLeft" align="right" valign="top"><a id="aa7fc4e45a2339e17585dd2c31a06fa0c" name="aa7fc4e45a2339e17585dd2c31a06fa0c"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>Solution</b> = <a class="el" href="classEquation_1_1Solution.html">Equation::Solution</a></td></tr>
+<tr class="memdesc:aa7fc4e45a2339e17585dd2c31a06fa0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the solution type. <br /></td></tr>
 <tr class="separator:aa7fc4e45a2339e17585dd2c31a06fa0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2bd03d19dfdd53d7b9bcceaa4a8ab044" id="r_a2bd03d19dfdd53d7b9bcceaa4a8ab044"><td class="memItemLeft" align="right" valign="top"><a id="a2bd03d19dfdd53d7b9bcceaa4a8ab044" name="a2bd03d19dfdd53d7b9bcceaa4a8ab044"></a>
-<a class="el" href="classEquation_1_1Solution.html">Solution</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Solve</b> (const <a class="el" href="classMap.html">Map</a> &amp;mapping, const <a class="el" href="classPoint.html">Point</a> &amp;point) const</td></tr>
+<tr class="memitem:a2bd03d19dfdd53d7b9bcceaa4a8ab044" id="r_a2bd03d19dfdd53d7b9bcceaa4a8ab044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolver.html#aa7fc4e45a2339e17585dd2c31a06fa0c">Solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044">Solve</a> (const <a class="el" href="classMap.html">Map</a> &amp;mapping, const <a class="el" href="classPoint.html">Point</a> &amp;point) const</td></tr>
+<tr class="memdesc:a2bd03d19dfdd53d7b9bcceaa4a8ab044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the equation defined by the given mapping and point.  <br /></td></tr>
 <tr class="separator:a2bd03d19dfdd53d7b9bcceaa4a8ab044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a27e59f215e8d71dafd5f45ad3630c4ed" id="r_a27e59f215e8d71dafd5f45ad3630c4ed"><td class="memItemLeft" align="right" valign="top"><a id="a27e59f215e8d71dafd5f45ad3630c4ed" name="a27e59f215e8d71dafd5f45ad3630c4ed"></a>
-static <a class="el" href="classSolver.html">Solver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
+<tr class="memitem:a27e59f215e8d71dafd5f45ad3630c4ed" id="r_a27e59f215e8d71dafd5f45ad3630c4ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSolver.html">Solver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a27e59f215e8d71dafd5f45ad3630c4ed">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a27e59f215e8d71dafd5f45ad3630c4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of the <a class="el" href="classSolver.html" title="A class for solving equations defined by mappings and points.">Solver</a>.  <br /></td></tr>
 <tr class="separator:a27e59f215e8d71dafd5f45ad3630c4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a83b673900078afb56d459e75295b0d43" id="r_a83b673900078afb56d459e75295b0d43"><td class="memItemLeft" align="right" valign="top"><a id="a83b673900078afb56d459e75295b0d43" name="a83b673900078afb56d459e75295b0d43"></a>
-<a class="el" href="classEquation.html">Equation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CreateEquation</b> (const <a class="el" href="classMap.html">Map</a> &amp;mapping, const <a class="el" href="classPoint.html">Point</a> &amp;point) const</td></tr>
+<tr class="memitem:a83b673900078afb56d459e75295b0d43" id="r_a83b673900078afb56d459e75295b0d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEquation.html">Equation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a83b673900078afb56d459e75295b0d43">CreateEquation</a> (const <a class="el" href="classMap.html">Map</a> &amp;mapping, const <a class="el" href="classPoint.html">Point</a> &amp;point) const</td></tr>
+<tr class="memdesc:a83b673900078afb56d459e75295b0d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an equation from the given mapping and point.  <br /></td></tr>
 <tr class="separator:a83b673900078afb56d459e75295b0d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7808b466eaac88fb9f73b8064b087c1d" id="r_a7808b466eaac88fb9f73b8064b087c1d"><td class="memItemLeft" align="right" valign="top"><a id="a7808b466eaac88fb9f73b8064b087c1d" name="a7808b466eaac88fb9f73b8064b087c1d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b> ()=default</td></tr>
+<tr class="memdesc:a7808b466eaac88fb9f73b8064b087c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classSolver.html" title="A class for solving equations defined by mappings and points.">Solver</a> instance. <br /></td></tr>
+<tr class="separator:a7808b466eaac88fb9f73b8064b087c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bf90e6f8029839d603352dfe72f8b74" id="r_a6bf90e6f8029839d603352dfe72f8b74"><td class="memItemLeft" align="right" valign="top"><a id="a6bf90e6f8029839d603352dfe72f8b74" name="a6bf90e6f8029839d603352dfe72f8b74"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b> (const <a class="el" href="classSolver.html">Solver</a> &amp;root)=delete</td></tr>
+<tr class="memdesc:a6bf90e6f8029839d603352dfe72f8b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor. <br /></td></tr>
 <tr class="separator:a6bf90e6f8029839d603352dfe72f8b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f1bd1aa8586e758ca927a16cbc1fc7" id="r_a86f1bd1aa8586e758ca927a16cbc1fc7"><td class="memItemLeft" align="right" valign="top"><a id="a86f1bd1aa8586e758ca927a16cbc1fc7" name="a86f1bd1aa8586e758ca927a16cbc1fc7"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b> (<a class="el" href="classSolver.html">Solver</a> &amp;&amp;root)=delete</td></tr>
+<tr class="memdesc:a86f1bd1aa8586e758ca927a16cbc1fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor. <br /></td></tr>
 <tr class="separator:a86f1bd1aa8586e758ca927a16cbc1fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a722ad83fa56dd52e4399ab8689b3120b" id="r_a722ad83fa56dd52e4399ab8689b3120b"><td class="memItemLeft" align="right" valign="top"><a id="a722ad83fa56dd52e4399ab8689b3120b" name="a722ad83fa56dd52e4399ab8689b3120b"></a>
 <a class="el" href="classSolver.html">Solver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classSolver.html">Solver</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a722ad83fa56dd52e4399ab8689b3120b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment operator. <br /></td></tr>
 <tr class="separator:a722ad83fa56dd52e4399ab8689b3120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c1ab43fb01f7797338701b4d7480e1" id="r_a82c1ab43fb01f7797338701b4d7480e1"><td class="memItemLeft" align="right" valign="top"><a id="a82c1ab43fb01f7797338701b4d7480e1" name="a82c1ab43fb01f7797338701b4d7480e1"></a>
 <a class="el" href="classSolver.html">Solver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classSolver.html">Solver</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a82c1ab43fb01f7797338701b4d7480e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator. <br /></td></tr>
 <tr class="separator:a82c1ab43fb01f7797338701b4d7480e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class for solving equations defined by mappings and points. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a83b673900078afb56d459e75295b0d43" name="a83b673900078afb56d459e75295b0d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b673900078afb56d459e75295b0d43">&#9670;&#160;</a></span>CreateEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEquation.html">Equation</a> Solver::CreateEquation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMap.html">Map</a> &amp;&#160;</td>
+          <td class="paramname"><em>mapping</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an equation from the given mapping and point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapping</td><td>The mapping defining the equations. </td></tr>
+    <tr><td class="paramname">point</td><td>The point defining the equations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The constructed <a class="el" href="classEquation.html" title="Class representing an equation.">Equation</a> object. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a83b673900078afb56d459e75295b0d43_cgraph.png" border="0" usemap="#aclassSolver_a83b673900078afb56d459e75295b0d43_cgraph" alt=""/></div>
+<map name="aclassSolver_a83b673900078afb56d459e75295b0d43_cgraph" id="aclassSolver_a83b673900078afb56d459e75295b0d43_cgraph">
+<area shape="rect" title="Creates an equation from the given mapping and point." alt="" coords="5,79,176,104"/>
+<area shape="rect" href="classEquation.html#a28f78a59c69dfdc27b505afc1263e3cc" title="Appends an equation to the system." alt="" coords="224,29,417,55"/>
+<area shape="poly" title=" " alt="" coords="150,76,247,55,248,60,151,81"/>
+<area shape="rect" href="classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="241,79,400,104"/>
+<area shape="poly" title=" " alt="" coords="176,89,228,89,228,94,176,94"/>
+<area shape="rect" href="classPoint.html#a8807f48794da645588a9b92c7aff4789" title="Gets the number of dimensions of the point." alt="" coords="239,128,402,153"/>
+<area shape="poly" title=" " alt="" coords="151,101,248,122,247,128,150,107"/>
+<area shape="poly" title=" " alt="" coords="283,31,275,21,279,11,295,5,321,3,353,7,365,16,362,20,351,11,321,8,296,10,283,15,280,20,287,27"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a83b673900078afb56d459e75295b0d43_icgraph.png" border="0" usemap="#aclassSolver_a83b673900078afb56d459e75295b0d43_icgraph" alt=""/></div>
+<map name="aclassSolver_a83b673900078afb56d459e75295b0d43_icgraph" id="aclassSolver_a83b673900078afb56d459e75295b0d43_icgraph">
+<area shape="rect" title="Creates an equation from the given mapping and point." alt="" coords="160,5,331,31"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="5,5,112,31"/>
+<area shape="poly" title=" " alt="" coords="146,21,112,21,112,15,146,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a27e59f215e8d71dafd5f45ad3630c4ed" name="a27e59f215e8d71dafd5f45ad3630c4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e59f215e8d71dafd5f45ad3630c4ed">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolver.html">Solver</a> &amp; Solver::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of the <a class="el" href="classSolver.html" title="A class for solving equations defined by mappings and points.">Solver</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the <a class="el" href="classSolver.html" title="A class for solving equations defined by mappings and points.">Solver</a> instance. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a27e59f215e8d71dafd5f45ad3630c4ed_icgraph.png" border="0" usemap="#aclassSolver_a27e59f215e8d71dafd5f45ad3630c4ed_icgraph" alt=""/></div>
+<map name="aclassSolver_a27e59f215e8d71dafd5f45ad3630c4ed_icgraph" id="aclassSolver_a27e59f215e8d71dafd5f45ad3630c4ed_icgraph">
+<area shape="rect" title="Gets the singleton instance of the Solver." alt="" coords="520,5,669,31"/>
+<area shape="rect" href="classMap.html#a3495abb2416426db3f9eff6d5832fb17" title="Evaluates the extension degree of the map." alt="" coords="245,5,472,31"/>
+<area shape="poly" title=" " alt="" coords="506,21,472,21,472,15,506,15"/>
+<area shape="rect" href="classMap.html#a6966029610d6d01a0ff49372f642fc7a" title="Gets the extension degree of the map." alt="" coords="5,5,197,31"/>
+<area shape="poly" title=" " alt="" coords="232,21,198,21,198,15,232,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bd03d19dfdd53d7b9bcceaa4a8ab044" name="a2bd03d19dfdd53d7b9bcceaa4a8ab044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd03d19dfdd53d7b9bcceaa4a8ab044">&#9670;&#160;</a></span>Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolver.html#aa7fc4e45a2339e17585dd2c31a06fa0c">Solver::Solution</a> Solver::Solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMap.html">Map</a> &amp;&#160;</td>
+          <td class="paramname"><em>mapping</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solves the equation defined by the given mapping and point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapping</td><td>The mapping defining the equations. </td></tr>
+    <tr><td class="paramname">point</td><td>The point defining the equations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The solution to the equations. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044_cgraph.png" border="0" usemap="#aclassSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044_cgraph" alt=""/></div>
+<map name="aclassSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044_cgraph" id="aclassSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044_cgraph">
+<area shape="rect" title="Solves the equation defined by the given mapping and point." alt="" coords="5,243,112,268"/>
+<area shape="rect" href="classSolver.html#a83b673900078afb56d459e75295b0d43" title="Creates an equation from the given mapping and point." alt="" coords="160,104,331,129"/>
+<area shape="poly" title=" " alt="" coords="75,240,214,136,218,140,79,245"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="184,328,307,353"/>
+<area shape="poly" title=" " alt="" coords="89,266,205,320,203,325,86,271"/>
+<area shape="rect" href="classEquation.html#a28f78a59c69dfdc27b505afc1263e3cc" title="Appends an equation to the system." alt="" coords="392,29,585,55"/>
+<area shape="poly" title=" " alt="" coords="275,101,378,63,408,55,409,60,379,69,277,106"/>
+<area shape="rect" href="classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="409,79,568,104"/>
+<area shape="poly" title=" " alt="" coords="331,105,395,98,396,104,331,110"/>
+<area shape="rect" href="classPoint.html#a8807f48794da645588a9b92c7aff4789" title="Gets the number of dimensions of the point." alt="" coords="407,128,570,153"/>
+<area shape="poly" title=" " alt="" coords="331,122,394,129,394,134,331,128"/>
+<area shape="poly" title=" " alt="" coords="449,31,441,21,445,11,462,5,489,3,523,7,533,11,536,17,532,20,529,15,522,12,489,8,463,10,449,15,446,20,453,27"/>
+<area shape="rect" href="classEquation_1_1Solution.html#ad846c8ff497fb25a85a195214ceed7ae" title="Appends a root to the solution." alt="" coords="419,178,559,218"/>
+<area shape="poly" title=" " alt="" coords="258,326,308,282,342,257,377,234,406,221,408,226,380,239,345,261,312,286,262,330"/>
+<area shape="rect" href="classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a" title="Gets the singleton instance of the PHCWrapper." alt="" coords="663,276,884,301"/>
+<area shape="poly" title=" " alt="" coords="266,326,316,300,378,278,456,267,534,263,609,266,676,272,675,277,609,271,534,269,456,272,379,283,318,305,268,330"/>
+<area shape="rect" href="classphc_1_1PHCWrapper.html#a8b19675d3ab4b629f927d53f96dc1f25" title="Initializes the number of polynomials to be solved." alt="" coords="389,293,588,333"/>
+<area shape="poly" title=" " alt="" coords="306,331,375,323,376,328,307,336"/>
+<area shape="rect" href="classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="397,357,580,383"/>
+<area shape="poly" title=" " alt="" coords="307,345,384,355,383,360,306,351"/>
+<area shape="rect" href="classEquation_1_1Solution.html#ae18c7373473f299782964936de1e6a8a" title="Reserves space for a number of roots." alt="" coords="419,407,559,447"/>
+<area shape="poly" title=" " alt="" coords="276,351,380,393,406,402,405,407,378,398,274,356"/>
+<area shape="rect" href="classphc_1_1PHCWrapper.html#a4e2645b2f24716a72316bcd7bd14aac1" title="Sets the symbols used in the polynomials." alt="" coords="379,472,599,497"/>
+<area shape="poly" title=" " alt="" coords="259,352,308,404,342,433,380,457,399,465,397,470,377,462,339,437,304,407,255,356"/>
+<area shape="rect" href="classphc_1_1PHCWrapper.html#a6c0a34ada438fc0059b33c3f52ecdf94" title="Solves the system of polynomials." alt="" coords="399,521,578,547"/>
+<area shape="poly" title=" " alt="" coords="255,353,272,385,300,427,336,471,380,508,391,514,388,518,377,512,332,475,295,430,268,387,250,355"/>
+<area shape="poly" title=" " alt="" coords="548,355,598,342,722,303,724,308,599,347,550,360"/>
+<area shape="rect" href="classphc_1_1PHCWrapper.html#a51398b92cf100355f9b26073d2c5c773" title="Inserts a polynomial into the system at the specified index." alt="" coords="647,357,900,383"/>
+<area shape="poly" title=" " alt="" coords="580,367,633,367,633,373,580,373"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>source/<a class="el" href="solver_8hpp_source.html">solver.hpp</a></li>
 <li>source/<b>solver.cpp</b></li>

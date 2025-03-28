@@ -1,7 +1,9 @@
 <map id="Equation::Solve" name="Equation::Solve">
-<area shape="rect" id="Node000001" title="Solves the equation." alt="" coords="852,5,975,31"/>
+<area shape="rect" id="Node000001" title="Solves the equation." alt="" coords="852,31,975,56"/>
 <area shape="rect" id="Node000002" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,5,804,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="838,21,804,21,804,15,838,15"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="838,36,804,31,804,26,839,31"/>
+<area shape="rect" id="Node000006" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,55,778,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="838,56,779,63,778,58,838,50"/>
 <area shape="rect" id="Node000003" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,5,597,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="631,21,598,21,598,15,631,15"/>
 <area shape="rect" id="Node000004" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,5,375,31"/>

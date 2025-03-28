@@ -93,62 +93,77 @@ $(function() {
   <div class="headertitle"><div class="title">phc::PHCWrapper Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A wrapper class for handling polynomial homotopy continuation operations.  
+ <a href="classphc_1_1PHCWrapper.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="phc__wrapper_8hpp_source.html">phc_wrapper.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for phc::PHCWrapper:</div>
 <div class="dyncontent">
 <div class="center"><img src="classphc_1_1PHCWrapper__coll__graph.png" border="0" usemap="#aphc_1_1PHCWrapper_coll__map" alt="Collaboration graph"/></div>
 <map name="aphc_1_1PHCWrapper_coll__map" id="aphc_1_1PHCWrapper_coll__map">
-<area shape="rect" title=" " alt="" coords="5,148,247,513"/>
-<area shape="rect" title=" " alt="" coords="15,5,237,85"/>
-<area shape="poly" title=" " alt="" coords="129,85,129,131,123,131,123,85"/>
+<area shape="rect" title="A wrapper class for handling polynomial homotopy continuation operations." alt="" coords="5,163,247,548"/>
+<area shape="rect" title=" " alt="" coords="21,5,231,100"/>
+<area shape="poly" title=" " alt="" coords="129,100,129,146,123,146,123,100"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper_1_1PHCWrapperImplementation.html">PHCWrapperImplementation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the <a class="el" href="classphc_1_1PHCWrapper.html" title="A wrapper class for handling polynomial homotopy continuation operations.">PHCWrapper</a> for a specific precision.  <a href="classphc_1_1PHCWrapper_1_1PHCWrapperImplementation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a root of the polynomial system.  <a href="structphc_1_1PHCWrapper_1_1Root.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a98bddaa58924c8cc07fbcd47512490b7" id="r_a98bddaa58924c8cc07fbcd47512490b7"><td class="memItemLeft" align="right" valign="top"><a id="a98bddaa58924c8cc07fbcd47512490b7" name="a98bddaa58924c8cc07fbcd47512490b7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> () const</td></tr>
+<tr class="memdesc:a98bddaa58924c8cc07fbcd47512490b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the internal state of the wrapper. <br /></td></tr>
 <tr class="separator:a98bddaa58924c8cc07fbcd47512490b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b19675d3ab4b629f927d53f96dc1f25" id="r_a8b19675d3ab4b629f927d53f96dc1f25"><td class="memItemLeft" align="right" valign="top"><a id="a8b19675d3ab4b629f927d53f96dc1f25" name="a8b19675d3ab4b629f927d53f96dc1f25"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeNumberOfPolynomials</b> (size_t n) const</td></tr>
+<tr class="memitem:a8b19675d3ab4b629f927d53f96dc1f25" id="r_a8b19675d3ab4b629f927d53f96dc1f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a8b19675d3ab4b629f927d53f96dc1f25">InitializeNumberOfPolynomials</a> (size_t n) const</td></tr>
+<tr class="memdesc:a8b19675d3ab4b629f927d53f96dc1f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the number of polynomials to be solved.  <br /></td></tr>
 <tr class="separator:a8b19675d3ab4b629f927d53f96dc1f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51398b92cf100355f9b26073d2c5c773" id="r_a51398b92cf100355f9b26073d2c5c773"><td class="memItemLeft" align="right" valign="top"><a id="a51398b92cf100355f9b26073d2c5c773" name="a51398b92cf100355f9b26073d2c5c773"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InsertPolynomial</b> (std::string_view polynomial, size_t idx) const</td></tr>
+<tr class="memitem:a51398b92cf100355f9b26073d2c5c773" id="r_a51398b92cf100355f9b26073d2c5c773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a51398b92cf100355f9b26073d2c5c773">InsertPolynomial</a> (std::string_view polynomial, size_t idx) const</td></tr>
+<tr class="memdesc:a51398b92cf100355f9b26073d2c5c773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a polynomial into the system at the specified index.  <br /></td></tr>
 <tr class="separator:a51398b92cf100355f9b26073d2c5c773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa58b8094c171f8f3f8303c5ee9f376ec" id="r_aa58b8094c171f8f3f8303c5ee9f376ec"><td class="memItemLeft" align="right" valign="top"><a id="aa58b8094c171f8f3f8303c5ee9f376ec" name="aa58b8094c171f8f3f8303c5ee9f376ec"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetAmountOfSymbols</b> () const</td></tr>
+<tr class="memitem:aa58b8094c171f8f3f8303c5ee9f376ec" id="r_aa58b8094c171f8f3f8303c5ee9f376ec"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#aa58b8094c171f8f3f8303c5ee9f376ec">GetAmountOfSymbols</a> () const</td></tr>
+<tr class="memdesc:aa58b8094c171f8f3f8303c5ee9f376ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of symbols used in the polynomials.  <br /></td></tr>
 <tr class="separator:aa58b8094c171f8f3f8303c5ee9f376ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ead8dcc2ad1038f4400e4ede5a001a4" id="r_a1ead8dcc2ad1038f4400e4ede5a001a4"><td class="memItemLeft" align="right" valign="top"><a id="a1ead8dcc2ad1038f4400e4ede5a001a4" name="a1ead8dcc2ad1038f4400e4ede5a001a4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsSquare</b> () const</td></tr>
+<tr class="memitem:a1ead8dcc2ad1038f4400e4ede5a001a4" id="r_a1ead8dcc2ad1038f4400e4ede5a001a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a1ead8dcc2ad1038f4400e4ede5a001a4">IsSquare</a> () const</td></tr>
+<tr class="memdesc:a1ead8dcc2ad1038f4400e4ede5a001a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the system of polynomials is square (same number of equations and variables).  <br /></td></tr>
 <tr class="separator:a1ead8dcc2ad1038f4400e4ede5a001a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2645b2f24716a72316bcd7bd14aac1" id="r_a4e2645b2f24716a72316bcd7bd14aac1"><td class="memItemLeft" align="right" valign="top"><a id="a4e2645b2f24716a72316bcd7bd14aac1" name="a4e2645b2f24716a72316bcd7bd14aac1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSymbols</b> (const std::vector&lt; std::string &gt; &amp;symbols)</td></tr>
+<tr class="memitem:a4e2645b2f24716a72316bcd7bd14aac1" id="r_a4e2645b2f24716a72316bcd7bd14aac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a4e2645b2f24716a72316bcd7bd14aac1">SetSymbols</a> (const std::vector&lt; std::string &gt; &amp;symbols)</td></tr>
+<tr class="memdesc:a4e2645b2f24716a72316bcd7bd14aac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the symbols used in the polynomials.  <br /></td></tr>
 <tr class="separator:a4e2645b2f24716a72316bcd7bd14aac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c0a34ada438fc0059b33c3f52ecdf94" id="r_a6c0a34ada438fc0059b33c3f52ecdf94"><td class="memItemLeft" align="right" valign="top"><a id="a6c0a34ada438fc0059b33c3f52ecdf94" name="a6c0a34ada438fc0059b33c3f52ecdf94"></a>
-std::vector&lt; <a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Solve</b> () const</td></tr>
+<tr class="memitem:a06fadfb600971a44543041d12a07233a" id="r_a06fadfb600971a44543041d12a07233a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a06fadfb600971a44543041d12a07233a">ParseRoot</a> (std::string root_string, size_t max_precision=10) const</td></tr>
+<tr class="memdesc:a06fadfb600971a44543041d12a07233a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a root from a string representation.  <br /></td></tr>
+<tr class="separator:a06fadfb600971a44543041d12a07233a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0a34ada438fc0059b33c3f52ecdf94" id="r_a6c0a34ada438fc0059b33c3f52ecdf94"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a6c0a34ada438fc0059b33c3f52ecdf94">Solve</a> () const</td></tr>
+<tr class="memdesc:a6c0a34ada438fc0059b33c3f52ecdf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the system of polynomials.  <br /></td></tr>
 <tr class="separator:a6c0a34ada438fc0059b33c3f52ecdf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c73498576c0c8f5e085da1933432cb" id="r_a45c73498576c0c8f5e085da1933432cb"><td class="memItemLeft" align="right" valign="top"><a id="a45c73498576c0c8f5e085da1933432cb" name="a45c73498576c0c8f5e085da1933432cb"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetTotalDegree</b> () const</td></tr>
+<tr class="memitem:a45c73498576c0c8f5e085da1933432cb" id="r_a45c73498576c0c8f5e085da1933432cb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a45c73498576c0c8f5e085da1933432cb">GetTotalDegree</a> () const</td></tr>
+<tr class="memdesc:a45c73498576c0c8f5e085da1933432cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total degree of the polynomial system.  <br /></td></tr>
 <tr class="separator:a45c73498576c0c8f5e085da1933432cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03d25f7ca6d14a8e02fa534d4bf442b3" id="r_a03d25f7ca6d14a8e02fa534d4bf442b3"><td class="memItemLeft" align="right" valign="top"><a id="a03d25f7ca6d14a8e02fa534d4bf442b3" name="a03d25f7ca6d14a8e02fa534d4bf442b3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetBezoutNumber</b> () const</td></tr>
+<tr class="memitem:a03d25f7ca6d14a8e02fa534d4bf442b3" id="r_a03d25f7ca6d14a8e02fa534d4bf442b3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a03d25f7ca6d14a8e02fa534d4bf442b3">GetBezoutNumber</a> () const</td></tr>
+<tr class="memdesc:a03d25f7ca6d14a8e02fa534d4bf442b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Bezout number of the polynomial system.  <br /></td></tr>
 <tr class="separator:a03d25f7ca6d14a8e02fa534d4bf442b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0191213383ec870741949f69f27f7c7a" id="r_a0191213383ec870741949f69f27f7c7a"><td class="memItemLeft" align="right" valign="top"><a id="a0191213383ec870741949f69f27f7c7a" name="a0191213383ec870741949f69f27f7c7a"></a>
-static <a class="el" href="classphc_1_1PHCWrapper.html">PHCWrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
+<tr class="memitem:a0191213383ec870741949f69f27f7c7a" id="r_a0191213383ec870741949f69f27f7c7a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classphc_1_1PHCWrapper.html">PHCWrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a0191213383ec870741949f69f27f7c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of the <a class="el" href="classphc_1_1PHCWrapper.html" title="A wrapper class for handling polynomial homotopy continuation operations.">PHCWrapper</a>.  <br /></td></tr>
 <tr class="separator:a0191213383ec870741949f69f27f7c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a1a9bf0479f47e90e0cd34e1606082dee" id="r_a1a9bf0479f47e90e0cd34e1606082dee"><td class="memItemLeft" align="right" valign="top"><a id="a1a9bf0479f47e90e0cd34e1606082dee" name="a1a9bf0479f47e90e0cd34e1606082dee"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PHCWrapper</b> ()</td></tr>
+<tr class="memdesc:a1a9bf0479f47e90e0cd34e1606082dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classphc_1_1PHCWrapper.html" title="A wrapper class for handling polynomial homotopy continuation operations.">PHCWrapper</a> instance. <br /></td></tr>
+<tr class="separator:a1a9bf0479f47e90e0cd34e1606082dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0405eed5b93ffa3ef1f519798c99ec29" id="r_a0405eed5b93ffa3ef1f519798c99ec29"><td class="memItemLeft" align="right" valign="top"><a id="a0405eed5b93ffa3ef1f519798c99ec29" name="a0405eed5b93ffa3ef1f519798c99ec29"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>PHCWrapper</b> (<a class="el" href="classphc_1_1PHCWrapper.html">PHCWrapper</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a0405eed5b93ffa3ef1f519798c99ec29"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,10 +179,391 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a6e4dd9239ae0ae9720464dc04d36ff10" id="r_a6e4dd9239ae0ae9720464dc04d36ff10"><td class="memItemLeft" align="right" valign="top"><a id="a6e4dd9239ae0ae9720464dc04d36ff10" name="a6e4dd9239ae0ae9720464dc04d36ff10"></a>
-std::unique_ptr&lt; <a class="el" href="classphc_1_1PHCWrapper_1_1PHCWrapperImplementation.html">PHCWrapperImplementation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>implementation_</b></td></tr>
-<tr class="separator:a6e4dd9239ae0ae9720464dc04d36ff10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e0ce319b55dd537ba3725f04ed00d5" id="r_a28e0ce319b55dd537ba3725f04ed00d5"><td class="memItemLeft" align="right" valign="top"><a id="a28e0ce319b55dd537ba3725f04ed00d5" name="a28e0ce319b55dd537ba3725f04ed00d5"></a>
+std::unique_ptr&lt; <a class="el" href="classphc_1_1PHCWrapper_1_1PHCWrapperImplementation.html">PHCWrapperImplementation</a>&lt; Precision::Standard &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>implementation_</b></td></tr>
+<tr class="memdesc:a28e0ce319b55dd537ba3725f04ed00d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation instance. <br /></td></tr>
+<tr class="separator:a28e0ce319b55dd537ba3725f04ed00d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A wrapper class for handling polynomial homotopy continuation operations. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa58b8094c171f8f3f8303c5ee9f376ec" name="aa58b8094c171f8f3f8303c5ee9f376ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58b8094c171f8f3f8303c5ee9f376ec">&#9670;&#160;</a></span>GetAmountOfSymbols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t phc::PHCWrapper::GetAmountOfSymbols </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of symbols used in the polynomials. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of symbols. </dd></dl>
+
+</div>
+</div>
+<a id="a03d25f7ca6d14a8e02fa534d4bf442b3" name="a03d25f7ca6d14a8e02fa534d4bf442b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d25f7ca6d14a8e02fa534d4bf442b3">&#9670;&#160;</a></span>GetBezoutNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t phc::PHCWrapper::GetBezoutNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Bezout number of the polynomial system. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Bezout number. </dd></dl>
+
+</div>
+</div>
+<a id="a0191213383ec870741949f69f27f7c7a" name="a0191213383ec870741949f69f27f7c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0191213383ec870741949f69f27f7c7a">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classphc_1_1PHCWrapper.html">PHCWrapper</a> &amp; phc::PHCWrapper::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of the <a class="el" href="classphc_1_1PHCWrapper.html" title="A wrapper class for handling polynomial homotopy continuation operations.">PHCWrapper</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the <a class="el" href="classphc_1_1PHCWrapper.html" title="A wrapper class for handling polynomial homotopy continuation operations.">PHCWrapper</a> instance. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a_icgraph" id="aclassphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a_icgraph">
+<area shape="rect" title="Gets the singleton instance of the PHCWrapper." alt="" coords="1273,29,1495,55"/>
+<area shape="rect" href="classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="852,5,995,31"/>
+<area shape="poly" title=" " alt="" coords="1305,30,1225,19,1134,17,1043,19,995,20,995,14,1043,14,1134,11,1226,14,1306,24"/>
+<area shape="rect" href="classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="1043,29,1225,55"/>
+<area shape="poly" title=" " alt="" coords="1260,45,1226,45,1226,39,1260,39"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="862,55,985,80"/>
+<area shape="poly" title=" " alt="" coords="1306,60,1226,70,1097,75,985,73,985,67,1097,69,1225,65,1305,54"/>
+<area shape="poly" title=" " alt="" coords="1029,33,994,29,995,23,1029,27"/>
+<area shape="poly" title=" " alt="" coords="1030,57,985,63,985,57,1029,52"/>
+<area shape="rect" href="classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,29,804,55"/>
+<area shape="poly" title=" " alt="" coords="848,60,804,55,805,49,848,55"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,79,778,104"/>
+<area shape="poly" title=" " alt="" coords="849,79,779,88,778,82,848,74"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,29,597,55"/>
+<area shape="poly" title=" " alt="" coords="631,45,598,45,598,39,631,39"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,29,375,55"/>
+<area shape="poly" title=" " alt="" coords="409,45,375,45,375,39,409,39"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,29,124,55"/>
+<area shape="poly" title=" " alt="" coords="158,45,124,45,124,39,158,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45c73498576c0c8f5e085da1933432cb" name="a45c73498576c0c8f5e085da1933432cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c73498576c0c8f5e085da1933432cb">&#9670;&#160;</a></span>GetTotalDegree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t phc::PHCWrapper::GetTotalDegree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the total degree of the polynomial system. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total degree. </dd></dl>
+
+</div>
+</div>
+<a id="a8b19675d3ab4b629f927d53f96dc1f25" name="a8b19675d3ab4b629f927d53f96dc1f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b19675d3ab4b629f927d53f96dc1f25">&#9670;&#160;</a></span>InitializeNumberOfPolynomials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phc::PHCWrapper::InitializeNumberOfPolynomials </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the number of polynomials to be solved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of polynomials. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25_icgraph" id="aclassphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25_icgraph">
+<area shape="rect" title="Initializes the number of polynomials to be solved." alt="" coords="1043,23,1241,63"/>
+<area shape="rect" href="classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="852,5,995,31"/>
+<area shape="poly" title=" " alt="" coords="1028,33,995,29,996,24,1029,28"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="862,55,985,80"/>
+<area shape="poly" title=" " alt="" coords="1029,58,985,63,984,58,1029,53"/>
+<area shape="rect" href="classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,29,804,55"/>
+<area shape="poly" title=" " alt="" coords="848,60,804,55,805,49,848,55"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,79,778,104"/>
+<area shape="poly" title=" " alt="" coords="849,79,779,88,778,82,848,74"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,29,597,55"/>
+<area shape="poly" title=" " alt="" coords="631,45,598,45,598,39,631,39"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,29,375,55"/>
+<area shape="poly" title=" " alt="" coords="409,45,375,45,375,39,409,39"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,29,124,55"/>
+<area shape="poly" title=" " alt="" coords="158,45,124,45,124,39,158,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a51398b92cf100355f9b26073d2c5c773" name="a51398b92cf100355f9b26073d2c5c773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51398b92cf100355f9b26073d2c5c773">&#9670;&#160;</a></span>InsertPolynomial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phc::PHCWrapper::InsertPolynomial </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>polynomial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts a polynomial into the system at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">polynomial</td><td>The polynomial as a string view. </td></tr>
+    <tr><td class="paramname">idx</td><td>The index where the polynomial is inserted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773_icgraph" id="aclassphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773_icgraph">
+<area shape="rect" title="Inserts a polynomial into the system at the specified index." alt="" coords="1273,31,1527,56"/>
+<area shape="rect" href="classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="1043,31,1225,56"/>
+<area shape="poly" title=" " alt="" coords="1260,46,1226,46,1226,41,1260,41"/>
+<area shape="rect" href="classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="852,5,995,31"/>
+<area shape="poly" title=" " alt="" coords="1029,33,994,29,995,24,1029,28"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="862,55,985,80"/>
+<area shape="poly" title=" " alt="" coords="1030,58,985,63,985,58,1029,53"/>
+<area shape="rect" href="classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,29,804,55"/>
+<area shape="poly" title=" " alt="" coords="848,60,804,55,805,49,848,55"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,79,778,104"/>
+<area shape="poly" title=" " alt="" coords="849,79,779,88,778,82,848,74"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,29,597,55"/>
+<area shape="poly" title=" " alt="" coords="631,45,598,45,598,39,631,39"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,29,375,55"/>
+<area shape="poly" title=" " alt="" coords="409,45,375,45,375,39,409,39"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,29,124,55"/>
+<area shape="poly" title=" " alt="" coords="158,45,124,45,124,39,158,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ead8dcc2ad1038f4400e4ede5a001a4" name="a1ead8dcc2ad1038f4400e4ede5a001a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ead8dcc2ad1038f4400e4ede5a001a4">&#9670;&#160;</a></span>IsSquare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool phc::PHCWrapper::IsSquare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the system of polynomials is square (same number of equations and variables). </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the system is square, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4_icgraph" id="aclassphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4_icgraph">
+<area shape="rect" title="Checks if the system of polynomials is square (same number of equations and variables)." alt="" coords="196,5,395,31"/>
+<area shape="rect" href="classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="5,5,148,31"/>
+<area shape="poly" title=" " alt="" coords="182,21,149,21,149,15,182,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06fadfb600971a44543041d12a07233a" name="a06fadfb600971a44543041d12a07233a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fadfb600971a44543041d12a07233a">&#9670;&#160;</a></span>ParseRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">PHCWrapper::Root</a> phc::PHCWrapper::ParseRoot </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>root_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max_precision</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a root from a string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root_string</td><td>The string representation of the root. </td></tr>
+    <tr><td class="paramname">max_precision</td><td>The maximum precision for parsing. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The parsed root. </dd></dl>
+
+</div>
+</div>
+<a id="a4e2645b2f24716a72316bcd7bd14aac1" name="a4e2645b2f24716a72316bcd7bd14aac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2645b2f24716a72316bcd7bd14aac1">&#9670;&#160;</a></span>SetSymbols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phc::PHCWrapper::SetSymbols </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>symbols</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the symbols used in the polynomials. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbols</td><td>A vector of symbol names. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1_icgraph" id="aclassphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1_icgraph">
+<area shape="rect" title="Sets the symbols used in the polynomials." alt="" coords="1023,31,1243,56"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="852,31,975,56"/>
+<area shape="poly" title=" " alt="" coords="1009,46,975,46,975,41,1009,41"/>
+<area shape="rect" href="classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,5,804,31"/>
+<area shape="poly" title=" " alt="" coords="838,36,804,31,804,26,839,31"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,55,778,80"/>
+<area shape="poly" title=" " alt="" coords="838,56,779,63,778,58,838,50"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,5,597,31"/>
+<area shape="poly" title=" " alt="" coords="631,21,598,21,598,15,631,15"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,5,375,31"/>
+<area shape="poly" title=" " alt="" coords="409,21,375,21,375,15,409,15"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,5,124,31"/>
+<area shape="poly" title=" " alt="" coords="158,21,124,21,124,15,158,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c0a34ada438fc0059b33c3f52ecdf94" name="a6c0a34ada438fc0059b33c3f52ecdf94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0a34ada438fc0059b33c3f52ecdf94">&#9670;&#160;</a></span>Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">PHCWrapper::Root</a> &gt; phc::PHCWrapper::Solve </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solves the system of polynomials. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of roots. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94_icgraph.png" border="0" usemap="#aclassphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94_icgraph" alt=""/></div>
+<map name="aclassphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94_icgraph" id="aclassphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94_icgraph">
+<area shape="rect" title="Solves the system of polynomials." alt="" coords="1023,31,1201,56"/>
+<area shape="rect" href="classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="852,31,975,56"/>
+<area shape="poly" title=" " alt="" coords="1009,46,975,46,975,41,1009,41"/>
+<area shape="rect" href="classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,5,804,31"/>
+<area shape="poly" title=" " alt="" coords="838,36,804,31,804,26,839,31"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,55,778,80"/>
+<area shape="poly" title=" " alt="" coords="838,56,779,63,778,58,838,50"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,5,597,31"/>
+<area shape="poly" title=" " alt="" coords="631,21,598,21,598,15,631,15"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,5,375,31"/>
+<area shape="poly" title=" " alt="" coords="409,21,375,21,375,15,409,15"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,5,124,31"/>
+<area shape="poly" title=" " alt="" coords="158,21,124,21,124,15,158,15"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>source/<a class="el" href="phc__wrapper_8hpp_source.html">phc_wrapper.hpp</a></li>
 <li>source/<b>phc_wrapper.cpp</b></li>

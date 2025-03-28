@@ -1,0 +1,15 @@
+<map id="phc::PHCWrapper::Solve" name="phc::PHCWrapper::Solve">
+<area shape="rect" id="Node000001" title="Solves the system of polynomials." alt="" coords="1023,31,1201,56"/>
+<area shape="rect" id="Node000002" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="852,31,975,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1009,46,975,46,975,41,1009,41"/>
+<area shape="rect" id="Node000003" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,5,804,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="838,36,804,31,804,26,839,31"/>
+<area shape="rect" id="Node000007" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,55,778,80"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="838,56,779,63,778,58,838,50"/>
+<area shape="rect" id="Node000004" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,5,597,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="631,21,598,21,598,15,631,15"/>
+<area shape="rect" id="Node000005" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,5,375,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="409,21,375,21,375,15,409,15"/>
+<area shape="rect" id="Node000006" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,5,124,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="158,21,124,21,124,15,158,15"/>
+</map>

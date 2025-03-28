@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['value_0',['value',['../structCheckResult_1_1Failed.html#a30f346ef6bdc91927c90cb430734a1f0',1,'CheckResult::Failed']]],
-  ['via_20docker_1',['Running via Docker',['../md_README.html#autotoc_md6',1,'']]]
+  ['schema_5f_0',['schema_',['../classFunctionDatabase.html#a93f65eca7a23bb16146101c7d0918f57',1,'FunctionDatabase']]],
+  ['session_5f_1',['session_',['../classFunctionDatabase.html#a06e7d832a80a36b9e6da4b3b7f0a55ae',1,'FunctionDatabase']]],
+  ['setmap_2',['SetMap',['../classChecker.html#aff5e90958f5c3128c5979d4ca1b84c0a',1,'Checker']]],
+  ['setsettings_3',['SetSettings',['../classMapChecker.html#ab598ff6168d7002486d60e359c364315',1,'MapChecker']]],
+  ['setstrategy_4',['SetStrategy',['../classMapChecker.html#a90933f190a71db31e86aee55f36822c5',1,'MapChecker']]],
+  ['setsymbols_5',['SetSymbols',['../classphc_1_1PHCWrapper.html#a4e2645b2f24716a72316bcd7bd14aac1',1,'phc::PHCWrapper']]],
+  ['settings_5f_6',['settings_',['../classChecker.html#ab16a97490660fb8fc649c1a7c3eb3321',1,'Checker']]],
+  ['singularpoint_7',['SingularPoint',['../structChecker_1_1SingularPoint.html',1,'Checker']]],
+  ['solution_8',['solution',['../classEquation_1_1Solution.html',1,'Equation::Solution'],['../classSolver.html#aa7fc4e45a2339e17585dd2c31a06fa0c',1,'Solver::Solution']]],
+  ['solutioncontainerfunctions_9',['SolutionContainerFunctions',['../structphc_1_1base_1_1SolutionContainerFunctions.html',1,'phc::base']]],
+  ['solutioncontainertraits_10',['SolutionContainerTraits',['../structphc_1_1SolutionContainerTraits.html',1,'phc']]],
+  ['solutioncontainertraits_3c_20precision_3a_3astandard_20_3e_11',['SolutionContainerTraits&lt; Precision::Standard &gt;',['../structphc_1_1SolutionContainerTraits_3_01Precision_1_1Standard_01_4.html',1,'phc']]],
+  ['solve_12',['solve',['../classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149',1,'Equation::Solve()'],['../classphc_1_1PHCWrapper.html#a6c0a34ada438fc0059b33c3f52ecdf94',1,'phc::PHCWrapper::Solve()'],['../classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044',1,'Solver::Solve()']]],
+  ['solver_13',['solver',['../classSolver.html',1,'Solver'],['../classSolver.html#a7808b466eaac88fb9f73b8064b087c1d',1,'Solver::Solver()=default'],['../classSolver.html#a6bf90e6f8029839d603352dfe72f8b74',1,'Solver::Solver(const Solver &amp;root)=delete'],['../classSolver.html#a86f1bd1aa8586e758ca927a16cbc1fc7',1,'Solver::Solver(Solver &amp;&amp;root)=delete']]],
+  ['solvesystem_14',['solvesystem',['../structphc_1_1PHCPackTraits.html#aa75a0bca610b0adff940a2286bccc198',1,'phc::PHCPackTraits::SolveSystem()'],['../structphc_1_1PHCPackTraits_3_01Precision_1_1Standard_01_4.html#ae54e0a46a970a51cdbc494ebabb51aea',1,'phc::PHCPackTraits&lt; Precision::Standard &gt;::SolveSystem()']]],
+  ['storepolynomial_15',['storepolynomial',['../structphc_1_1SystemContainerTraits_3_01Precision_1_1Standard_01_4.html#a734368f4add948434a1d76670c6f339e',1,'phc::SystemContainerTraits&lt; Precision::Standard &gt;::StorePolynomial()'],['../structphc_1_1SystemContainerTraits.html#af902a05ce207ded72234531ad22e975f',1,'phc::SystemContainerTraits::StorePolynomial()']]],
+  ['strategy_5f_16',['strategy_',['../classMapChecker.html#a6aecc7b21752dabbe65260e09e8e4418',1,'MapChecker']]],
+  ['substitutejacobian_17',['SubstituteJacobian',['../classChecker.html#ad27c68388778a2a37c7a9589bc58c78e',1,'Checker']]],
+  ['symbols_18',['Symbols',['../classSymbols.html',1,'']]],
+  ['systemcontainerfunctions_19',['SystemContainerFunctions',['../structphc_1_1base_1_1SystemContainerFunctions.html',1,'phc::base']]],
+  ['systemcontainertraits_20',['SystemContainerTraits',['../structphc_1_1SystemContainerTraits.html',1,'phc']]],
+  ['systemcontainertraits_3c_20precision_3a_3astandard_20_3e_21',['SystemContainerTraits&lt; Precision::Standard &gt;',['../structphc_1_1SystemContainerTraits_3_01Precision_1_1Standard_01_4.html',1,'phc']]]
 ];

@@ -27,10 +27,13 @@ using {\bfseries Settings} = \mbox{\hyperlink{structCheckerSettings}{Checker\+Se
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMapChecker_abadcd9d4e61aa5d9a342209253fb9bf5}{Map\+Checker}} (const \mbox{\hyperlink{structCheckerSettings}{Settings}} \&settings=\{\}, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}} $>$ strategy=std\+::make\+\_\+unique$<$ \mbox{\hyperlink{classUserInputMapStrategy}{User\+Input\+Map\+Strategy}} $>$(std\+::cin, std\+::cout))
+\mbox{\hyperlink{classMapChecker_aea4df67457696d93d46e0d916841473e}{Map\+Checker}} (const \mbox{\hyperlink{structCheckerSettings}{Settings}} \&settings, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}} $>$ strategy)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMapChecker}{Map\+Checker} with the given settings and strategy. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMapChecker_a90933f190a71db31e86aee55f36822c5}{Set\+Strategy}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}} $>$ strategy)
 \begin{DoxyCompactList}\small\item\em Sets the strategy for generating maps. \end{DoxyCompactList}\item 
+\Hypertarget{classMapChecker_a4f56d265da6b536ba42fbacda1fd0be3}\label{classMapChecker_a4f56d265da6b536ba42fbacda1fd0be3} 
+bool {\bfseries Can\+Check\+More} () const
+\item 
 void \mbox{\hyperlink{classMapChecker_ab598ff6168d7002486d60e359c364315}{Set\+Settings}} (const \mbox{\hyperlink{structCheckerSettings}{Settings}} \&settings)
 \begin{DoxyCompactList}\small\item\em Sets the settings for the checker. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classCheckResult}{Check\+Result}} \mbox{\hyperlink{classMapChecker_ac37359c66ceb1ce7e5f1d16240bfc3ac}{Perform\+Check}} ()
@@ -55,11 +58,11 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Gener
 Class to check maps using a specified strategy. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classMapChecker_abadcd9d4e61aa5d9a342209253fb9bf5}\label{classMapChecker_abadcd9d4e61aa5d9a342209253fb9bf5} 
+\Hypertarget{classMapChecker_aea4df67457696d93d46e0d916841473e}\label{classMapChecker_aea4df67457696d93d46e0d916841473e} 
 \index{MapChecker@{MapChecker}!MapChecker@{MapChecker}}
 \index{MapChecker@{MapChecker}!MapChecker@{MapChecker}}
 \doxysubsubsection{\texorpdfstring{MapChecker()}{MapChecker()}}
-{\footnotesize\ttfamily Map\+Checker\+::\+Map\+Checker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCheckerSettings}{Settings}} \&}]{settings = {\ttfamily \{\}},  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}} $>$}]{strategy = {\ttfamily std\+:\+:make\+\_\+unique$<$\mbox{\hyperlink{classUserInputMapStrategy}{User\+Input\+Map\+Strategy}}$>$(std\+:\+:cin,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~std\+:\+:cout)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily Map\+Checker\+::\+Map\+Checker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCheckerSettings}{Settings}} \&}]{settings,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMapGeneratorStrategy}{Map\+Generator\+Strategy}} $>$}]{strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -152,6 +155,13 @@ Sets the strategy for generating maps.
 {\em strategy} & New strategy for generating maps. \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMapChecker_a90933f190a71db31e86aee55f36822c5_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

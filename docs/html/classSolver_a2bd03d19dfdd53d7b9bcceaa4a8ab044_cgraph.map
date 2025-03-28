@@ -1,0 +1,31 @@
+<map id="Solver::Solve" name="Solver::Solve">
+<area shape="rect" id="Node000001" title="Solves the equation defined by the given mapping and point." alt="" coords="5,243,112,268"/>
+<area shape="rect" id="Node000002" href="$classSolver.html#a83b673900078afb56d459e75295b0d43" title="Creates an equation from the given mapping and point." alt="" coords="160,104,331,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,240,214,136,218,140,79,245"/>
+<area shape="rect" id="Node000006" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="184,328,307,353"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="89,266,205,320,203,325,86,271"/>
+<area shape="rect" id="Node000003" href="$classEquation.html#a28f78a59c69dfdc27b505afc1263e3cc" title="Appends an equation to the system." alt="" coords="392,29,585,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,101,378,63,408,55,409,60,379,69,277,106"/>
+<area shape="rect" id="Node000004" href="$classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="409,79,568,104"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="331,105,395,98,396,104,331,110"/>
+<area shape="rect" id="Node000005" href="$classPoint.html#a8807f48794da645588a9b92c7aff4789" title="Gets the number of dimensions of the point." alt="" coords="407,128,570,153"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="331,122,394,129,394,134,331,128"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="449,31,441,21,445,11,462,5,489,3,523,7,533,11,536,17,532,20,529,15,522,12,489,8,463,10,449,15,446,20,453,27"/>
+<area shape="rect" id="Node000007" href="$classEquation_1_1Solution.html#ad846c8ff497fb25a85a195214ceed7ae" title="Appends a root to the solution." alt="" coords="419,178,559,218"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="258,326,308,282,342,257,377,234,406,221,408,226,380,239,345,261,312,286,262,330"/>
+<area shape="rect" id="Node000008" href="$classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a" title="Gets the singleton instance of the PHCWrapper." alt="" coords="663,276,884,301"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="266,326,316,300,378,278,456,267,534,263,609,266,676,272,675,277,609,271,534,269,456,272,379,283,318,305,268,330"/>
+<area shape="rect" id="Node000009" href="$classphc_1_1PHCWrapper.html#a8b19675d3ab4b629f927d53f96dc1f25" title="Initializes the number of polynomials to be solved." alt="" coords="389,293,588,333"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="306,331,375,323,376,328,307,336"/>
+<area shape="rect" id="Node000010" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="397,357,580,383"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="307,345,384,355,383,360,306,351"/>
+<area shape="rect" id="Node000012" href="$classEquation_1_1Solution.html#ae18c7373473f299782964936de1e6a8a" title="Reserves space for a number of roots." alt="" coords="419,407,559,447"/>
+<area shape="poly" id="edge13_Node000006_Node000012" title=" " alt="" coords="276,351,380,393,406,402,405,407,378,398,274,356"/>
+<area shape="rect" id="Node000013" href="$classphc_1_1PHCWrapper.html#a4e2645b2f24716a72316bcd7bd14aac1" title="Sets the symbols used in the polynomials." alt="" coords="379,472,599,497"/>
+<area shape="poly" id="edge14_Node000006_Node000013" title=" " alt="" coords="259,352,308,404,342,433,380,457,399,465,397,470,377,462,339,437,304,407,255,356"/>
+<area shape="rect" id="Node000014" href="$classphc_1_1PHCWrapper.html#a6c0a34ada438fc0059b33c3f52ecdf94" title="Solves the system of polynomials." alt="" coords="399,521,578,547"/>
+<area shape="poly" id="edge15_Node000006_Node000014" title=" " alt="" coords="255,353,272,385,300,427,336,471,380,508,391,514,388,518,377,512,332,475,295,430,268,387,250,355"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="548,355,598,342,722,303,724,308,599,347,550,360"/>
+<area shape="rect" id="Node000011" href="$classphc_1_1PHCWrapper.html#a51398b92cf100355f9b26073d2c5c773" title="Inserts a polynomial into the system at the specified index." alt="" coords="647,357,900,383"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="580,367,633,367,633,373,580,373"/>
+</map>

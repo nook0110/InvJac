@@ -1,0 +1,5 @@
+<map id="phc::PHCWrapper::IsSquare" name="phc::PHCWrapper::IsSquare">
+<area shape="rect" id="Node000001" title="Checks if the system of polynomials is square (same number of equations and variables)." alt="" coords="196,5,395,31"/>
+<area shape="rect" id="Node000002" href="$classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="5,5,148,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,21,149,21,149,15,182,15"/>
+</map>

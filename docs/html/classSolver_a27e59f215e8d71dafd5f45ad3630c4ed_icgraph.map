@@ -1,0 +1,7 @@
+<map id="Solver::GetInstance" name="Solver::GetInstance">
+<area shape="rect" id="Node000001" title="Gets the singleton instance of the Solver." alt="" coords="520,5,669,31"/>
+<area shape="rect" id="Node000002" href="$classMap.html#a3495abb2416426db3f9eff6d5832fb17" title="Evaluates the extension degree of the map." alt="" coords="245,5,472,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,21,472,21,472,15,506,15"/>
+<area shape="rect" id="Node000003" href="$classMap.html#a6966029610d6d01a0ff49372f642fc7a" title="Gets the extension degree of the map." alt="" coords="5,5,197,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,21,198,21,198,15,232,15"/>
+</map>

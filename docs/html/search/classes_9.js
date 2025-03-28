@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userinputmapstrategy_0',['UserInputMapStrategy',['../classUserInputMapStrategy.html',1,'']]]
+  ['root_0',['root',['../structEquation_1_1Root.html',1,'Equation::Root'],['../structphc_1_1PHCWrapper_1_1Root.html',1,'phc::PHCWrapper::Root']]]
 ];

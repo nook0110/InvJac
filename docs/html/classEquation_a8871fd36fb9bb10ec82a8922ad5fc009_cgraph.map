@@ -1,5 +1,14 @@
 <map id="Equation::IsSquare" name="Equation::IsSquare">
-<area shape="rect" id="Node000001" title="Checks if the equation system is square." alt="" coords="5,5,148,31"/>
-<area shape="rect" id="Node000002" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="196,5,379,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+<area shape="rect" id="Node000001" title="Checks if the equation system is square." alt="" coords="5,67,148,92"/>
+<area shape="rect" id="Node000002" href="$classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a" title="Gets the singleton instance of the PHCWrapper." alt="" coords="459,37,680,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,64,139,38,166,25,195,15,238,8,281,4,367,6,447,17,512,31,511,36,446,22,367,12,281,9,238,13,197,20,168,30,141,42,97,69"/>
+<area shape="rect" id="Node000003" href="$classphc_1_1PHCWrapper.html#a8b19675d3ab4b629f927d53f96dc1f25" title="Initializes the number of polynomials to be solved." alt="" coords="196,30,395,70"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,67,182,62,183,68,148,72"/>
+<area shape="rect" id="Node000004" href="$classphc_1_1PHCWrapper.html#a1ead8dcc2ad1038f4400e4ede5a001a4" title="Checks if the system of polynomials is square (same number of equations and variables)." alt="" coords="196,95,395,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,86,183,90,182,95,148,91"/>
+<area shape="rect" id="Node000005" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="204,144,387,169"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="104,90,147,110,197,130,222,138,220,143,195,135,145,115,102,94"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="356,141,394,130,468,99,532,67,534,72,471,104,396,135,358,146"/>
+<area shape="rect" id="Node000006" href="$classphc_1_1PHCWrapper.html#a51398b92cf100355f9b26073d2c5c773" title="Inserts a polynomial into the system at the specified index." alt="" coords="443,144,696,169"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="387,154,429,154,429,159,387,159"/>
 </map>

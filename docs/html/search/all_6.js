@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['hascontraction_0',['HasContraction',['../classMap.html#a96bb87aa86af7d89988c619cd0fa59d5',1,'Map']]],
-  ['host_1',['host',['../structDatabaseConfig.html#afb231b9431e7b3ac9f7059c461b3828e',1,'DatabaseConfig']]]
+  ['generate_0',['generate',['../classUserInputMapStrategy.html#a8dde28067d43f3e1da6ad009e39b46f2',1,'UserInputMapStrategy::Generate()'],['../classMapGeneratorStrategy.html#a6d0af3a5597dff2f24c6d798e4841f61',1,'MapGeneratorStrategy::Generate()']]],
+  ['generatemap_1',['GenerateMap',['../classMapChecker.html#a944e4df960fa48bf3d64ea7ccfea128e',1,'MapChecker']]],
+  ['generaterandom_2',['GenerateRandom',['../classPoint.html#a1be7479354600505f20653a55a74343b',1,'Point']]],
+  ['getamountofsymbols_3',['GetAmountOfSymbols',['../classphc_1_1PHCWrapper.html#aa58b8094c171f8f3f8303c5ee9f376ec',1,'phc::PHCWrapper']]],
+  ['getbezoutnumber_4',['GetBezoutNumber',['../classphc_1_1PHCWrapper.html#a03d25f7ca6d14a8e02fa534d4bf442b3',1,'phc::PHCWrapper']]],
+  ['getcoord_5',['GetCoord',['../classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b',1,'Point']]],
+  ['getdimensions_6',['getdimensions',['../classMap.html#ac534b0030b33c463764d453a50bc1949',1,'Map::GetDimensions()'],['../classPoint.html#a8807f48794da645588a9b92c7aff4789',1,'Point::GetDimensions()']]],
+  ['getextensiondegree_7',['GetExtensionDegree',['../classMap.html#a6966029610d6d01a0ff49372f642fc7a',1,'Map']]],
+  ['getinstance_8',['getinstance',['../classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a',1,'phc::PHCWrapper::GetInstance()'],['../classSolver.html#a27e59f215e8d71dafd5f45ad3630c4ed',1,'Solver::GetInstance()']]],
+  ['getjacobian_9',['GetJacobian',['../classMap.html#ae2c291f4f24e65f7c5c841843f14e8e1',1,'Map']]],
+  ['getjacobianmatrix_10',['GetJacobianMatrix',['../classMap.html#a5e541877bbd65e1a30b4d0ab63a1630d',1,'Map']]],
+  ['getmap_11',['GetMap',['../classCheckResult.html#ab914d3312511dc356af31e43ed7b1cf5',1,'CheckResult']]],
+  ['getpoly_12',['GetPoly',['../classMap.html#abcf03601f4d3b46d9fcf38dd1b0f20d7',1,'Map']]],
+  ['getresult_13',['GetResult',['../classCheckResult.html#abb344684e272ccd953b9577bcdcda039',1,'CheckResult']]],
+  ['getrootcount_14',['GetRootCount',['../classEquation_1_1Solution.html#a66ef1b5e93e4a9c909620b53218df55a',1,'Equation::Solution']]],
+  ['gettotaldegree_15',['GetTotalDegree',['../classphc_1_1PHCWrapper.html#a45c73498576c0c8f5e085da1933432cb',1,'phc::PHCWrapper']]]
 ];

@@ -1,41 +1,56 @@
 <map id="MapChecker::PerformCheck" name="MapChecker::PerformCheck">
-<area shape="rect" id="Node000001" title="Performs the check on the generated map." alt="" coords="5,326,208,351"/>
-<area shape="rect" id="Node000002" href="$classMapChecker.html#a944e4df960fa48bf3d64ea7ccfea128e" title="Generates a map using the current strategy." alt="" coords="256,277,455,302"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,323,277,302,278,307,172,329"/>
-<area shape="rect" id="Node000003" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="268,326,443,351"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,336,254,336,254,341,208,341"/>
-<area shape="rect" id="Node000017" href="$classChecker.html#aff5e90958f5c3128c5979d4ca1b84c0a" title="Sets the map to be checked." alt="" coords="290,375,421,401"/>
-<area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="172,349,278,370,277,375,171,354"/>
-<area shape="rect" id="Node000004" href="$classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="1161,301,1320,326"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="443,341,571,346,735,349,918,347,1101,336,1170,326,1170,331,1102,341,918,352,735,355,571,352,443,346"/>
-<area shape="rect" id="Node000005" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="692,201,851,226"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="418,323,454,312,477,300,502,287,604,252,698,227,700,232,605,257,504,292,480,305,456,317,419,329"/>
-<area shape="rect" id="Node000012" href="$classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="524,402,623,427"/>
-<area shape="poly" id="edge14_Node000003_Node000012" title=" " alt="" coords="413,349,456,361,532,394,530,399,454,367,411,354"/>
-<area shape="rect" id="Node000014" href="$classChecker.html#a5557d50dbd898a42629d367321fa4d7c" title="Tests a point on the map." alt="" coords="503,301,644,326"/>
-<area shape="poly" id="edge17_Node000003_Node000014" title=" " alt="" coords="443,326,489,320,489,326,443,331"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="851,208,970,212,1037,221,1102,236,1162,261,1212,291,1209,295,1160,266,1101,241,1036,226,970,218,851,213"/>
-<area shape="rect" id="Node000006" href="$classEquation.html#a28f78a59c69dfdc27b505afc1263e3cc" title="Appends an equation to the system." alt="" coords="903,150,1097,175"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="829,198,928,176,929,181,830,203"/>
-<area shape="rect" id="Node000007" href="$classMap.html#a5e541877bbd65e1a30b4d0ab63a1630d" title="Gets the Jacobian matrix of the map." alt="" coords="911,251,1089,277"/>
-<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="830,224,929,246,928,251,829,229"/>
-<area shape="rect" id="Node000008" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="939,77,1061,102"/>
-<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="783,198,830,155,863,131,898,111,924,101,926,106,900,116,866,136,834,159,787,202"/>
-<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="963,152,955,142,959,132,975,126,1000,123,1032,127,1044,137,1041,141,1030,132,1000,129,976,131,963,136,960,141,967,148"/>
-<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="1063,274,1165,295,1164,300,1062,279"/>
-<area shape="rect" id="Node000009" href="$classEquation_1_1Solution.html#ad846c8ff497fb25a85a195214ceed7ae" title="Appends a root to the solution." alt="" coords="1171,69,1311,109"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="1061,87,1157,87,1157,92,1061,92"/>
-<area shape="rect" id="Node000010" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="1149,134,1332,159"/>
-<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="1055,99,1102,111,1174,128,1173,133,1101,116,1054,105"/>
-<area shape="rect" id="Node000011" href="$classEquation_1_1Solution.html#ae18c7373473f299782964936de1e6a8a" title="Reserves space for a number of roots." alt="" coords="1171,5,1311,45"/>
-<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="1048,74,1157,45,1158,50,1050,79"/>
-<area shape="poly" id="edge15_Node000012_Node000004" title=" " alt="" coords="623,425,692,437,809,445,900,439,989,418,1100,380,1157,356,1205,330,1208,335,1159,361,1102,385,991,423,901,445,809,451,692,443,622,430"/>
-<area shape="rect" id="Node000013" href="$classMap.html#abcf03601f4d3b46d9fcf38dd1b0f20d7" title="Gets the polynomial at the specified index." alt="" coords="717,402,826,427"/>
-<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="623,412,703,412,703,417,623,417"/>
-<area shape="rect" id="Node000015" href="$classMap.html#ae2c291f4f24e65f7c5c841843f14e8e1" title="Gets the Jacobian of the map." alt="" coords="703,250,839,275"/>
-<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="623,298,707,276,709,281,625,303"/>
-<area shape="rect" id="Node000016" href="$classChecker.html#ad27c68388778a2a37c7a9589bc58c78e" title="Substitutes the Jacobian with the given point." alt="" coords="899,301,1101,326"/>
-<area shape="poly" id="edge20_Node000014_Node000016" title=" " alt="" coords="644,311,885,311,885,316,644,316"/>
-<area shape="poly" id="edge19_Node000015_Node000007" title=" " alt="" coords="840,260,897,261,896,266,840,266"/>
-<area shape="poly" id="edge21_Node000016_Node000004" title=" " alt="" coords="1102,311,1148,311,1148,316,1102,316"/>
+<area shape="rect" id="Node000001" title="Performs the check on the generated map." alt="" coords="5,132,208,157"/>
+<area shape="rect" id="Node000002" href="$classMapChecker.html#a944e4df960fa48bf3d64ea7ccfea128e" title="Generates a map using the current strategy." alt="" coords="256,83,455,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,129,277,108,278,113,172,135"/>
+<area shape="rect" id="Node000003" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="268,132,443,157"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,142,254,142,254,147,208,147"/>
+<area shape="rect" id="Node000024" href="$classChecker.html#aff5e90958f5c3128c5979d4ca1b84c0a" title="Sets the map to be checked." alt="" coords="290,181,421,207"/>
+<area shape="poly" id="edge30_Node000001_Node000024" title=" " alt="" coords="172,155,278,176,277,181,171,160"/>
+<area shape="rect" id="Node000004" href="$classPoint.html#a1be7479354600505f20653a55a74343b" title="Generates a random point with the specified number of dimensions." alt="" coords="503,5,680,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="429,129,453,117,469,101,477,84,485,66,501,48,525,34,528,38,504,52,489,69,482,86,473,104,456,121,432,134"/>
+<area shape="rect" id="Node000005" href="$classMap.html#ac534b0030b33c463764d453a50bc1949" title="Gets the dimensions of the map." alt="" coords="1000,109,1159,135"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="414,129,454,117,477,103,502,91,571,78,643,71,714,70,784,72,912,86,1012,104,1011,109,911,91,784,78,714,75,643,77,572,83,503,97,480,108,456,122,416,135"/>
+<area shape="rect" id="Node000006" href="$classMap.html#ae2c291f4f24e65f7c5c841843f14e8e1" title="Gets the Jacobian of the map." alt="" coords="523,107,659,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="443,133,509,125,510,131,443,138"/>
+<area shape="rect" id="Node000008" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="512,157,671,183"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="443,151,498,157,498,163,443,157"/>
+<area shape="rect" id="Node000019" href="$classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="542,407,641,432"/>
+<area shape="poly" id="edge23_Node000003_Node000019" title=" " alt="" coords="437,155,456,167,483,191,507,220,545,283,571,344,586,392,581,394,566,346,540,285,503,223,480,195,453,171,434,160"/>
+<area shape="rect" id="Node000023" href="$classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0" title="Converts the point to a string representation." alt="" coords="777,531,872,556"/>
+<area shape="poly" id="edge29_Node000003_Node000023" title=" " alt="" coords="442,155,457,167,480,202,489,236,488,271,483,305,477,339,476,373,483,407,505,442,531,467,562,488,596,505,631,517,701,533,764,540,763,545,701,539,629,522,594,510,559,493,528,471,501,445,478,409,470,374,472,339,478,304,483,270,484,237,475,204,453,170,439,160"/>
+<area shape="rect" id="Node000007" href="$classMap.html#a5e541877bbd65e1a30b4d0ab63a1630d" title="Gets the Jacobian matrix of the map." alt="" coords="735,107,914,132"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="659,117,722,117,722,122,659,122"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="914,118,986,118,986,124,914,123"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="671,162,921,141,986,133,986,138,922,146,671,167"/>
+<area shape="poly" id="edge12_Node000008_Node000007" title=" " alt="" coords="650,155,752,132,753,138,651,160"/>
+<area shape="rect" id="Node000009" href="$classEquation.html#a28f78a59c69dfdc27b505afc1263e3cc" title="Appends an equation to the system." alt="" coords="728,232,921,257"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="633,180,772,225,770,230,631,185"/>
+<area shape="rect" id="Node000010" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="763,333,886,359"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="611,181,797,322,794,327,608,185"/>
+<area shape="poly" id="edge10_Node000009_Node000009" title=" " alt="" coords="787,234,779,224,783,214,799,208,825,205,857,209,870,219,866,223,855,214,825,211,800,213,787,218,784,223,791,230"/>
+<area shape="rect" id="Node000011" href="$classEquation_1_1Solution.html#ad846c8ff497fb25a85a195214ceed7ae" title="Appends a root to the solution." alt="" coords="1009,326,1149,366"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="886,343,996,343,996,349,886,349"/>
+<area shape="rect" id="Node000012" href="$classphc_1_1PHCWrapper.html#a0191213383ec870741949f69f27f7c7a" title="Gets the singleton instance of the PHCWrapper." alt="" coords="1253,392,1475,417"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="875,356,970,375,1109,391,1240,398,1239,404,1109,396,969,381,874,361"/>
+<area shape="rect" id="Node000013" href="$classphc_1_1PHCWrapper.html#a8b19675d3ab4b629f927d53f96dc1f25" title="Initializes the number of polynomials to be solved." alt="" coords="980,491,1179,531"/>
+<area shape="poly" id="edge16_Node000010_Node000013" title=" " alt="" coords="887,350,906,357,923,368,936,381,943,395,948,423,953,450,960,463,971,476,978,482,975,486,967,480,955,466,948,452,943,424,938,397,931,384,920,372,904,362,885,355"/>
+<area shape="rect" id="Node000014" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="988,441,1171,467"/>
+<area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="887,353,923,368,938,381,948,394,956,407,971,420,1002,434,999,439,968,424,952,411,943,397,935,384,920,372,885,358"/>
+<area shape="rect" id="Node000016" href="$classEquation_1_1Solution.html#ae18c7373473f299782964936de1e6a8a" title="Reserves space for a number of roots." alt="" coords="1009,162,1149,202"/>
+<area shape="poly" id="edge20_Node000010_Node000016" title=" " alt="" coords="885,331,904,323,920,312,930,300,937,288,943,263,949,238,956,225,968,212,995,195,998,200,971,216,960,228,954,239,948,264,942,290,935,303,923,316,906,328,887,336"/>
+<area shape="rect" id="Node000017" href="$classphc_1_1PHCWrapper.html#a4e2645b2f24716a72316bcd7bd14aac1" title="Sets the symbols used in the polynomials." alt="" coords="969,227,1189,252"/>
+<area shape="poly" id="edge21_Node000010_Node000017" title=" " alt="" coords="878,331,920,312,934,299,943,287,952,274,968,261,982,254,984,259,971,266,956,277,947,290,938,303,923,316,880,336"/>
+<area shape="rect" id="Node000018" href="$classphc_1_1PHCWrapper.html#a6c0a34ada438fc0059b33c3f52ecdf94" title="Solves the system of polynomials." alt="" coords="990,276,1169,301"/>
+<area shape="poly" id="edge22_Node000010_Node000018" title=" " alt="" coords="881,331,1008,302,1010,307,883,336"/>
+<area shape="poly" id="edge18_Node000014_Node000012" title=" " alt="" coords="1153,439,1276,417,1277,422,1154,444"/>
+<area shape="rect" id="Node000015" href="$classphc_1_1PHCWrapper.html#a51398b92cf100355f9b26073d2c5c773" title="Inserts a polynomial into the system at the specified index." alt="" coords="1237,441,1491,467"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="1171,451,1223,451,1223,457,1171,457"/>
+<area shape="poly" id="edge24_Node000019_Node000005" title=" " alt="" coords="605,404,656,362,690,339,727,318,756,307,782,302,830,300,874,294,896,284,920,267,932,253,938,239,943,209,947,178,955,163,968,148,986,136,989,140,971,152,959,166,952,180,948,210,943,240,936,256,923,271,899,289,875,299,830,305,783,307,757,312,729,323,693,343,659,367,608,409"/>
+<area shape="rect" id="Node000020" href="$classPoint.html#a8807f48794da645588a9b92c7aff4789" title="Gets the number of dimensions of the point." alt="" coords="743,383,906,408"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="641,412,730,402,730,408,641,417"/>
+<area shape="rect" id="Node000021" href="$classMap.html#abcf03601f4d3b46d9fcf38dd1b0f20d7" title="Gets the polynomial at the specified index." alt="" coords="770,432,879,457"/>
+<area shape="poly" id="edge26_Node000019_Node000021" title=" " alt="" coords="641,422,756,435,756,440,641,427"/>
+<area shape="rect" id="Node000022" href="$classPoint.html#aba67c2dc4c850255af08f6ef7b53cffc" title="Converts the point to a GiNaC::lst object." alt="" coords="777,481,873,507"/>
+<area shape="poly" id="edge27_Node000019_Node000022" title=" " alt="" coords="626,430,729,466,764,476,763,482,727,471,624,435"/>
+<area shape="poly" id="edge28_Node000019_Node000023" title=" " alt="" coords="608,430,659,473,693,497,729,517,765,530,763,535,727,522,690,501,656,477,604,434"/>
 </map>

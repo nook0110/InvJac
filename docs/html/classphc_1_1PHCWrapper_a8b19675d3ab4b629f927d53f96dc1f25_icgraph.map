@@ -1,0 +1,17 @@
+<map id="phc::PHCWrapper::InitializeNumberOfPolynomials" name="phc::PHCWrapper::InitializeNumberOfPolynomials">
+<area shape="rect" id="Node000001" title="Initializes the number of polynomials to be solved." alt="" coords="1043,23,1241,63"/>
+<area shape="rect" id="Node000002" href="$classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="852,5,995,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1028,33,995,29,996,24,1029,28"/>
+<area shape="rect" id="Node000003" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="862,55,985,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1029,58,985,63,984,58,1029,53"/>
+<area shape="rect" id="Node000004" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,29,804,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="848,60,804,55,805,49,848,55"/>
+<area shape="rect" id="Node000008" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,79,778,104"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="849,79,779,88,778,82,848,74"/>
+<area shape="rect" id="Node000005" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,29,597,55"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,45,598,45,598,39,631,39"/>
+<area shape="rect" id="Node000006" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,29,375,55"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="409,45,375,45,375,39,409,39"/>
+<area shape="rect" id="Node000007" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,29,124,55"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="158,45,124,45,124,39,158,39"/>
+</map>

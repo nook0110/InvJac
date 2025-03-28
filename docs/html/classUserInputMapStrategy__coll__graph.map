@@ -1,9 +1,9 @@
 <map id="UserInputMapStrategy" name="UserInputMapStrategy">
-<area shape="rect" id="Node000001" title="Strategy for generating maps from user input." alt="" coords="174,153,359,239"/>
-<area shape="rect" id="Node000002" href="$classMapGeneratorStrategy.html" title="Strategy interface for generating maps." alt="" coords="5,5,203,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,98,222,151,218,155,159,102"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="227,15,306,81"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,81,269,137,264,137,264,81"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="331,15,413,81"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="352,82,317,131,309,142,305,139,313,128,347,79"/>
+<area shape="rect" id="Node000001" title="Strategy for generating maps from user input." alt="" coords="174,173,359,279"/>
+<area shape="rect" id="Node000002" href="$classMapGeneratorStrategy.html" title="Strategy interface for generating maps." alt="" coords="5,5,203,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,118,218,171,214,175,162,122"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="227,25,306,91"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,91,269,157,264,157,264,91"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="331,25,413,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="354,92,310,161,306,158,350,89"/>
 </map>

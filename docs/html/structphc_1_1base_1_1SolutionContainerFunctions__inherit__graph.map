@@ -1,0 +1,7 @@
+<map id="phc::base::SolutionContainerFunctions" name="phc::base::SolutionContainerFunctions">
+<area shape="rect" id="Node000001" title="Provides base functions for managing the solution container." alt="" coords="143,5,343,85"/>
+<area shape="rect" id="Node000002" href="$structphc_1_1SolutionContainerTraits.html" title="Traits for managing solution containers based on precision." alt="" coords="5,141,240,266"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,98,173,142,168,139,202,95"/>
+<area shape="rect" id="Node000003" href="$structphc_1_1SolutionContainerTraits_3_01Precision_1_1Standard_01_4.html" title="Specialization of SolutionContainerTraits for standard precision." alt="" coords="265,133,461,273"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="283,95,311,131,307,135,279,98"/>
+</map>

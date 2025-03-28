@@ -21,7 +21,7 @@ Collaboration diagram for Inv\+Jac\+App\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classInvJacApp_a717d88f4381a589718518700ef23cc74}{Inv\+Jac\+App}} (std\+::istream \&input\+\_\+stream=std\+::cin, std\+::ostream \&output\+\_\+stream=std\+::cout)
+\mbox{\hyperlink{classInvJacApp_ad26604c3b9481dec28c63aaed3329461}{Inv\+Jac\+App}} (std\+::istream \&input\+\_\+stream, std\+::ostream \&output\+\_\+stream)
 \begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classInvJacApp}{Inv\+Jac\+App} with the given input and output streams. \end{DoxyCompactList}\item 
 \Hypertarget{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e}\label{classInvJacApp_a60085f4750c5a530574bdc86cd12c22e} 
 void {\bfseries Run} ()
@@ -32,14 +32,16 @@ bool \mbox{\hyperlink{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42}{Parse\+C
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980}\label{classInvJacApp_ae6d5e933c246beceee2d1e26ca325980} 
-std\+::istream \& {\bfseries input\+\_\+} = std\+::cin
+std\+::istream \& {\bfseries input\+\_\+}
 \begin{DoxyCompactList}\small\item\em Input stream for user input. \end{DoxyCompactList}\item 
 \Hypertarget{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220}\label{classInvJacApp_a2c7f7a54339b5aad9c84757c7418e220} 
-std\+::ostream \& {\bfseries out\+\_\+} = std\+::cout
+std\+::ostream \& {\bfseries out\+\_\+}
 \begin{DoxyCompactList}\small\item\em Output stream for messages. \end{DoxyCompactList}\item 
 \Hypertarget{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160}\label{classInvJacApp_a5e9f7574180ab59d3c2c0db7c5ff2160} 
 std\+::ifstream {\bfseries input\+\_\+file\+\_\+}
 \begin{DoxyCompactList}\small\item\em Input file stream. \end{DoxyCompactList}\item 
+boost\+::iostreams\+::stream$<$ boost\+::iostreams\+::null\+\_\+sink $>$ \mbox{\hyperlink{classInvJacApp_a7ca3d8b67380615960c988d30cea1871}{onullstream}}
+\begin{DoxyCompactList}\small\item\em Null output stream. \end{DoxyCompactList}\item 
 \Hypertarget{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2}\label{classInvJacApp_a5622509cad7567442ea23ba8292e0ca2} 
 bool {\bfseries use\+\_\+database\+\_\+} = false
 \begin{DoxyCompactList}\small\item\em Flag to use the database. \end{DoxyCompactList}\item 
@@ -55,11 +57,11 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classFunctionDatabase}{Function\+Data
 Main application class for Inv\+Jac. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classInvJacApp_a717d88f4381a589718518700ef23cc74}\label{classInvJacApp_a717d88f4381a589718518700ef23cc74} 
+\Hypertarget{classInvJacApp_ad26604c3b9481dec28c63aaed3329461}\label{classInvJacApp_ad26604c3b9481dec28c63aaed3329461} 
 \index{InvJacApp@{InvJacApp}!InvJacApp@{InvJacApp}}
 \index{InvJacApp@{InvJacApp}!InvJacApp@{InvJacApp}}
 \doxysubsubsection{\texorpdfstring{InvJacApp()}{InvJacApp()}}
-{\footnotesize\ttfamily Inv\+Jac\+App\+::\+Inv\+Jac\+App (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream = {\ttfamily std\+:\+:cin},  }\item[{std\+::ostream \&}]{output\+\_\+stream = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Inv\+Jac\+App\+::\+Inv\+Jac\+App (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream,  }\item[{std\+::ostream \&}]{output\+\_\+stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -95,6 +97,32 @@ Parses command line arguments.
 \begin{DoxyReturn}{Returns}
 True if help message is displayed, false otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInvJacApp_ad49e850214c7194442c91e8f9fc7fd42_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classInvJacApp_a7ca3d8b67380615960c988d30cea1871}\label{classInvJacApp_a7ca3d8b67380615960c988d30cea1871} 
+\index{InvJacApp@{InvJacApp}!onullstream@{onullstream}}
+\index{onullstream@{onullstream}!InvJacApp@{InvJacApp}}
+\doxysubsubsection{\texorpdfstring{onullstream}{onullstream}}
+{\footnotesize\ttfamily boost\+::iostreams\+::stream$<$boost\+::iostreams\+::null\+\_\+sink$>$ Inv\+Jac\+App\+::onullstream\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ boost::iostreams::null\_sink()\}}
+
+\end{DoxyCode}
+
+
+Null output stream. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

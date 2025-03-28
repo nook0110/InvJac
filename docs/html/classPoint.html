@@ -87,12 +87,17 @@ $(function() {
   <div class="headertitle"><div class="title">Point Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a point in a multidimensional complex space.  
+ <a href="classPoint.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="point_8hpp_source.html">point.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Point:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPoint__coll__graph.png" border="0" usemap="#aPoint_coll__map" alt="Collaboration graph"/></div>
 <map name="aPoint_coll__map" id="aPoint_coll__map">
-<area shape="rect" title=" " alt="" coords="5,133,159,399"/>
+<area shape="rect" title="Represents a point in a multidimensional complex space." alt="" coords="5,133,159,399"/>
 <area shape="rect" title=" " alt="" coords="11,5,153,71"/>
 <area shape="poly" title=" " alt="" coords="85,71,85,117,79,117,79,71"/>
 </map>
@@ -100,49 +105,479 @@ Collaboration diagram for Point:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a57cb67ce8efdc82e6ea579cc05835292" id="r_a57cb67ce8efdc82e6ea579cc05835292"><td class="memItemLeft" align="right" valign="top"><a id="a57cb67ce8efdc82e6ea579cc05835292" name="a57cb67ce8efdc82e6ea579cc05835292"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Point</b> (std::vector&lt; Complex &gt; coords={})</td></tr>
+<tr class="memitem:a57cb67ce8efdc82e6ea579cc05835292" id="r_a57cb67ce8efdc82e6ea579cc05835292"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a57cb67ce8efdc82e6ea579cc05835292">Point</a> (std::vector&lt; Complex &gt; coords={})</td></tr>
+<tr class="memdesc:a57cb67ce8efdc82e6ea579cc05835292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPoint.html" title="Represents a point in a multidimensional complex space.">Point</a> with the given coordinates.  <br /></td></tr>
 <tr class="separator:a57cb67ce8efdc82e6ea579cc05835292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8807f48794da645588a9b92c7aff4789" id="r_a8807f48794da645588a9b92c7aff4789"><td class="memItemLeft" align="right" valign="top"><a id="a8807f48794da645588a9b92c7aff4789" name="a8807f48794da645588a9b92c7aff4789"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetDimensions</b> () const</td></tr>
+<tr class="memitem:a8807f48794da645588a9b92c7aff4789" id="r_a8807f48794da645588a9b92c7aff4789"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a8807f48794da645588a9b92c7aff4789">GetDimensions</a> () const</td></tr>
+<tr class="memdesc:a8807f48794da645588a9b92c7aff4789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of dimensions of the point.  <br /></td></tr>
 <tr class="separator:a8807f48794da645588a9b92c7aff4789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c19aa6a99a8f9a3ac082d72a22cb3b" id="r_ad3c19aa6a99a8f9a3ac082d72a22cb3b"><td class="memItemLeft" align="right" valign="top"><a id="ad3c19aa6a99a8f9a3ac082d72a22cb3b" name="ad3c19aa6a99a8f9a3ac082d72a22cb3b"></a>
-const Complex &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCoord</b> (size_t i) const</td></tr>
+<tr class="memitem:ad3c19aa6a99a8f9a3ac082d72a22cb3b" id="r_ad3c19aa6a99a8f9a3ac082d72a22cb3b"><td class="memItemLeft" align="right" valign="top">const Complex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b">GetCoord</a> (size_t i) const</td></tr>
+<tr class="memdesc:ad3c19aa6a99a8f9a3ac082d72a22cb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the coordinate at the specified index.  <br /></td></tr>
 <tr class="separator:ad3c19aa6a99a8f9a3ac082d72a22cb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92326ddb107faaaf6385000d00826af5" id="r_a92326ddb107faaaf6385000d00826af5"><td class="memItemLeft" align="right" valign="top"><a id="a92326ddb107faaaf6385000d00826af5" name="a92326ddb107faaaf6385000d00826af5"></a>
-const Complex &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (size_t i) const</td></tr>
+<tr class="memitem:a92326ddb107faaaf6385000d00826af5" id="r_a92326ddb107faaaf6385000d00826af5"><td class="memItemLeft" align="right" valign="top">const Complex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a92326ddb107faaaf6385000d00826af5">operator[]</a> (size_t i) const</td></tr>
+<tr class="memdesc:a92326ddb107faaaf6385000d00826af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the coordinate at the specified index.  <br /></td></tr>
 <tr class="separator:a92326ddb107faaaf6385000d00826af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba67c2dc4c850255af08f6ef7b53cffc" id="r_aba67c2dc4c850255af08f6ef7b53cffc"><td class="memItemLeft" align="right" valign="top"><a id="aba67c2dc4c850255af08f6ef7b53cffc" name="aba67c2dc4c850255af08f6ef7b53cffc"></a>
-GiNaC::lst&#160;</td><td class="memItemRight" valign="bottom"><b>ToLst</b> () const</td></tr>
+<tr class="memitem:aba67c2dc4c850255af08f6ef7b53cffc" id="r_aba67c2dc4c850255af08f6ef7b53cffc"><td class="memItemLeft" align="right" valign="top">GiNaC::lst&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#aba67c2dc4c850255af08f6ef7b53cffc">ToLst</a> () const</td></tr>
+<tr class="memdesc:aba67c2dc4c850255af08f6ef7b53cffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the point to a GiNaC::lst object.  <br /></td></tr>
 <tr class="separator:aba67c2dc4c850255af08f6ef7b53cffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5a8bfc0d842b5a98b1292babb09da0" id="r_abf5a8bfc0d842b5a98b1292babb09da0"><td class="memItemLeft" align="right" valign="top"><a id="abf5a8bfc0d842b5a98b1292babb09da0" name="abf5a8bfc0d842b5a98b1292babb09da0"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToStr</b> () const</td></tr>
+<tr class="memitem:abf5a8bfc0d842b5a98b1292babb09da0" id="r_abf5a8bfc0d842b5a98b1292babb09da0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0">ToStr</a> () const</td></tr>
+<tr class="memdesc:abf5a8bfc0d842b5a98b1292babb09da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the point to a string representation.  <br /></td></tr>
 <tr class="separator:abf5a8bfc0d842b5a98b1292babb09da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad943e966b387776d9c76f233ea14737e" id="r_ad943e966b387776d9c76f233ea14737e"><td class="memItemLeft" align="right" valign="top"><a id="ad943e966b387776d9c76f233ea14737e" name="ad943e966b387776d9c76f233ea14737e"></a>
-std::vector&lt; Complex &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:ad943e966b387776d9c76f233ea14737e" id="r_ad943e966b387776d9c76f233ea14737e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Complex &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#ad943e966b387776d9c76f233ea14737e">begin</a> ()</td></tr>
+<tr class="memdesc:ad943e966b387776d9c76f233ea14737e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator to the beginning of the coordinates.  <br /></td></tr>
 <tr class="separator:ad943e966b387776d9c76f233ea14737e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d149a65b910a28995401163864595d" id="r_a69d149a65b910a28995401163864595d"><td class="memItemLeft" align="right" valign="top"><a id="a69d149a65b910a28995401163864595d" name="a69d149a65b910a28995401163864595d"></a>
-std::vector&lt; Complex &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
+<tr class="memitem:a69d149a65b910a28995401163864595d" id="r_a69d149a65b910a28995401163864595d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Complex &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a69d149a65b910a28995401163864595d">begin</a> () const</td></tr>
+<tr class="memdesc:a69d149a65b910a28995401163864595d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a constant iterator to the beginning of the coordinates.  <br /></td></tr>
 <tr class="separator:a69d149a65b910a28995401163864595d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36b7dcab233f15bc5d2a9df36132cca7" id="r_a36b7dcab233f15bc5d2a9df36132cca7"><td class="memItemLeft" align="right" valign="top"><a id="a36b7dcab233f15bc5d2a9df36132cca7" name="a36b7dcab233f15bc5d2a9df36132cca7"></a>
-std::vector&lt; Complex &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:a36b7dcab233f15bc5d2a9df36132cca7" id="r_a36b7dcab233f15bc5d2a9df36132cca7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Complex &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a36b7dcab233f15bc5d2a9df36132cca7">end</a> ()</td></tr>
+<tr class="memdesc:a36b7dcab233f15bc5d2a9df36132cca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator to the end of the coordinates.  <br /></td></tr>
 <tr class="separator:a36b7dcab233f15bc5d2a9df36132cca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94230d609d1a493ff411218ab08e65ce" id="r_a94230d609d1a493ff411218ab08e65ce"><td class="memItemLeft" align="right" valign="top"><a id="a94230d609d1a493ff411218ab08e65ce" name="a94230d609d1a493ff411218ab08e65ce"></a>
-std::vector&lt; Complex &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
+<tr class="memitem:a94230d609d1a493ff411218ab08e65ce" id="r_a94230d609d1a493ff411218ab08e65ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Complex &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a94230d609d1a493ff411218ab08e65ce">end</a> () const</td></tr>
+<tr class="memdesc:a94230d609d1a493ff411218ab08e65ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a constant iterator to the end of the coordinates.  <br /></td></tr>
 <tr class="separator:a94230d609d1a493ff411218ab08e65ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1be7479354600505f20653a55a74343b" id="r_a1be7479354600505f20653a55a74343b"><td class="memItemLeft" align="right" valign="top"><a id="a1be7479354600505f20653a55a74343b" name="a1be7479354600505f20653a55a74343b"></a>
-static <a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GenerateRandom</b> (size_t dimensions)</td></tr>
+<tr class="memitem:a1be7479354600505f20653a55a74343b" id="r_a1be7479354600505f20653a55a74343b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a1be7479354600505f20653a55a74343b">GenerateRandom</a> (size_t dimensions)</td></tr>
+<tr class="memdesc:a1be7479354600505f20653a55a74343b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random point with the specified number of dimensions.  <br /></td></tr>
 <tr class="separator:a1be7479354600505f20653a55a74343b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a82035f0ce989a54a69d7c318ebeb4335" id="r_a82035f0ce989a54a69d7c318ebeb4335"><td class="memItemLeft" align="right" valign="top"><a id="a82035f0ce989a54a69d7c318ebeb4335" name="a82035f0ce989a54a69d7c318ebeb4335"></a>
 std::vector&lt; Complex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>coords_</b></td></tr>
+<tr class="memdesc:a82035f0ce989a54a69d7c318ebeb4335"><td class="mdescLeft">&#160;</td><td class="mdescRight">The coordinates of the point. <br /></td></tr>
 <tr class="separator:a82035f0ce989a54a69d7c318ebeb4335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a point in a multidimensional complex space. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a57cb67ce8efdc82e6ea579cc05835292" name="a57cb67ce8efdc82e6ea579cc05835292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57cb67ce8efdc82e6ea579cc05835292">&#9670;&#160;</a></span>Point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Point::Point </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; Complex &gt;&#160;</td>
+          <td class="paramname"><em>coords</em> = <code>{}</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classPoint.html" title="Represents a point in a multidimensional complex space.">Point</a> with the given coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coords</td><td>A vector of complex coordinates. Defaults to an empty vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad943e966b387776d9c76f233ea14737e" name="ad943e966b387776d9c76f233ea14737e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad943e966b387776d9c76f233ea14737e">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Complex &gt;::iterator Point::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator to the beginning of the coordinates. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the beginning of the coordinates. </dd></dl>
+
+</div>
+</div>
+<a id="a69d149a65b910a28995401163864595d" name="a69d149a65b910a28995401163864595d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d149a65b910a28995401163864595d">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Complex &gt;::const_iterator Point::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a constant iterator to the beginning of the coordinates. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant iterator to the beginning of the coordinates. </dd></dl>
+
+</div>
+</div>
+<a id="a36b7dcab233f15bc5d2a9df36132cca7" name="a36b7dcab233f15bc5d2a9df36132cca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b7dcab233f15bc5d2a9df36132cca7">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Complex &gt;::iterator Point::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an iterator to the end of the coordinates. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator to the end of the coordinates. </dd></dl>
+
+</div>
+</div>
+<a id="a94230d609d1a493ff411218ab08e65ce" name="a94230d609d1a493ff411218ab08e65ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94230d609d1a493ff411218ab08e65ce">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Complex &gt;::const_iterator Point::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a constant iterator to the end of the coordinates. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant iterator to the end of the coordinates. </dd></dl>
+
+</div>
+</div>
+<a id="a1be7479354600505f20653a55a74343b" name="a1be7479354600505f20653a55a74343b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be7479354600505f20653a55a74343b">&#9670;&#160;</a></span>GenerateRandom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classPoint.html">Point</a> Point::GenerateRandom </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dimensions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a random point with the specified number of dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dimensions</td><td>The number of dimensions for the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A randomly generated <a class="el" href="classPoint.html" title="Represents a point in a multidimensional complex space.">Point</a>. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_a1be7479354600505f20653a55a74343b_icgraph.png" border="0" usemap="#aclassPoint_a1be7479354600505f20653a55a74343b_icgraph" alt=""/></div>
+<map name="aclassPoint_a1be7479354600505f20653a55a74343b_icgraph" id="aclassPoint_a1be7479354600505f20653a55a74343b_icgraph">
+<area shape="rect" title="Generates a random point with the specified number of dimensions." alt="" coords="697,31,875,56"/>
+<area shape="rect" href="classMap.html#a3495abb2416426db3f9eff6d5832fb17" title="Evaluates the extension degree of the map." alt="" coords="423,5,649,31"/>
+<area shape="poly" title=" " alt="" coords="683,36,649,32,650,27,684,30"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="449,55,623,80"/>
+<area shape="poly" title=" " alt="" coords="684,56,624,62,623,56,683,50"/>
+<area shape="rect" href="classMap.html#a6966029610d6d01a0ff49372f642fc7a" title="Gets the extension degree of the map." alt="" coords="177,5,369,31"/>
+<area shape="poly" title=" " alt="" coords="409,21,370,21,370,15,409,15"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,55,375,80"/>
+<area shape="poly" title=" " alt="" coords="435,70,375,70,375,65,435,65"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,55,124,80"/>
+<area shape="poly" title=" " alt="" coords="158,70,124,70,124,65,158,65"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3c19aa6a99a8f9a3ac082d72a22cb3b" name="ad3c19aa6a99a8f9a3ac082d72a22cb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c19aa6a99a8f9a3ac082d72a22cb3b">&#9670;&#160;</a></span>GetCoord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Complex &amp; Point::GetCoord </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the coordinate at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>The index of the coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the complex coordinate. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b_icgraph.png" border="0" usemap="#aclassPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b_icgraph" alt=""/></div>
+<map name="aclassPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b_icgraph" id="aclassPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b_icgraph">
+<area shape="rect" title="Gets the coordinate at the specified index." alt="" coords="181,5,305,31"/>
+<area shape="rect" href="classPoint.html#a92326ddb107faaaf6385000d00826af5" title="Accesses the coordinate at the specified index." alt="" coords="5,5,133,31"/>
+<area shape="poly" title=" " alt="" coords="168,21,134,21,134,15,168,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8807f48794da645588a9b92c7aff4789" name="a8807f48794da645588a9b92c7aff4789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8807f48794da645588a9b92c7aff4789">&#9670;&#160;</a></span>GetDimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Point::GetDimensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of dimensions of the point. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of dimensions. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_a8807f48794da645588a9b92c7aff4789_icgraph.png" border="0" usemap="#aclassPoint_a8807f48794da645588a9b92c7aff4789_icgraph" alt=""/></div>
+<map name="aclassPoint_a8807f48794da645588a9b92c7aff4789_icgraph" id="aclassPoint_a8807f48794da645588a9b92c7aff4789_icgraph">
+<area shape="rect" title="Gets the number of dimensions of the point." alt="" coords="864,31,1027,56"/>
+<area shape="rect" href="classSolver.html#a83b673900078afb56d459e75295b0d43" title="Creates an equation from the given mapping and point." alt="" coords="645,5,816,31"/>
+<area shape="poly" title=" " alt="" coords="850,35,816,31,816,25,851,30"/>
+<area shape="rect" href="classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="681,55,780,80"/>
+<area shape="poly" title=" " alt="" coords="851,57,781,65,780,59,850,51"/>
+<area shape="rect" href="classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="457,5,563,31"/>
+<area shape="poly" title=" " alt="" coords="631,21,564,21,564,15,631,15"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,55,597,80"/>
+<area shape="poly" title=" " alt="" coords="667,70,598,70,598,65,667,65"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,55,375,80"/>
+<area shape="poly" title=" " alt="" coords="409,70,375,70,375,65,409,65"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,55,124,80"/>
+<area shape="poly" title=" " alt="" coords="158,70,124,70,124,65,158,65"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a92326ddb107faaaf6385000d00826af5" name="a92326ddb107faaaf6385000d00826af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92326ddb107faaaf6385000d00826af5">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Complex &amp; Point::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accesses the coordinate at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>The index of the coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the complex coordinate. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_a92326ddb107faaaf6385000d00826af5_cgraph.png" border="0" usemap="#aclassPoint_a92326ddb107faaaf6385000d00826af5_cgraph" alt=""/></div>
+<map name="aclassPoint_a92326ddb107faaaf6385000d00826af5_cgraph" id="aclassPoint_a92326ddb107faaaf6385000d00826af5_cgraph">
+<area shape="rect" title="Accesses the coordinate at the specified index." alt="" coords="5,5,133,31"/>
+<area shape="rect" href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b" title="Gets the coordinate at the specified index." alt="" coords="181,5,305,31"/>
+<area shape="poly" title=" " alt="" coords="133,15,167,15,167,21,133,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aba67c2dc4c850255af08f6ef7b53cffc" name="aba67c2dc4c850255af08f6ef7b53cffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba67c2dc4c850255af08f6ef7b53cffc">&#9670;&#160;</a></span>ToLst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GiNaC::lst Point::ToLst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the point to a GiNaC::lst object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A GiNaC::lst representation of the point. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_aba67c2dc4c850255af08f6ef7b53cffc_icgraph.png" border="0" usemap="#aclassPoint_aba67c2dc4c850255af08f6ef7b53cffc_icgraph" alt=""/></div>
+<map name="aclassPoint_aba67c2dc4c850255af08f6ef7b53cffc_icgraph" id="aclassPoint_aba67c2dc4c850255af08f6ef7b53cffc_icgraph">
+<area shape="rect" title="Converts the point to a GiNaC::lst object." alt="" coords="896,31,992,56"/>
+<area shape="rect" href="classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="697,5,796,31"/>
+<area shape="poly" title=" " alt="" coords="882,38,796,27,796,22,882,33"/>
+<area shape="rect" href="classChecker.html#ad27c68388778a2a37c7a9589bc58c78e" title="Substitutes the Jacobian with the given point." alt="" coords="645,55,848,80"/>
+<area shape="poly" title=" " alt="" coords="883,53,849,58,848,52,882,48"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,5,597,31"/>
+<area shape="poly" title=" " alt="" coords="683,21,598,21,598,15,683,15"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,5,375,31"/>
+<area shape="poly" title=" " alt="" coords="409,21,375,21,375,15,409,15"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,5,124,31"/>
+<area shape="poly" title=" " alt="" coords="158,21,124,21,124,15,158,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf5a8bfc0d842b5a98b1292babb09da0" name="abf5a8bfc0d842b5a98b1292babb09da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5a8bfc0d842b5a98b1292babb09da0">&#9670;&#160;</a></span>ToStr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Point::ToStr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the point to a string representation. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representation of the point. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPoint_abf5a8bfc0d842b5a98b1292babb09da0_icgraph.png" border="0" usemap="#aclassPoint_abf5a8bfc0d842b5a98b1292babb09da0_icgraph" alt=""/></div>
+<map name="aclassPoint_abf5a8bfc0d842b5a98b1292babb09da0_icgraph" id="aclassPoint_abf5a8bfc0d842b5a98b1292babb09da0_icgraph">
+<area shape="rect" title="Converts the point to a string representation." alt="" coords="880,97,975,123"/>
+<area shape="rect" href="classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="689,5,788,31"/>
+<area shape="poly" title=" " alt="" coords="896,92,831,52,782,33,784,28,833,48,899,87"/>
+<area shape="rect" href="classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,31,597,56"/>
+<area shape="poly" title=" " alt="" coords="866,102,832,97,593,59,594,53,832,91,867,97"/>
+<area shape="rect" href="structCheckResult_1_1Failed.html#a538d88cd5974a6f60c31dd0c18d4b81d" title="Converts the failure to a string." alt="" coords="664,130,813,170"/>
+<area shape="poly" title=" " alt="" coords="867,125,814,137,813,132,866,120"/>
+<area shape="rect" href="structCheckResult_1_1Contraction.html#a9212b9ba409e7e547440ce01bb501258" title="Converts the contraction to a string." alt="" coords="645,194,832,234"/>
+<area shape="poly" title=" " alt="" coords="904,134,871,160,833,184,807,196,805,192,831,180,868,155,900,130"/>
+<area shape="poly" title=" " alt="" coords="676,28,598,36,597,31,675,22"/>
+<area shape="rect" href="classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,31,375,56"/>
+<area shape="poly" title=" " alt="" coords="409,46,375,46,375,41,409,41"/>
+<area shape="rect" href="classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,31,124,56"/>
+<area shape="poly" title=" " alt="" coords="158,46,124,46,124,41,158,41"/>
+<area shape="poly" title=" " alt="" coords="770,118,759,111,739,109,721,111,710,115,706,121,708,129,703,130,701,120,707,111,720,105,739,103,761,106,773,114"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>source/<a class="el" href="point_8hpp_source.html">point.hpp</a></li>
 <li>source/<b>point.cpp</b></li>

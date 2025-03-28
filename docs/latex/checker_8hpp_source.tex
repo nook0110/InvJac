@@ -9,219 +9,304 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glog/logging.h>}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iterator>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <optional>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}equation.hpp"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}solver.hpp"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}symbol.hpp"{}}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}}
-\DoxyCodeLine{00022\ \{}
-\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\ =\ 10;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structCheckerSettings_aa38ef3daee29c189ea7935da5eeac2ef}{epsilon}}\ =\ 1e-\/4;\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structCheckerSettings_a804005aa10a1c0370015da462d9eb772}{check\_contraction}}\ =\ \textcolor{keyword}{true};\ \ }
-\DoxyCodeLine{00026\ \};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCheckResult}{CheckResult}}}
-\DoxyCodeLine{00032\ \{}
-\DoxyCodeLine{00033\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Error}{Error}}}
-\DoxyCodeLine{00038\ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Error_a65bc165d2866efd67babba50775b3ded}{message}};\ \ }
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Error_a4ff1fe8c6f17d0cba9cf1eaff7991b6c}{ToStr}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Error.\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Error_a65bc165d2866efd67babba50775b3ded}{message}};\ \}}
-\DoxyCodeLine{00046\ \ \ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}}
-\DoxyCodeLine{00052\ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}(\mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{p}},\ Complex\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{v}})\ :\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}}(std::move(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{p}})),\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}}(std::move(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{v}}))\ \{\}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}(\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\&)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\ operator=(\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\&)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00062\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Failed_a538d88cd5974a6f60c31dd0c18d4b81d}{ToStr}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Failed.\ Point:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}}.ToStr()\ +\ \textcolor{stringliteral}{"{},\ Value:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Failed_a538d88cd5974a6f60c31dd0c18d4b81d}{::ToStr}}(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}});}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}};\ \ \ \ }
-\DoxyCodeLine{00068\ \ \ \ \ Complex\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}};\ \ }
-\DoxyCodeLine{00069\ \ \ \};}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Passed}{Passed}}}
-\DoxyCodeLine{00075\ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Passed_af1f2120c5ee55d9cb1a9c311c804f13f}{ToStr}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00081\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Passed.\ Total\ checks:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{structCheckResult_1_1Passed_a6c4002291a22fa277245bdd763cf410e}{check\_amount}});}
-\DoxyCodeLine{00083\ \ \ \ \ \}}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structCheckResult_1_1Passed_a6c4002291a22fa277245bdd763cf410e}{check\_amount}};\ \ }
-\DoxyCodeLine{00085\ \ \ \};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Contraction}{Contraction}}}
-\DoxyCodeLine{00091\ \ \ \{}
-\DoxyCodeLine{00096\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Contraction_a9212b9ba409e7e547440ce01bb501258}{ToStr}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00097\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Contraction.\ At\ point:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Contraction_aae732e8011fa70a257998c64c92fe9b2}{point}}.ToStr();}
-\DoxyCodeLine{00099\ \ \ \ \ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Contraction_aae732e8011fa70a257998c64c92fe9b2}{point}};\ \ }
-\DoxyCodeLine{00102\ \ \ \};}
-\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{using\ }Result\ =\ std::variant<Error,\ Failed,\ Passed,\ Contraction>;}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{classCheckResult_aa63c4f0421ab5527ae68fb1463375e6b}{CheckResult}}(\mbox{\hyperlink{classMap}{Map}}\ m,\ Result\ res)\ :\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}}(std::move(m)),\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}}(std::move(res))\ \{\}}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ \mbox{\hyperlink{classCheckResult_ab914d3312511dc356af31e43ed7b1cf5}{GetMap}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}};\ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{const}\ Result\&\ \mbox{\hyperlink{classCheckResult_abb344684e272ccd953b9577bcdcda039}{GetResult}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}};\ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00128\ \ \ std::string\ \mbox{\hyperlink{classCheckResult_aba9dd5b6ed1fea5631b6b2721f0c1f39}{ToStr}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00129\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Map:\ "{}}\ +\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}}.\mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{ToStr}}()\ +\ \textcolor{stringliteral}{"{}.\ Result:\ "{}}\ +}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ std::visit([](\textcolor{keyword}{auto}\&\&\ arg)\ \{\ \textcolor{keywordflow}{return}\ arg.ToStr();\ \},\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}});}
-\DoxyCodeLine{00132\ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00136\ \ \ Result\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}};\ \ }
-\DoxyCodeLine{00137\ \};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00145\ std::optional<Point>\ GeneratePointWithUnitJacobian(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ map,}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point);}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00151\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChecker}{Checker}}}
-\DoxyCodeLine{00152\ \{}
-\DoxyCodeLine{00153\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classChecker_adabcd3158c464f241edf4255631b73c7}{Checker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}\&\ settings\ =\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}())}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}(settings),\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}(nullptr)}
-\DoxyCodeLine{00160\ \ \ \{\}}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{SetMap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}*\ new\_map)}
-\DoxyCodeLine{00167\ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ VLOG(0)\ <<\ \textcolor{stringliteral}{"{}Setting\ new\ map."{}};}
-\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}\ =\ new\_map;}
-\DoxyCodeLine{00170\ \ \ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00176\ \ \ CheckResult::Result\ \mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{PerformCheck}}()}
-\DoxyCodeLine{00177\ \ \ \{}
-\DoxyCodeLine{00178\ \ \ \ \ LOG\_IF(FATAL,\ !\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}})\ <<\ \textcolor{stringliteral}{"{}Attempting\ to\ perform\ a\ check\ without\ a\ map\ set."{}};}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00181\ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()\ ==\ 2)}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}\ point\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_a96bb87aa86af7d89988c619cd0fa59d5}{HasContraction}}())}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Contraction}{CheckResult::Contraction}}\{*point\};}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iteration\ =\ 0;\ iteration\ <\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}};\ ++iteration)}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ point\ =\ Point::GenerateRandom(\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}());}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ point\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_a292bbf3fa2ba781d16c404491f6e0725}{Image}}(}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ GeneratePointWithUnitJacobian(*\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}},\ point).value\_or(point));}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{classChecker_a5557d50dbd898a42629d367321fa4d7c}{TestPoint}}(point);}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result)}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Failed}{CheckResult::Failed}}\{point,\ *result\};}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00202\ \ \ \ \ \}}
-\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
-\DoxyCodeLine{00204\ \ \ \ \ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ LOG(ERROR)\ <<\ \textcolor{stringliteral}{"{}Exception\ occurred:\ "{}}\ <<\ e.what();}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Error}{CheckResult::Error}}\{e.what()\};}
-\DoxyCodeLine{00207\ \ \ \ \ \}}
-\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Passed}{CheckResult::Passed}}\{\mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\};}
-\DoxyCodeLine{00209\ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00217\ \ \ std::optional<Complex>\ \mbox{\hyperlink{classChecker_a5557d50dbd898a42629d367321fa4d7c}{TestPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00218\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00219\ \ \ \ \ VLOG(0)\ <<\ \textcolor{stringliteral}{"{}Testing\ point:\ "{}}\ <<\ point.ToStr();}
-\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{auto}\ solutions\ =\ Solver::GetInstance().Solve(*\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}},\ point);}
-\DoxyCodeLine{00221\ }
-\DoxyCodeLine{00222\ \ \ \ \ Complex\ sum\_reciprocals\ =\ 0;}
-\DoxyCodeLine{00223\ }
-\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [multiplicity,\ solution]\ :\ solutions)}
-\DoxyCodeLine{00225\ \ \ \ \ \{}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ jacobian\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}();}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ term\ =}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ multiplicity\ /\ \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{SubstituteJacobian}}(std::move(jacobian),\ solution);}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ sum\_reciprocals\ +=\ term;}
-\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}equation.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}map.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}solver.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}symbol.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\ =\ 10;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structCheckerSettings_aa38ef3daee29c189ea7935da5eeac2ef}{epsilon}}\ =\ 1e-\/4;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structCheckerSettings_a804005aa10a1c0370015da462d9eb772}{check\_contraction}}\ =\ \textcolor{keyword}{true};\ \ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCheckResult}{CheckResult}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Error}{Error}}}
+\DoxyCodeLine{00040\ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Error_a65bc165d2866efd67babba50775b3ded}{message}};\ \ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Error_a4ff1fe8c6f17d0cba9cf1eaff7991b6c}{ToStr}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Error.\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Error_a65bc165d2866efd67babba50775b3ded}{message}};\ \}}
+\DoxyCodeLine{00048\ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}}
+\DoxyCodeLine{00054\ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}(\mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{p}},\ Complex\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{v}})\ :\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}}(std::move(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{p}})),\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}}(std::move(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{v}}))\ \{\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}(\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\&)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\ operator=(\mbox{\hyperlink{structCheckResult_1_1Failed}{Failed}}\&\&)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Failed_a538d88cd5974a6f60c31dd0c18d4b81d}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00065\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Failed.\ Point:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}}.\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}()\ +\ \textcolor{stringliteral}{"{},\ Value:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Failed_a538d88cd5974a6f60c31dd0c18d4b81d}{::ToStr}}(\mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Failed_a33ff29a6d64a7aa5b788341582680461}{point}};\ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ Complex\ \mbox{\hyperlink{structCheckResult_1_1Failed_a30f346ef6bdc91927c90cb430734a1f0}{value}};\ \ }
+\DoxyCodeLine{00071\ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Passed}{Passed}}}
+\DoxyCodeLine{00077\ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Passed_af1f2120c5ee55d9cb1a9c311c804f13f}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Passed.\ Total\ checks:\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{structCheckResult_1_1Passed_a6c4002291a22fa277245bdd763cf410e}{check\_amount}});}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structCheckResult_1_1Passed_a6c4002291a22fa277245bdd763cf410e}{check\_amount}};\ \ }
+\DoxyCodeLine{00087\ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Contraction}{Contraction}}}
+\DoxyCodeLine{00093\ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Contraction_a9212b9ba409e7e547440ce01bb501258}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00099\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Contraction.\ At\ point:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Contraction_aae732e8011fa70a257998c64c92fe9b2}{point}}.\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{structCheckResult_1_1Contraction_aae732e8011fa70a257998c64c92fe9b2}{point}};\ \ }
+\DoxyCodeLine{00104\ \ \ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCheckResult_1_1Keller}{Keller}}}
+\DoxyCodeLine{00110\ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ std::string\ \mbox{\hyperlink{structCheckResult_1_1Keller_abb0fbc4f17879f7a44b12df92767892d}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Keller.\ Jacobian:\ "{}}\ +\ \mbox{\hyperlink{structCheckResult_1_1Keller_abb0fbc4f17879f7a44b12df92767892d}{::ToStr}}(\mbox{\hyperlink{structCheckResult_1_1Keller_a3af727336d38bc984188bc1c246d21a8}{jacobian}});}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ Complex\ \mbox{\hyperlink{structCheckResult_1_1Keller_a3af727336d38bc984188bc1c246d21a8}{jacobian}};\ \ }
+\DoxyCodeLine{00121\ \ \ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{using\ }Result\ =\ std::variant<Error,\ Failed,\ Passed,\ Contraction,\ Keller>;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{classCheckResult_aa63c4f0421ab5527ae68fb1463375e6b}{CheckResult}}(\mbox{\hyperlink{classMap}{Map}}\ m,\ Result\ res)\ :\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}}(std::move(m)),\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}}(std::move(res))\ \{\}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ \mbox{\hyperlink{classCheckResult_ab914d3312511dc356af31e43ed7b1cf5}{GetMap}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}};\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{const}\ Result\&\ \mbox{\hyperlink{classCheckResult_abb344684e272ccd953b9577bcdcda039}{GetResult}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}};\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ std::string\ \mbox{\hyperlink{classCheckResult_aba9dd5b6ed1fea5631b6b2721f0c1f39}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00149\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Map:\ "{}}\ +\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}}.\mbox{\hyperlink{classMap_ad683c9c4a552bc98ff71f19b74315ac1}{ToStr}}()\ +\ \textcolor{stringliteral}{"{}.\ Result:\ "{}}\ +}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ std::visit([](\textcolor{keyword}{auto}\&\&\ arg)\ \{\ \textcolor{keywordflow}{return}\ arg.ToStr();\ \},\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}});}
+\DoxyCodeLine{00152\ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \mbox{\hyperlink{classMap}{Map}}\ \mbox{\hyperlink{classCheckResult_a62a485e68be6758c32a1bbca39d6c23b}{map}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ Result\ \mbox{\hyperlink{classCheckResult_afa5dc1898e2d216153061ce4fb4e6f07}{result}};\ \ }
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ std::optional<Point>\ GeneratePointWithSpecificJacobian(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ map,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Complex\&\ value);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChecker}{Checker}}}
+\DoxyCodeLine{00173\ \{}
+\DoxyCodeLine{00174\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classChecker_adabcd3158c464f241edf4255631b73c7}{Checker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}\&\ settings\ =\ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}())}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}(settings),\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}(nullptr)}
+\DoxyCodeLine{00181\ \ \ \{\}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChecker_aff5e90958f5c3128c5979d4ca1b84c0a}{SetMap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}*\ new\_map)}
+\DoxyCodeLine{00188\ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ VLOG(0)\ <<\ \textcolor{stringliteral}{"{}Setting\ new\ map."{}};}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}\ =\ new\_map;}
+\DoxyCodeLine{00191\ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ CheckResult::Result\ \mbox{\hyperlink{classChecker_a6d1f44e90af6bd7279d82a2f5b8dc0a2}{PerformCheck}}()}
+\DoxyCodeLine{00198\ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ LOG\_IF(FATAL,\ !\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}})\ <<\ \textcolor{stringliteral}{"{}Attempting\ to\ perform\ a\ check\ without\ a\ map\ set."{}};}
+\DoxyCodeLine{00200\ \ \ \ \ VLOG(4)\ <<\ \textcolor{stringliteral}{"{}Starting\ check\ with\ settings:\ iterations\ =\ "{}}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\ <<\ \textcolor{stringliteral}{"{},\ epsilon\ =\ "{}}\ <<\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_aa38ef3daee29c189ea7935da5eeac2ef}{epsilon}}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ check\_contraction\ =\ "{}}\ <<\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a804005aa10a1c0370015da462d9eb772}{check\_contraction}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ jacobian\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GiNaC::is\_a<Complex>(jacobian))}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Jacobian\ is\ a\ complex\ number."{}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Keller}{CheckResult::Keller}}\{GiNaC::ex\_to<Complex>(jacobian)\};}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iteration\ =\ 0;\ iteration\ <\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}};\ ++iteration)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ VLOG(2)\ <<\ \textcolor{stringliteral}{"{}Iteration\ "{}}\ <<\ iteration\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\ of\ "{}}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}};}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::array<Complex,\ 5>\ jacobian\_values\{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ Complex(1),\ Complex(1,\ 2),\ Complex(-\/1),\ Complex(-\/1,\ 2),\ Complex(2)\};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ TestResult\ result;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPoint}{Point}}\ point;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ jacobian\_value\ :\ jacobian\_values)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}Testing\ with\ jacobian\ value:\ "{}}\ <<\ jacobian\_value;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ point\ =\ \mbox{\hyperlink{classPoint_a1be7479354600505f20653a55a74343b}{Point::GenerateRandom}}(\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}());}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}Generated\ random\ point:\ "{}}\ <<\ point.\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ point\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_a292bbf3fa2ba781d16c404491f6e0725}{Image}}(}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GeneratePointWithSpecificJacobian(*\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}},\ point,\ jacobian\_value)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .value\_or(point));}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}Mapped\ point:\ "{}}\ <<\ point.\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}();}
 \DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{auto}\ approximate\_sum\ =\ GiNaC::abs(sum\_reciprocals).to\_double();}
-\DoxyCodeLine{00233\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Sum\ of\ reciprocals\ of\ Jacobians:\ "{}}\ <<\ approximate\_sum;}
-\DoxyCodeLine{00234\ }
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ approximate\_sum\ <\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_aa38ef3daee29c189ea7935da5eeac2ef}{epsilon}};}
-\DoxyCodeLine{00236\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Test\ result:\ "{}}\ <<\ (result\ ?\ \textcolor{stringliteral}{"{}passed"{}}\ :\ \textcolor{stringliteral}{"{}failed"{}});}
-\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ result\ ?\ std::nullopt\ :\ std::optional<Complex>\{approximate\_sum\};}
-\DoxyCodeLine{00238\ \ \ \}}
-\DoxyCodeLine{00239\ }
-\DoxyCodeLine{00246\ \ \ Complex\ \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{SubstituteJacobian}}(Polynomial\ jacobian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00247\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{return}\ GiNaC::ex\_to<Complex>(jacobian.subs(}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ Symbols::GetSymbolsList(\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()),\ point.ToLst()));}
-\DoxyCodeLine{00250\ \ \ \}}
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}*\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}\ =\ \textcolor{keyword}{nullptr};\ \ }
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00254\ \ \ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}};\ \ }
-\DoxyCodeLine{00255\ \};}
-\DoxyCodeLine{00256\ }
-\DoxyCodeLine{00263\ \textcolor{keyword}{inline}\ std::optional<Point>\ GeneratePointWithUnitJacobian(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ map,}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)}
-\DoxyCodeLine{00265\ \{}
-\DoxyCodeLine{00266\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dimensions\ =\ map.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}();}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00268\ \ \ \textcolor{keyword}{auto}\ jacobian\ =\ map.\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}();}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \ \ std::vector<Polynomial>\ equations;}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00272\ \ \ std::ranges::transform(}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ Symbols::GetSymbolsList(dimensions),\ point,\ std::back\_inserter(equations),}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ symbol,\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ coord)\ \{\ \textcolor{keywordflow}{return}\ symbol\ -\/\ coord;\ \});}
-\DoxyCodeLine{00275\ }
-\DoxyCodeLine{00276\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dimensions;\ ++i)}
-\DoxyCodeLine{00277\ \ \ \{}
-\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation;}
-\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ dimensions;\ ++j)}
-\DoxyCodeLine{00280\ \ \ \ \ \{}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ ==\ i)}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(jacobian\ -\/\ 1);}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(equations[j]);}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00289\ \ \ \ \ \}}
-\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{if}\ (!equation.\mbox{\hyperlink{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009}{IsSquare}}())}
-\DoxyCodeLine{00291\ \ \ \ \ \{}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ result\ =\ TestPoint(point);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::holds\_alternative<SingularPoint>(result))}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::holds\_alternative<SingularPoint>(result))}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}All\ points\ resulted\ in\ singular\ points,\ generating\ a\ new\ "{}}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}random\ point."{}};}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ point\ =\ \mbox{\hyperlink{classPoint_a1be7479354600505f20653a55a74343b}{Point::GenerateRandom}}(\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}());}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ result\ =\ TestPoint(point);}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::holds\_alternative<NonZeroJacobian>(result))}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ VLOG(2)\ <<\ \textcolor{stringliteral}{"{}Non-\/zero\ Jacobian\ found."{}};}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()\ ==\ 2)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}\ point\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_a96bb87aa86af7d89988c619cd0fa59d5}{HasContraction}}())}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VLOG(2)\ <<\ \textcolor{stringliteral}{"{}Contraction\ found\ at\ point:\ "{}}\ <<\ point-\/>\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Contraction}{CheckResult::Contraction}}\{*point\};}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ VLOG(4)\ <<\ \textcolor{stringliteral}{"{}Non-\/zero\ Jacobian\ value:\ "{}}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::get<NonZeroJacobian>(result).value;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Failed}{CheckResult::Failed}}\{point,}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::get<NonZeroJacobian>(result).value\};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{00267\ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ LOG(ERROR)\ <<\ \textcolor{stringliteral}{"{}Exception\ occurred:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Error}{CheckResult::Error}}\{e.what()\};}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Check\ passed\ after\ "{}}\ <<\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\ <<\ \textcolor{stringliteral}{"{}\ iterations."{}};}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structCheckResult_1_1Passed}{CheckResult::Passed}}\{\mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_a5f960a9dba31e118724c927eab7458ee}{iterations}}\};}
+\DoxyCodeLine{00273\ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00282\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChecker_1_1NonZeroJacobian}{NonZeroJacobian}}}
+\DoxyCodeLine{00283\ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ Complex\ value;}
+\DoxyCodeLine{00285\ \ \ \};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChecker_1_1ZeroJacobian}{ZeroJacobian}}}
+\DoxyCodeLine{00288\ \ \ \{\};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChecker_1_1SingularPoint}{SingularPoint}}}
+\DoxyCodeLine{00291\ \ \ \{\};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \textcolor{keyword}{using\ }TestResult\ =\ std::variant<NonZeroJacobian,\ ZeroJacobian,\ SingularPoint>;}
 \DoxyCodeLine{00294\ }
-\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{auto}\ solutions\ =\ equation.\mbox{\hyperlink{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149}{Solve}}();}
-\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keyword}{auto}\ solution\ =\ *solutions.begin();}
-\DoxyCodeLine{00297\ \ \ \ \ DLOG\_IF(FATAL,\ solution.point.GetDimensions()\ !=\ dimensions)}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}The\ solution\ point\ does\ not\ have\ the\ expected\ dimensions."{}};}
-\DoxyCodeLine{00299\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Using\ point\ with\ jacobian\ equal\ to\ "{}}}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ ToStr(map.\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}()}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .subs(Symbols::GetSymbolsList(map.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()),}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ solution.point.ToLst())}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .evalf());}
-\DoxyCodeLine{00304\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Point\ is\ "{}}\ <<\ solution.point.ToStr();}
-\DoxyCodeLine{00305\ }
-\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{return}\ solution.point;}
-\DoxyCodeLine{00307\ \ \ \}}
-\DoxyCodeLine{00308\ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Couldn't\ generate\ a\ point\ with\ jacobian\ equal\ to\ 1."{}};}
-\DoxyCodeLine{00309\ \ \ \textcolor{keywordflow}{return}\ \{\};}
-\DoxyCodeLine{00310\ \}}
+\DoxyCodeLine{00295\ \ \ TestResult\ TestPoint(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00296\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00297\ \ \ \ \ VLOG(0)\ <<\ \textcolor{stringliteral}{"{}Testing\ point:\ "{}}\ <<\ point.\mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}();}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{auto}\ solutions\ =\ \mbox{\hyperlink{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed}{Solver::GetInstance}}().\mbox{\hyperlink{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044}{Solve}}(*\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}},\ point);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{if}\ (solutions.GetRootCount()\ <\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_a6966029610d6d01a0ff49372f642fc7a}{GetExtensionDegree}}())}
+\DoxyCodeLine{00301\ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structChecker_1_1SingularPoint}{SingularPoint}}\{\};}
+\DoxyCodeLine{00303\ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ Complex\ sum\_reciprocals\ =\ 0;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [multiplicity,\ solution]\ :\ solutions)}
+\DoxyCodeLine{00308\ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}Multiplicity:\ "{}}\ <<\ multiplicity}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ Solution:\ "{}}\ <<\ solution.ToStr();}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ jacobian\ =\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}();}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ term\ =}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ multiplicity\ /\ \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{SubstituteJacobian}}(std::move(jacobian),\ solution);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ sum\_reciprocals\ +=\ term;}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ VLOG(3)\ <<\ \textcolor{stringliteral}{"{}Term:\ "{}}\ <<\ term.evalf();}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keyword}{auto}\ approximate\_sum\ =\ GiNaC::abs(sum\_reciprocals).to\_double();}
+\DoxyCodeLine{00321\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Sum\ of\ reciprocals\ of\ Jacobians:\ "{}}\ <<\ approximate\_sum;}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ approximate\_sum\ <\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}}.\mbox{\hyperlink{structCheckerSettings_aa38ef3daee29c189ea7935da5eeac2ef}{epsilon}};}
+\DoxyCodeLine{00324\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Test\ result:\ "{}}\ <<\ (result\ ?\ \textcolor{stringliteral}{"{}passed"{}}\ :\ \textcolor{stringliteral}{"{}failed"{}});}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{if}\ (result)}
+\DoxyCodeLine{00326\ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ZeroJacobian\{\};}
+\DoxyCodeLine{00328\ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{return}\ NonZeroJacobian\{approximate\_sum\};}
+\DoxyCodeLine{00330\ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00338\ \ \ Complex\ \mbox{\hyperlink{classChecker_ad27c68388778a2a37c7a9589bc58c78e}{SubstituteJacobian}}(Polynomial\ jacobian,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00339\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{return}\ GiNaC::ex\_to<Complex>(jacobian.subs(}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ Symbols::GetSymbolsList(\mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}-\/>\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()),\ point.\mbox{\hyperlink{classPoint_aba67c2dc4c850255af08f6ef7b53cffc}{ToLst}}()));}
+\DoxyCodeLine{00342\ \ \ \}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}*\ \mbox{\hyperlink{classChecker_ae26b39a416dd85f851ed2cf616e570b4}{map\_}}\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \mbox{\hyperlink{structCheckerSettings}{CheckerSettings}}\ \mbox{\hyperlink{classChecker_ab16a97490660fb8fc649c1a7c3eb3321}{settings\_}};\ \ }
+\DoxyCodeLine{00347\ \};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00355\ \textcolor{keyword}{inline}\ std::optional<Point>\ GeneratePointWithSpecificJacobian(}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMap}{Map}}\&\ map,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPoint}{Point}}\&\ point,\ \textcolor{keyword}{const}\ Complex\&\ value)}
+\DoxyCodeLine{00357\ \{}
+\DoxyCodeLine{00358\ \ \ VLOG(4)\ <<\ \textcolor{stringliteral}{"{}Generating\ point\ with\ specific\ Jacobian:\ "{}}\ <<\ value;}
+\DoxyCodeLine{00359\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dimensions\ =\ map.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}();}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \textcolor{keyword}{auto}\ jacobian\ =\ map.\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}();}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ std::vector<Polynomial>\ equations;}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ std::ranges::transform(}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ Symbols::GetSymbolsList(dimensions),\ point,\ std::back\_inserter(equations),}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ symbol,\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ coord)\ \{\ \textcolor{keywordflow}{return}\ symbol\ -\/\ coord;\ \});}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dimensions;\ ++i)}
+\DoxyCodeLine{00370\ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation;}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ dimensions;\ ++j)}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ ==\ i)}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(jacobian\ -\/\ value);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ equation.\mbox{\hyperlink{classEquation_a28f78a59c69dfdc27b505afc1263e3cc}{AppendEquation}}(equations[j]);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \}}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{if}\ (!equation.\mbox{\hyperlink{classEquation_a8871fd36fb9bb10ec82a8922ad5fc009}{IsSquare}}())}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00386\ \ \ \ \ \}}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{auto}\ solutions\ =\ equation.\mbox{\hyperlink{classEquation_ae57d9bce0f5e3af995ea20b8e3af1149}{Solve}}();}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keyword}{auto}\ solution\ =\ *solutions.begin();}
+\DoxyCodeLine{00390\ \ \ \ \ DLOG\_IF(FATAL,\ solution.point.GetDimensions()\ !=\ dimensions)}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}The\ solution\ point\ does\ not\ have\ the\ expected\ dimensions."{}};}
+\DoxyCodeLine{00392\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Using\ point\ with\ jacobian\ equal\ to\ "{}}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ ToStr(map.\mbox{\hyperlink{classMap_ae2c291f4f24e65f7c5c841843f14e8e1}{GetJacobian}}()}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .subs(Symbols::GetSymbolsList(map.\mbox{\hyperlink{classMap_ac534b0030b33c463764d453a50bc1949}{GetDimensions}}()),}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ solution.point.ToLst())}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .evalf());}
+\DoxyCodeLine{00397\ \ \ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Point\ is\ "{}}\ <<\ solution.point.ToStr();}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordflow}{return}\ solution.point;}
+\DoxyCodeLine{00400\ \ \ \}}
+\DoxyCodeLine{00401\ \ \ VLOG(1)\ <<\ \textcolor{stringliteral}{"{}Couldn't\ generate\ a\ point\ with\ jacobian\ equal\ to\ "{}}\ <<\ value;}
+\DoxyCodeLine{00402\ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00403\ \}}
 
 \end{DoxyCode}

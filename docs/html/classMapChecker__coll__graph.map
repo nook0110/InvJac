@@ -1,7 +1,7 @@
 <map id="MapChecker" name="MapChecker">
-<area shape="rect" id="Node000001" title="Class to check maps using a specified strategy." alt="" coords="382,729,513,875"/>
+<area shape="rect" id="Node000001" title="Class to check maps using a specified strategy." alt="" coords="379,729,516,895"/>
 <area shape="rect" id="Node000002" href="$classChecker.html" title="Class to perform checks on a map." alt="" coords="267,521,427,667"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="385,666,408,713,403,716,380,668"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="383,666,405,714,400,716,378,668"/>
 <area shape="rect" id="Node000003" href="$classMap.html" title="Class representing a mathematical map." alt="" coords="152,133,359,459"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,458,323,505,318,506,303,460"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,5,164,71"/>
@@ -17,5 +17,5 @@
 <area shape="rect" id="Node000009" title=" " alt="" coords="599,5,642,71"/>
 <area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="607,72,587,111,512,250,507,248,582,108,602,70"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="452,554,643,634"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="531,636,492,716,487,714,526,633"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="532,635,494,716,490,713,527,633"/>
 </map>

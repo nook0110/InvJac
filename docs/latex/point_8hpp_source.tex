@@ -11,58 +11,62 @@
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{using\ }Complex\ =\ GiNaC::numeric;}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPoint}{Point}}}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPoint}{Point}}(std::vector<Complex>\ coords\ =\ \{\})\ :\ coords\_(std::move(coords))}
-\DoxyCodeLine{00014\ \ \ \{\}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{size\_t}\ GetDimensions()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.size();\ \}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{const}\ Complex\&\ GetCoord(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_[i];\ \}}
-\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{const}\ Complex\&\ operator[](\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ GetCoord(i);\ \}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ GiNaC::lst\ ToLst()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classPoint}{Point}}\ GenerateRandom(\textcolor{keywordtype}{size\_t}\ dimensions)}
-\DoxyCodeLine{00024\ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ std::vector<Complex>\ coords(dimensions);}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(80085);}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ dis(-\/10.0,\ 10.0);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ coord\ :\ coords)}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ coord\ =\ dis(gen)\ +\ GiNaC::I\ *\ dis(gen);}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint}{Point}}(std::move(coords));}
-\DoxyCodeLine{00034\ \ \ \}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ std::string\ ToStr()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00037\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00038\ \ \ \ \ std::ostringstream\ oss;}
-\DoxyCodeLine{00039\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}("{}};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ coords\_.size();\ ++i)}
-\DoxyCodeLine{00041\ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ oss\ <<\ coords\_[i].evalf();}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ coords\_.size()\ -\/\ 1)}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
-\DoxyCodeLine{00050\ \ \ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ std::vector<Complex>::iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ coords\_.begin();\ \}}
-\DoxyCodeLine{00053\ \ \ std::vector<Complex>::const\_iterator\ begin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.begin();\ \}}
-\DoxyCodeLine{00054\ \ \ std::vector<Complex>::iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ coords\_.end();\ \}}
-\DoxyCodeLine{00055\ \ \ std::vector<Complex>::const\_iterator\ end()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ coords\_.end();\ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00058\ \ \ std::vector<Complex>\ coords\_;}
-\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPoint}{Point}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPoint_a57cb67ce8efdc82e6ea579cc05835292}{Point}}(std::vector<Complex>\ coords\ =\ \{\})\ :\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}(std::move(coords))}
+\DoxyCodeLine{00022\ \ \ \{\}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classPoint_a8807f48794da645588a9b92c7aff4789}{GetDimensions}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.size();\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{const}\ Complex\&\ \mbox{\hyperlink{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b}{GetCoord}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}[i];\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ Complex\&\ \mbox{\hyperlink{classPoint_a92326ddb107faaaf6385000d00826af5}{operator[]}}(\textcolor{keywordtype}{size\_t}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_ad3c19aa6a99a8f9a3ac082d72a22cb3b}{GetCoord}}(i);\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ GiNaC::lst\ \mbox{\hyperlink{classPoint_aba67c2dc4c850255af08f6ef7b53cffc}{ToLst}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classPoint}{Point}}\ \mbox{\hyperlink{classPoint_a1be7479354600505f20653a55a74343b}{GenerateRandom}}(\textcolor{keywordtype}{size\_t}\ dimensions)}
+\DoxyCodeLine{00056\ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<Complex>\ coords(dimensions);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(80085);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ dis(-\/10.0,\ 10.0);}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{static\_assert}(std::ranges::range<Point>);}
-\DoxyCodeLine{00062\ \textcolor{keyword}{static\_assert}(std::ranges::constant\_range<const\ Point>);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ coord\ :\ coords)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ coord\ =\ dis(gen)\ +\ GiNaC::I\ *\ dis(gen);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint}{Point}}(std::move(coords));}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ std::string\ \mbox{\hyperlink{classPoint_abf5a8bfc0d842b5a98b1292babb09da0}{ToStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00075\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}("{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.size();\ ++i)}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ oss\ <<\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}[i].evalf();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.size()\ -\/\ 1)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00086\ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ std::vector<Complex>::iterator\ \mbox{\hyperlink{classPoint_ad943e966b387776d9c76f233ea14737e}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.begin();\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ std::vector<Complex>::const\_iterator\ \mbox{\hyperlink{classPoint_a69d149a65b910a28995401163864595d}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.begin();\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ std::vector<Complex>::iterator\ \mbox{\hyperlink{classPoint_a36b7dcab233f15bc5d2a9df36132cca7}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.end();\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ std::vector<Complex>::const\_iterator\ \mbox{\hyperlink{classPoint_a94230d609d1a493ff411218ab08e65ce}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}}.end();\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00113\ \ \ std::vector<Complex>\ \mbox{\hyperlink{classPoint_a82035f0ce989a54a69d7c318ebeb4335}{coords\_}};\ \ }
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{static\_assert}(std::ranges::range<Point>);}
+\DoxyCodeLine{00117\ \textcolor{keyword}{static\_assert}(std::ranges::constant\_range<const\ Point>);}
 
 \end{DoxyCode}

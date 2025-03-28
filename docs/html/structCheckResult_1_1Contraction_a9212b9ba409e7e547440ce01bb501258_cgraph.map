@@ -1,0 +1,5 @@
+<map id="CheckResult::Contraction::ToStr" name="CheckResult::Contraction::ToStr">
+<area shape="rect" id="Node000001" title="Converts the contraction to a string." alt="" coords="5,5,192,45"/>
+<area shape="rect" id="Node000002" href="$classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0" title="Converts the point to a string representation." alt="" coords="240,13,335,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,23,226,23,226,28,192,28"/>
+</map>

@@ -98,24 +98,28 @@ Collaboration diagram for FunctionDatabase:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFunctionDatabase__coll__graph.png" border="0" usemap="#aFunctionDatabase_coll__map" alt="Collaboration graph"/></div>
 <map name="aFunctionDatabase_coll__map" id="aFunctionDatabase_coll__map">
-<area shape="rect" title="Class to interact with the function database." alt="" coords="52,207,215,352"/>
+<area shape="rect" title="Class to interact with the function database." alt="" coords="52,221,215,367"/>
 <area shape="rect" title=" " alt="" coords="5,5,69,71"/>
-<area shape="poly" title=" " alt="" coords="41,70,48,124,65,182,69,191,65,193,60,184,43,125,36,71"/>
+<area shape="poly" title=" " alt="" coords="41,71,47,130,54,164,65,196,69,206,65,208,60,198,49,165,42,131,35,71"/>
 <area shape="rect" title=" " alt="" coords="100,5,167,71"/>
-<area shape="poly" title=" " alt="" coords="136,71,136,190,131,190,131,71"/>
+<area shape="poly" title=" " alt="" coords="136,71,136,205,131,205,131,71"/>
 <area shape="rect" title=" " alt="" coords="208,5,256,71"/>
-<area shape="poly" title=" " alt="" coords="232,71,223,125,205,184,200,194,196,191,200,182,218,124,227,70"/>
+<area shape="poly" title=" " alt="" coords="233,71,225,131,217,165,205,198,200,208,196,206,200,196,212,164,220,130,228,70"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a818f96f69008173a3792f99be6584038" id="r_a818f96f69008173a3792f99be6584038"><td class="memItemLeft" align="right" valign="top"><a id="a818f96f69008173a3792f99be6584038" name="a818f96f69008173a3792f99be6584038"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionDatabase.html#a818f96f69008173a3792f99be6584038">ResultType</a> { <b>Passed</b>
+<tr class="memitem:a818f96f69008173a3792f99be6584038" id="r_a818f96f69008173a3792f99be6584038"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionDatabase.html#a818f96f69008173a3792f99be6584038">ResultType</a> { <br />
+&#160;&#160;<b>Passed</b>
 , <b>Failed</b>
 , <b>Error</b>
 , <b>Contraction</b>
+, <br />
+&#160;&#160;<a class="el" href="classFunctionDatabase.html#a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9">Keller</a>
+<br />
  }</td></tr>
-<tr class="memdesc:a818f96f69008173a3792f99be6584038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the type of result. <br /></td></tr>
+<tr class="memdesc:a818f96f69008173a3792f99be6584038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the type of result.  <a href="classFunctionDatabase.html#a818f96f69008173a3792f99be6584038">More...</a><br /></td></tr>
 <tr class="separator:a818f96f69008173a3792f99be6584038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -169,10 +173,43 @@ mysqlx::Table&#160;</td><td class="memItemRight" valign="bottom"><b>error_table_
 mysqlx::Table&#160;</td><td class="memItemRight" valign="bottom"><b>contraction_table_</b></td></tr>
 <tr class="memdesc:a186e47ab070a6a91e803c041f4ff1701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contraction results table. <br /></td></tr>
 <tr class="separator:a186e47ab070a6a91e803c041f4ff1701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055b28a28743b9fdc98884c106270f3c" id="r_a055b28a28743b9fdc98884c106270f3c"><td class="memItemLeft" align="right" valign="top"><a id="a055b28a28743b9fdc98884c106270f3c" name="a055b28a28743b9fdc98884c106270f3c"></a>
+mysqlx::Table&#160;</td><td class="memItemRight" valign="bottom"><b>keller_table_</b></td></tr>
+<tr class="memdesc:a055b28a28743b9fdc98884c106270f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keller results table. <br /></td></tr>
+<tr class="separator:a055b28a28743b9fdc98884c106270f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to interact with the function database. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a818f96f69008173a3792f99be6584038" name="a818f96f69008173a3792f99be6584038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818f96f69008173a3792f99be6584038">&#9670;&#160;</a></span>ResultType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classFunctionDatabase.html#a818f96f69008173a3792f99be6584038">FunctionDatabase::ResultType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enum representing the type of result. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9" name="a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9"></a>Keller&#160;</td><td class="fielddoc"><p>New Keller result type. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a209a02bbd437097388dac7c6ec672b05" name="a209a02bbd437097388dac7c6ec672b05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a209a02bbd437097388dac7c6ec672b05">&#9670;&#160;</a></span>FunctionDatabase()</h2>
 

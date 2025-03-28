@@ -1,0 +1,122 @@
+\doxysection{phc\+\_\+traits.\+hpp}
+\hypertarget{phc__traits_8hpp_source}{}\label{phc__traits_8hpp_source}\index{source/phc\_traits.hpp@{source/phc\_traits.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }phc}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ Precision}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ Standard\ \ }
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }base}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions}{SystemContainerFunctions}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00026\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions_aceb97bb8d16b9848d4a26be523432083}{ClearSymbolTable}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions_a79994a76a7ba4a23753c465ca0a12691}{AddSymbol}}(\textcolor{keywordtype}{int}\ size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions_a5424a87c467380d7fac54e4c82336cca}{NumberOfSymbols}}(\textcolor{keywordtype}{int}*\ n);}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ \}\ \ \textcolor{comment}{//\ namespace\ base}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <Precision\ P>}
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1SystemContainerTraits}{SystemContainerTraits}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions}{base::SystemContainerFunctions}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00056\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_ae2e9121ea768d0424658ba648c64a149}{ClearSystem}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_a18ba724cab1f9a04608cad204751c78e}{NumberOfPolynomials}}(\textcolor{keywordtype}{int}*\ n)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_af902a05ce207ded72234531ad22e975f}{StorePolynomial}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ number\_of\_characters,\ \textcolor{keywordtype}{int}\ number\_of\_variables,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\_of\_polynomial,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ polynomial\_string)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_afe2b4df422c363020c7ac70f4439da04}{InitializeNumberOfPolynomials}}(\textcolor{keywordtype}{int}\ n)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1SystemContainerTraits}{SystemContainerTraits}}<Precision::Standard>}
+\DoxyCodeLine{00082\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1SystemContainerFunctions}{base::SystemContainerFunctions}}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00088\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_ae2e9121ea768d0424658ba648c64a149}{ClearSystem}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_a18ba724cab1f9a04608cad204751c78e}{NumberOfPolynomials}}(\textcolor{keywordtype}{int}*\ n);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00105\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_af902a05ce207ded72234531ad22e975f}{StorePolynomial}}(\textcolor{keywordtype}{int}\ number\_of\_characters,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ number\_of\_variables,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\_of\_polynomial,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ polynomial\_string);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SystemContainerTraits_afe2b4df422c363020c7ac70f4439da04}{InitializeNumberOfPolynomials}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{namespace\ }base}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1base_1_1SolutionContainerFunctions}{SolutionContainerFunctions}}}
+\DoxyCodeLine{00125\ \{\};}
+\DoxyCodeLine{00126\ \}\ \ \textcolor{comment}{//\ namespace\ base}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{template}\ <Precision\ P>}
+\DoxyCodeLine{00134\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1SolutionContainerTraits}{SolutionContainerTraits}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1SolutionContainerFunctions}{base::SolutionContainerFunctions}}}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00139\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a6fc0239fe70332f0b7c94a4609a21343}{ClearSolutions}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00144\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a6261dd4fb77b0ae214efbc355950879f}{NumberOfSolutions}}(\textcolor{keywordtype}{int}*\ n)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a4084889bcda5122f14e205b6ead3b246}{LengthSolutionString}}(\textcolor{keywordtype}{int}\ solution\_number,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ length)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00155\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_aca404cf8e637103d69f66106ff442297}{WriteSolutionString}}(\textcolor{keywordtype}{int}\ solution\_number,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ solution\_string\_length,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ solution\_string)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00158\ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00165\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1SolutionContainerTraits}{SolutionContainerTraits}}<Precision::Standard>}
+\DoxyCodeLine{00166\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1SolutionContainerFunctions}{base::SolutionContainerFunctions}}}
+\DoxyCodeLine{00167\ \{}
+\DoxyCodeLine{00172\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a6fc0239fe70332f0b7c94a4609a21343}{ClearSolutions}}();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a6261dd4fb77b0ae214efbc355950879f}{NumberOfSolutions}}(\textcolor{keywordtype}{int}*\ n);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00187\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_a4084889bcda5122f14e205b6ead3b246}{LengthSolutionString}}(\textcolor{keywordtype}{int}\ solution\_number,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ length);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00197\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1SolutionContainerTraits_aca404cf8e637103d69f66106ff442297}{WriteSolutionString}}(\textcolor{keywordtype}{int}\ solution\_number,}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ solution\_string\_length,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ solution\_string);}
+\DoxyCodeLine{00200\ \};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{namespace\ }base}
+\DoxyCodeLine{00203\ \{}
+\DoxyCodeLine{00208\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions}{PHCPackFunctions}}}
+\DoxyCodeLine{00209\ \{}
+\DoxyCodeLine{00213\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions_a9c6c063a4e24638203d3bb93fd946af4}{AdaInit}}();}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions_a2cc039ef4451bb518e27777db4755f95}{AdaFinal}}();}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00224\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions_abab51e0b9148997b87a06835f25b567c}{ClearData}}();}
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ \}\ \ \textcolor{comment}{//\ namespace\ base}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{template}\ <Precision\ P>}
+\DoxyCodeLine{00234\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1PHCPackTraits}{PHCPackTraits}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions}{base::PHCPackFunctions}}}
+\DoxyCodeLine{00235\ \{}
+\DoxyCodeLine{00239\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1PHCPackTraits_aa75a0bca610b0adff940a2286bccc198}{SolveSystem}}(\textcolor{keywordtype}{int}*\ root\_count,\ \textcolor{keywordtype}{int}\ silent,\ \textcolor{keywordtype}{int}*\ nrcs,}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ rocos,\ \textcolor{keywordtype}{int}\ nbtasks,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vrb)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00242\ \};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00248\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00249\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structphc_1_1PHCPackTraits}{PHCPackTraits}}<Precision::Standard>\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structphc_1_1base_1_1PHCPackFunctions}{base::PHCPackFunctions}}}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00261\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structphc_1_1PHCPackTraits_aa75a0bca610b0adff940a2286bccc198}{SolveSystem}}(\textcolor{keywordtype}{int}*\ root\_count,\ \textcolor{keywordtype}{int}\ silent,\ \textcolor{keywordtype}{int}*\ nrcs,}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ rocos,\ \textcolor{keywordtype}{int}\ nbtasks,\ \textcolor{keywordtype}{int}\ vrb);}
+\DoxyCodeLine{00263\ \};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \}\ \ \textcolor{comment}{//\ namespace\ phc}}
+
+\end{DoxyCode}

@@ -17,9 +17,11 @@ find_package(Boost 1.45.0 COMPONENTS program_options)
 
 include_directories(${Boost_INCLUDE_DIRS}) 
 add_library(invjac_lib ${SOURCES})
+add_library(invjac_lib_test ${SOURCES})
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/phc/PHCpack/lib)
 set(LIBRARIES phcpack_c_interface libPHCpack.so cln ginac mysql::concpp glog::glog ${Boost_LIBRARIES})
 target_link_libraries(invjac_lib ${LIBRARIES})
+target_link_libraries(invjac_lib_test ${LIBRARIES})
 
 add_executable(invjac source/main.cpp)    
 
@@ -47,15 +49,13 @@ FetchContent_MakeAvailable(googletest)
 FILE(GLOB TEST_SOURCES tests/*.cpp)
 enable_testing()
 add_executable(invjac_test ${TEST_SOURCES})
-target_link_libraries(invjac_test invjac_lib GTest::gtest_main)
+target_link_libraries(invjac_test invjac_lib_test GTest::gtest_main)
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(invjac_test PRIVATE --coverage -g)
-    target_link_options(invjac_test PRIVATE --coverage)
-    target_compile_options(invjac_lib PRIVATE --coverage -g)
-    target_link_options(invjac_lib PRIVATE --coverage)
-  endif()
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(invjac_test PRIVATE --coverage -g)
+  target_link_options(invjac_test PRIVATE --coverage)
+  target_compile_options(invjac_lib_test PRIVATE --coverage -g)
+  target_link_options(invjac_lib_test PRIVATE --coverage)
 endif()
 
 add_custom_target(coverage

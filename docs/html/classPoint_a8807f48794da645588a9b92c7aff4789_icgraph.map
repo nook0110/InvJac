@@ -1,0 +1,15 @@
+<map id="Point::GetDimensions" name="Point::GetDimensions">
+<area shape="rect" id="Node000001" title="Gets the number of dimensions of the point." alt="" coords="864,31,1027,56"/>
+<area shape="rect" id="Node000002" href="$classSolver.html#a83b673900078afb56d459e75295b0d43" title="Creates an equation from the given mapping and point." alt="" coords="645,5,816,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="850,35,816,31,816,25,851,30"/>
+<area shape="rect" id="Node000004" href="$classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="681,55,780,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="851,57,781,65,780,59,850,51"/>
+<area shape="rect" id="Node000003" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="457,5,563,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="631,21,564,21,564,15,631,15"/>
+<area shape="rect" id="Node000005" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,55,597,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="667,70,598,70,598,65,667,65"/>
+<area shape="rect" id="Node000006" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,55,375,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="409,70,375,70,375,65,409,65"/>
+<area shape="rect" id="Node000007" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,55,124,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="158,70,124,70,124,65,158,65"/>
+</map>

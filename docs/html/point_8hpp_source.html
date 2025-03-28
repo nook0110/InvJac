@@ -100,62 +100,84 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span>Complex = GiNaC::numeric;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classPoint.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classPoint.html">Point</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classPoint.html">Point</a>(std::vector&lt;Complex&gt; coords = {}) : coords_(std::move(coords))</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  {}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">size_t</span> GetDimensions()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> coords_.size(); }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> Complex&amp; GetCoord(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> coords_[i]; }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> Complex&amp; operator[](<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> GetCoord(i); }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  GiNaC::lst ToLst() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">static</span> <a class="code hl_class" href="classPoint.html">Point</a> GenerateRandom(<span class="keywordtype">size_t</span> dimensions)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::vector&lt;Complex&gt; coords(dimensions);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> std::mt19937 gen(80085);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> std::uniform_real_distribution&lt;double&gt; dis(-10.0, 10.0);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; coord : coords)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      coord = dis(gen) + GiNaC::I * dis(gen);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classPoint.html">Point</a>(std::move(coords));</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  std::string ToStr()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::ostringstream oss;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    oss &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; coords_.size(); ++i)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      oss &lt;&lt; coords_[i].evalf();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keywordflow">if</span> (i &lt; coords_.size() - 1)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        oss &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    oss &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  std::vector&lt;Complex&gt;::iterator begin() { <span class="keywordflow">return</span> coords_.begin(); }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  std::vector&lt;Complex&gt;::const_iterator begin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> coords_.begin(); }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::vector&lt;Complex&gt;::iterator end() { <span class="keywordflow">return</span> coords_.end(); }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::vector&lt;Complex&gt;::const_iterator end()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> coords_.end(); }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  std::vector&lt;Complex&gt; coords_;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classPoint.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classPoint.html">Point</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classPoint.html#a57cb67ce8efdc82e6ea579cc05835292">   21</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classPoint.html#a57cb67ce8efdc82e6ea579cc05835292">Point</a>(std::vector&lt;Complex&gt; coords = {}) : <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>(std::move(coords))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  {}</div>
 </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classPoint.html#a8807f48794da645588a9b92c7aff4789">   28</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPoint.html#a8807f48794da645588a9b92c7aff4789">GetDimensions</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.size(); }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b">   35</a></span>  <span class="keyword">const</span> Complex&amp; <a class="code hl_function" href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b">GetCoord</a>(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>[i]; }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classPoint.html#a92326ddb107faaaf6385000d00826af5">   42</a></span>  <span class="keyword">const</span> Complex&amp; <a class="code hl_function" href="classPoint.html#a92326ddb107faaaf6385000d00826af5">operator[]</a>(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b">GetCoord</a>(i); }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  GiNaC::lst <a class="code hl_function" href="classPoint.html#aba67c2dc4c850255af08f6ef7b53cffc">ToLst</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classPoint.html#a1be7479354600505f20653a55a74343b">   55</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="classPoint.html">Point</a> <a class="code hl_function" href="classPoint.html#a1be7479354600505f20653a55a74343b">GenerateRandom</a>(<span class="keywordtype">size_t</span> dimensions)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::vector&lt;Complex&gt; coords(dimensions);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> std::mt19937 gen(80085);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> std::uniform_real_distribution&lt;double&gt; dis(-10.0, 10.0);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">static_assert</span>(std::ranges::range&lt;Point&gt;);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">static_assert</span>(std::ranges::constant_range&lt;const Point&gt;);</div>
-<div class="ttc" id="aclassPoint_html"><div class="ttname"><a href="classPoint.html">Point</a></div><div class="ttdef"><b>Definition</b> point.hpp:11</div></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; coord : coords)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      coord = dis(gen) + GiNaC::I * dis(gen);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classPoint.html">Point</a>(std::move(coords));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0">   72</a></span>  std::string <a class="code hl_function" href="classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0">ToStr</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::ostringstream oss;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    oss &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.size(); ++i)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      oss &lt;&lt; <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>[i].evalf();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keywordflow">if</span> (i &lt; <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.size() - 1)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        oss &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    oss &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classPoint.html#ad943e966b387776d9c76f233ea14737e">   92</a></span>  std::vector&lt;Complex&gt;::iterator <a class="code hl_function" href="classPoint.html#ad943e966b387776d9c76f233ea14737e">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.begin(); }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classPoint.html#a69d149a65b910a28995401163864595d">   98</a></span>  std::vector&lt;Complex&gt;::const_iterator <a class="code hl_function" href="classPoint.html#a69d149a65b910a28995401163864595d">begin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.begin(); }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classPoint.html#a36b7dcab233f15bc5d2a9df36132cca7">  104</a></span>  std::vector&lt;Complex&gt;::iterator <a class="code hl_function" href="classPoint.html#a36b7dcab233f15bc5d2a9df36132cca7">end</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.end(); }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classPoint.html#a94230d609d1a493ff411218ab08e65ce">  110</a></span>  std::vector&lt;Complex&gt;::const_iterator <a class="code hl_function" href="classPoint.html#a94230d609d1a493ff411218ab08e65ce">end</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>.end(); }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">  113</a></span>  std::vector&lt;Complex&gt; <a class="code hl_variable" href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">coords_</a>;  </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">static_assert</span>(std::ranges::range&lt;Point&gt;);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">static_assert</span>(std::ranges::constant_range&lt;const Point&gt;);</div>
+<div class="ttc" id="aclassPoint_html"><div class="ttname"><a href="classPoint.html">Point</a></div><div class="ttdoc">Represents a point in a multidimensional complex space.</div><div class="ttdef"><b>Definition</b> point.hpp:15</div></div>
+<div class="ttc" id="aclassPoint_html_a1be7479354600505f20653a55a74343b"><div class="ttname"><a href="classPoint.html#a1be7479354600505f20653a55a74343b">Point::GenerateRandom</a></div><div class="ttdeci">static Point GenerateRandom(size_t dimensions)</div><div class="ttdoc">Generates a random point with the specified number of dimensions.</div><div class="ttdef"><b>Definition</b> point.hpp:55</div></div>
+<div class="ttc" id="aclassPoint_html_a36b7dcab233f15bc5d2a9df36132cca7"><div class="ttname"><a href="classPoint.html#a36b7dcab233f15bc5d2a9df36132cca7">Point::end</a></div><div class="ttdeci">std::vector&lt; Complex &gt;::iterator end()</div><div class="ttdoc">Gets an iterator to the end of the coordinates.</div><div class="ttdef"><b>Definition</b> point.hpp:104</div></div>
+<div class="ttc" id="aclassPoint_html_a57cb67ce8efdc82e6ea579cc05835292"><div class="ttname"><a href="classPoint.html#a57cb67ce8efdc82e6ea579cc05835292">Point::Point</a></div><div class="ttdeci">Point(std::vector&lt; Complex &gt; coords={})</div><div class="ttdoc">Constructs a Point with the given coordinates.</div><div class="ttdef"><b>Definition</b> point.hpp:21</div></div>
+<div class="ttc" id="aclassPoint_html_a69d149a65b910a28995401163864595d"><div class="ttname"><a href="classPoint.html#a69d149a65b910a28995401163864595d">Point::begin</a></div><div class="ttdeci">std::vector&lt; Complex &gt;::const_iterator begin() const</div><div class="ttdoc">Gets a constant iterator to the beginning of the coordinates.</div><div class="ttdef"><b>Definition</b> point.hpp:98</div></div>
+<div class="ttc" id="aclassPoint_html_a82035f0ce989a54a69d7c318ebeb4335"><div class="ttname"><a href="classPoint.html#a82035f0ce989a54a69d7c318ebeb4335">Point::coords_</a></div><div class="ttdeci">std::vector&lt; Complex &gt; coords_</div><div class="ttdoc">The coordinates of the point.</div><div class="ttdef"><b>Definition</b> point.hpp:113</div></div>
+<div class="ttc" id="aclassPoint_html_a8807f48794da645588a9b92c7aff4789"><div class="ttname"><a href="classPoint.html#a8807f48794da645588a9b92c7aff4789">Point::GetDimensions</a></div><div class="ttdeci">size_t GetDimensions() const</div><div class="ttdoc">Gets the number of dimensions of the point.</div><div class="ttdef"><b>Definition</b> point.hpp:28</div></div>
+<div class="ttc" id="aclassPoint_html_a92326ddb107faaaf6385000d00826af5"><div class="ttname"><a href="classPoint.html#a92326ddb107faaaf6385000d00826af5">Point::operator[]</a></div><div class="ttdeci">const Complex &amp; operator[](size_t i) const</div><div class="ttdoc">Accesses the coordinate at the specified index.</div><div class="ttdef"><b>Definition</b> point.hpp:42</div></div>
+<div class="ttc" id="aclassPoint_html_a94230d609d1a493ff411218ab08e65ce"><div class="ttname"><a href="classPoint.html#a94230d609d1a493ff411218ab08e65ce">Point::end</a></div><div class="ttdeci">std::vector&lt; Complex &gt;::const_iterator end() const</div><div class="ttdoc">Gets a constant iterator to the end of the coordinates.</div><div class="ttdef"><b>Definition</b> point.hpp:110</div></div>
+<div class="ttc" id="aclassPoint_html_aba67c2dc4c850255af08f6ef7b53cffc"><div class="ttname"><a href="classPoint.html#aba67c2dc4c850255af08f6ef7b53cffc">Point::ToLst</a></div><div class="ttdeci">GiNaC::lst ToLst() const</div><div class="ttdoc">Converts the point to a GiNaC::lst object.</div><div class="ttdef"><b>Definition</b> point.cpp:3</div></div>
+<div class="ttc" id="aclassPoint_html_abf5a8bfc0d842b5a98b1292babb09da0"><div class="ttname"><a href="classPoint.html#abf5a8bfc0d842b5a98b1292babb09da0">Point::ToStr</a></div><div class="ttdeci">std::string ToStr() const</div><div class="ttdoc">Converts the point to a string representation.</div><div class="ttdef"><b>Definition</b> point.hpp:72</div></div>
+<div class="ttc" id="aclassPoint_html_ad3c19aa6a99a8f9a3ac082d72a22cb3b"><div class="ttname"><a href="classPoint.html#ad3c19aa6a99a8f9a3ac082d72a22cb3b">Point::GetCoord</a></div><div class="ttdeci">const Complex &amp; GetCoord(size_t i) const</div><div class="ttdoc">Gets the coordinate at the specified index.</div><div class="ttdef"><b>Definition</b> point.hpp:35</div></div>
+<div class="ttc" id="aclassPoint_html_ad943e966b387776d9c76f233ea14737e"><div class="ttname"><a href="classPoint.html#ad943e966b387776d9c76f233ea14737e">Point::begin</a></div><div class="ttdeci">std::vector&lt; Complex &gt;::iterator begin()</div><div class="ttdoc">Gets an iterator to the beginning of the coordinates.</div><div class="ttdef"><b>Definition</b> point.hpp:92</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

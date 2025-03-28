@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['map_0',['Map',['../classMap.html#ad2f5c98261d6e71703a1aa27c17b5514',1,'Map']]],
-  ['mapchecker_1',['MapChecker',['../classMapChecker.html#abadcd9d4e61aa5d9a342209253fb9bf5',1,'MapChecker']]],
-  ['mapexists_2',['MapExists',['../classFunctionDatabase.html#a27bb6cb5f7a69df442c90d379bd30a60',1,'FunctionDatabase']]]
+  ['lengthsolutionstring_0',['lengthsolutionstring',['../structphc_1_1SolutionContainerTraits.html#a4084889bcda5122f14e205b6ead3b246',1,'phc::SolutionContainerTraits::LengthSolutionString()'],['../structphc_1_1SolutionContainerTraits_3_01Precision_1_1Standard_01_4.html#a1dd1861b6cd82818c55fb14e89196dfd',1,'phc::SolutionContainerTraits&lt; Precision::Standard &gt;::LengthSolutionString()']]],
+  ['loadequations_1',['LoadEquations',['../classEquation.html#aa930858b3d6f67de245f85569d446463',1,'Equation']]]
 ];

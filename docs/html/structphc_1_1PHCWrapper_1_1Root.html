@@ -84,33 +84,92 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structphc_1_1PHCWrapper_1_1Root-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">phc::PHCWrapper::Root Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a root of the polynomial system.  
+ <a href="structphc_1_1PHCWrapper_1_1Root.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="phc__wrapper_8hpp_source.html">phc_wrapper.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for phc::PHCWrapper::Root:</div>
 <div class="dyncontent">
 <div class="center"><img src="structphc_1_1PHCWrapper_1_1Root__coll__graph.png" border="0" usemap="#aphc_1_1PHCWrapper_1_1Root_coll__map" alt="Collaboration graph"/></div>
 <map name="aphc_1_1PHCWrapper_1_1Root_coll__map" id="aphc_1_1PHCWrapper_1_1Root_coll__map">
-<area shape="rect" title=" " alt="" coords="9,133,174,199"/>
-<area shape="rect" title=" " alt="" coords="5,5,57,71"/>
-<area shape="poly" title=" " alt="" coords="29,71,30,90,35,108,41,119,36,122,30,110,25,91,24,71"/>
-<area shape="rect" title=" " alt="" coords="87,5,216,71"/>
-<area shape="poly" title=" " alt="" coords="141,72,124,110,120,120,115,117,120,108,137,70"/>
+<area shape="rect" title="Represents a root of the polynomial system." alt="" coords="19,148,185,213"/>
+<area shape="rect" title=" " alt="" coords="5,13,57,78"/>
+<area shape="poly" title=" " alt="" coords="40,77,56,123,63,133,58,136,52,125,35,79"/>
+<area shape="rect" title=" " alt="" coords="81,5,264,85"/>
+<area shape="poly" title=" " alt="" coords="163,86,146,125,140,135,135,133,141,123,158,84"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structphc_1_1PHCWrapper_1_1Root_1_1Complex.html">Complex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a complex number.  <a href="structphc_1_1PHCWrapper_1_1Root_1_1Complex.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af5bf686c634be0153dcaf2cb8f4fba56" id="r_af5bf686c634be0153dcaf2cb8f4fba56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structphc_1_1PHCWrapper_1_1Root.html#af5bf686c634be0153dcaf2cb8f4fba56">operator==</a> (const <a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a> &amp;) const =default</td></tr>
+<tr class="memdesc:af5bf686c634be0153dcaf2cb8f4fba56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator for comparing two roots.  <br /></td></tr>
+<tr class="separator:af5bf686c634be0153dcaf2cb8f4fba56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3ff77533860c643e7ac29280ee42f240" id="r_a3ff77533860c643e7ac29280ee42f240"><td class="memItemLeft" align="right" valign="top"><a id="a3ff77533860c643e7ac29280ee42f240" name="a3ff77533860c643e7ac29280ee42f240"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>multiplicity</b></td></tr>
+<tr class="memdesc:a3ff77533860c643e7ac29280ee42f240"><td class="mdescLeft">&#160;</td><td class="mdescRight">The multiplicity of the root. <br /></td></tr>
 <tr class="separator:a3ff77533860c643e7ac29280ee42f240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab663beafaeb1ec9661f6e6ff8122cc5c" id="r_ab663beafaeb1ec9661f6e6ff8122cc5c"><td class="memItemLeft" align="right" valign="top"><a id="ab663beafaeb1ec9661f6e6ff8122cc5c" name="ab663beafaeb1ec9661f6e6ff8122cc5c"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:ab663beafaeb1ec9661f6e6ff8122cc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3051140a00b7069a0fbc601ee2902e4" id="r_ac3051140a00b7069a0fbc601ee2902e4"><td class="memItemLeft" align="right" valign="top"><a id="ac3051140a00b7069a0fbc601ee2902e4" name="ac3051140a00b7069a0fbc601ee2902e4"></a>
+std::vector&lt; <a class="el" href="structphc_1_1PHCWrapper_1_1Root_1_1Complex.html">Complex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:ac3051140a00b7069a0fbc601ee2902e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data representing the root. <br /></td></tr>
+<tr class="separator:ac3051140a00b7069a0fbc601ee2902e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a root of the polynomial system. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af5bf686c634be0153dcaf2cb8f4fba56" name="af5bf686c634be0153dcaf2cb8f4fba56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5bf686c634be0153dcaf2cb8f4fba56">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool phc::PHCWrapper::Root::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structphc_1_1PHCWrapper_1_1Root.html">Root</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Equality operator for comparing two roots. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other root to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if equal, false otherwise. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>source/<a class="el" href="phc__wrapper_8hpp_source.html">phc_wrapper.hpp</a></li>
 </ul>

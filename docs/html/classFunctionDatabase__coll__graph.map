@@ -1,9 +1,9 @@
 <map id="FunctionDatabase" name="FunctionDatabase">
-<area shape="rect" id="Node000001" title="Class to interact with the function database." alt="" coords="52,207,215,352"/>
+<area shape="rect" id="Node000001" title="Class to interact with the function database." alt="" coords="52,221,215,367"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,69,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,70,48,124,65,182,69,191,65,193,60,184,43,125,36,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,71,47,130,54,164,65,196,69,206,65,208,60,198,49,165,42,131,35,71"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="100,5,167,71"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,71,136,190,131,190,131,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,71,136,205,131,205,131,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="208,5,256,71"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,71,223,125,205,184,200,194,196,191,200,182,218,124,227,70"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,71,225,131,217,165,205,198,200,208,196,206,200,196,212,164,220,130,228,70"/>
 </map>

@@ -2,6 +2,15 @@
 \hypertarget{classSolver}{}\label{classSolver}\index{Solver@{Solver}}
 
 
+A class for solving equations defined by mappings and points.  
+
+
+
+
+{\ttfamily \#include $<$solver.\+hpp$>$}
+
+
+
 Collaboration diagram for Solver\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -14,40 +23,127 @@ Collaboration diagram for Solver\+:\nopagebreak
 \item 
 \Hypertarget{classSolver_a2f890d59082c2c520bc0b8d496c12182}\label{classSolver_a2f890d59082c2c520bc0b8d496c12182} 
 using {\bfseries Root} = \mbox{\hyperlink{structEquation_1_1Root}{Equation\+::\+Root}}
-\item 
+\begin{DoxyCompactList}\small\item\em Alias for the root type. \end{DoxyCompactList}\item 
 \Hypertarget{classSolver_aa7fc4e45a2339e17585dd2c31a06fa0c}\label{classSolver_aa7fc4e45a2339e17585dd2c31a06fa0c} 
 using {\bfseries Solution} = \mbox{\hyperlink{classEquation_1_1Solution}{Equation\+::\+Solution}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Alias for the solution type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044}\label{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044} 
-\mbox{\hyperlink{classEquation_1_1Solution}{Solution}} {\bfseries Solve} (const \mbox{\hyperlink{classMap}{Map}} \&mapping, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classSolver_aa7fc4e45a2339e17585dd2c31a06fa0c}{Solution}} \mbox{\hyperlink{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044}{Solve}} (const \mbox{\hyperlink{classMap}{Map}} \&mapping, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Solves the equation defined by the given mapping and point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed}\label{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed} 
-static \mbox{\hyperlink{classSolver}{Solver}} \& {\bfseries Get\+Instance} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classSolver}{Solver}} \& \mbox{\hyperlink{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the \doxylink{classSolver}{Solver}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classSolver_a83b673900078afb56d459e75295b0d43}\label{classSolver_a83b673900078afb56d459e75295b0d43} 
-\mbox{\hyperlink{classEquation}{Equation}} {\bfseries Create\+Equation} (const \mbox{\hyperlink{classMap}{Map}} \&mapping, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
-\item 
+\mbox{\hyperlink{classEquation}{Equation}} \mbox{\hyperlink{classSolver_a83b673900078afb56d459e75295b0d43}{Create\+Equation}} (const \mbox{\hyperlink{classMap}{Map}} \&mapping, const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Creates an equation from the given mapping and point. \end{DoxyCompactList}\item 
+\Hypertarget{classSolver_a7808b466eaac88fb9f73b8064b087c1d}\label{classSolver_a7808b466eaac88fb9f73b8064b087c1d} 
+{\bfseries Solver} ()=default
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSolver}{Solver} instance. \end{DoxyCompactList}\item 
 \Hypertarget{classSolver_a6bf90e6f8029839d603352dfe72f8b74}\label{classSolver_a6bf90e6f8029839d603352dfe72f8b74} 
 {\bfseries Solver} (const \mbox{\hyperlink{classSolver}{Solver}} \&root)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
 \Hypertarget{classSolver_a86f1bd1aa8586e758ca927a16cbc1fc7}\label{classSolver_a86f1bd1aa8586e758ca927a16cbc1fc7} 
 {\bfseries Solver} (\mbox{\hyperlink{classSolver}{Solver}} \&\&root)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
 \Hypertarget{classSolver_a722ad83fa56dd52e4399ab8689b3120b}\label{classSolver_a722ad83fa56dd52e4399ab8689b3120b} 
 \mbox{\hyperlink{classSolver}{Solver}} \& {\bfseries operator=} (const \mbox{\hyperlink{classSolver}{Solver}} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
 \Hypertarget{classSolver_a82c1ab43fb01f7797338701b4d7480e1}\label{classSolver_a82c1ab43fb01f7797338701b4d7480e1} 
 \mbox{\hyperlink{classSolver}{Solver}} \& {\bfseries operator=} (\mbox{\hyperlink{classSolver}{Solver}} \&\&)=delete
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for solving equations defined by mappings and points. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSolver_a83b673900078afb56d459e75295b0d43}\label{classSolver_a83b673900078afb56d459e75295b0d43} 
+\index{Solver@{Solver}!CreateEquation@{CreateEquation}}
+\index{CreateEquation@{CreateEquation}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{CreateEquation()}{CreateEquation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEquation}{Equation}} Solver\+::\+Create\+Equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{mapping,  }\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Creates an equation from the given mapping and point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mapping} & The mapping defining the equations. \\
+\hline
+{\em point} & The point defining the equations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The constructed \doxylink{classEquation}{Equation} object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a83b673900078afb56d459e75295b0d43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classSolver_a83b673900078afb56d459e75295b0d43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed}\label{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed} 
+\index{Solver@{Solver}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSolver}{Solver}} \& Solver\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the \doxylink{classSolver}{Solver}. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classSolver}{Solver} instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a27e59f215e8d71dafd5f45ad3630c4ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044}\label{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044} 
+\index{Solver@{Solver}!Solve@{Solve}}
+\index{Solve@{Solve}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSolver_aa7fc4e45a2339e17585dd2c31a06fa0c}{Solver\+::\+Solution}} Solver\+::\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{mapping,  }\item[{const \mbox{\hyperlink{classPoint}{Point}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Solves the equation defined by the given mapping and point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mapping} & The mapping defining the equations. \\
+\hline
+{\em point} & The point defining the equations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The solution to the equations. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a2bd03d19dfdd53d7b9bcceaa4a8ab044_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

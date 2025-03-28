@@ -1,30 +1,31 @@
 <map id="Map::GetDimensions" name="Map::GetDimensions">
-<area shape="rect" id="Node000001" title="Gets the dimensions of the map." alt="" coords="1349,132,1508,157"/>
-<area shape="rect" id="Node000002" href="$classMap.html#a3495abb2416426db3f9eff6d5832fb17" title="Evaluates the extension degree of the map." alt="" coords="1075,5,1301,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1402,125,1357,88,1300,52,1248,33,1250,28,1303,48,1360,83,1405,121"/>
-<area shape="rect" id="Node000004" href="$classMap.html#a5e541877bbd65e1a30b4d0ab63a1630d" title="Gets the Jacobian matrix of the map." alt="" coords="1099,107,1277,132"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1335,138,1277,131,1278,126,1335,132"/>
-<area shape="rect" id="Node000007" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,181,597,207"/>
-<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="1392,166,1349,183,1302,197,1205,211,1106,221,1007,225,910,225,734,219,597,207,598,202,734,213,910,220,1006,220,1105,215,1204,206,1301,191,1348,178,1390,161"/>
-<area shape="rect" id="Node000010" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="851,56,1010,81"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1389,129,1347,111,1301,97,1224,83,1147,75,1010,70,1010,64,1147,69,1225,78,1302,91,1349,106,1391,124"/>
-<area shape="rect" id="Node000011" href="$classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="667,257,765,283"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1407,169,1362,207,1333,226,1302,240,1229,262,1153,277,1076,286,1001,290,866,288,765,279,766,274,866,282,1001,284,1076,280,1152,272,1228,257,1300,236,1331,221,1359,203,1404,165"/>
-<area shape="rect" id="Node000012" href="$classChecker.html#ad27c68388778a2a37c7a9589bc58c78e" title="Substitutes the Jacobian with the given point." alt="" coords="1087,156,1289,181"/>
-<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="1335,157,1290,161,1289,156,1335,151"/>
-<area shape="rect" id="Node000003" href="$classMap.html#a6966029610d6d01a0ff49372f642fc7a" title="Gets the extension degree of the map." alt="" coords="835,5,1027,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1061,21,1027,21,1027,15,1061,15"/>
-<area shape="rect" id="Node000005" href="$classMap.html#ae2c291f4f24e65f7c5c841843f14e8e1" title="Gets the Jacobian of the map." alt="" coords="863,105,999,131"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1085,121,999,121,999,116,1085,116"/>
-<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="1108,106,995,84,996,79,1109,101"/>
-<area shape="rect" id="Node000006" href="$classChecker.html#a5557d50dbd898a42629d367321fa4d7c" title="Tests a point on the map." alt="" coords="645,156,787,181"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="863,137,771,159,770,153,862,131"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="632,182,598,186,597,181,631,176"/>
-<area shape="rect" id="Node000008" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,181,375,207"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="409,197,375,197,375,191,409,191"/>
-<area shape="rect" id="Node000009" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,181,124,207"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="158,197,124,197,124,191,158,191"/>
-<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="866,87,835,95,740,119,646,146,543,184,542,179,645,141,739,114,834,90,865,82"/>
-<area shape="poly" id="edge13_Node000011_Node000007" title=" " alt="" coords="667,255,545,209,546,204,669,250"/>
-<area shape="poly" id="edge16_Node000012_Node000006" title=" " alt="" coords="1073,171,787,171,787,166,1073,166"/>
+<area shape="rect" id="Node000001" title="Gets the dimensions of the map." alt="" coords="1160,155,1319,180"/>
+<area shape="rect" id="Node000002" href="$classSolver.html#a83b673900078afb56d459e75295b0d43" title="Creates an equation from the given mapping and point." alt="" coords="913,5,1084,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1219,145,1174,93,1144,67,1111,44,1083,33,1085,28,1113,40,1147,62,1178,90,1223,142"/>
+<area shape="rect" id="Node000004" href="$classMap.html#a3495abb2416426db3f9eff6d5832fb17" title="Evaluates the extension degree of the map." alt="" coords="885,55,1112,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1209,149,1164,120,1111,94,1076,83,1077,78,1113,89,1167,116,1211,144"/>
+<area shape="rect" id="Node000006" href="$classMap.html#a5e541877bbd65e1a30b4d0ab63a1630d" title="Gets the Jacobian matrix of the map." alt="" coords="909,104,1088,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1164,154,1059,132,1060,127,1165,149"/>
+<area shape="rect" id="Node000008" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,180,597,205"/>
+<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="1146,177,1001,187,837,195,598,197,597,191,837,190,1001,182,1146,172"/>
+<area shape="rect" id="Node000011" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="662,155,821,180"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1146,170,821,170,821,165,1146,165"/>
+<area shape="rect" id="Node000012" href="$classMap.html#a292bbf3fa2ba781d16c404491f6e0725" title="Applies the map to a point." alt="" coords="692,256,791,281"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1210,190,1166,217,1113,239,1026,259,937,270,856,274,791,273,791,268,856,268,937,264,1025,254,1111,234,1163,212,1208,186"/>
+<area shape="rect" id="Node000013" href="$classChecker.html#ad27c68388778a2a37c7a9589bc58c78e" title="Substitutes the Jacobian with the given point." alt="" coords="897,307,1100,332"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="1221,193,1176,242,1146,267,1113,290,1065,309,1063,304,1111,285,1143,263,1172,238,1218,189"/>
+<area shape="rect" id="Node000003" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="688,5,795,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="900,21,795,21,795,15,900,15"/>
+<area shape="rect" id="Node000005" href="$classMap.html#a6966029610d6d01a0ff49372f642fc7a" title="Gets the extension degree of the map." alt="" coords="645,55,837,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="872,70,838,70,838,65,872,65"/>
+<area shape="rect" id="Node000007" href="$classMap.html#ae2c291f4f24e65f7c5c841843f14e8e1" title="Gets the Jacobian of the map." alt="" coords="673,104,809,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="895,119,810,119,810,114,895,114"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="920,135,807,157,806,152,919,130"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="676,136,646,145,543,182,542,177,644,139,675,130"/>
+<area shape="rect" id="Node000009" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,180,375,205"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="409,195,375,195,375,190,409,190"/>
+<area shape="rect" id="Node000010" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,180,124,205"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="158,195,124,195,124,190,158,190"/>
+<area shape="poly" id="edge11_Node000011_Node000008" title=" " alt="" coords="649,180,598,186,597,180,648,175"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="688,254,549,208,551,203,690,249"/>
 </map>

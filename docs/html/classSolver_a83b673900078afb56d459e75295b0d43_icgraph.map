@@ -1,0 +1,5 @@
+<map id="Solver::CreateEquation" name="Solver::CreateEquation">
+<area shape="rect" id="Node000001" title="Creates an equation from the given mapping and point." alt="" coords="160,5,331,31"/>
+<area shape="rect" id="Node000002" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="5,5,112,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,21,112,21,112,15,146,15"/>
+</map>

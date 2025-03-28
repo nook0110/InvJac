@@ -15,17 +15,19 @@ Collaboration diagram for Function\+Database\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=337pt]{classFunctionDatabase__coll__graph}
+\includegraphics[width=338pt]{classFunctionDatabase__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classFunctionDatabase_a818f96f69008173a3792f99be6584038}\label{classFunctionDatabase_a818f96f69008173a3792f99be6584038} 
-enum class \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}} \{ {\bfseries Passed}
+enum class \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Result\+Type}} \{ \newline
+{\bfseries Passed}
 , {\bfseries Failed}
 , {\bfseries Error}
 , {\bfseries Contraction}
+, \newline
+\mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9}{Keller}}
  \}
 \begin{DoxyCompactList}\small\item\em Enum representing the type of result. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
@@ -67,11 +69,33 @@ mysqlx\+::\+Table {\bfseries error\+\_\+table\+\_\+}
 \begin{DoxyCompactList}\small\item\em Error results table. \end{DoxyCompactList}\item 
 \Hypertarget{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701}\label{classFunctionDatabase_a186e47ab070a6a91e803c041f4ff1701} 
 mysqlx\+::\+Table {\bfseries contraction\+\_\+table\+\_\+}
-\begin{DoxyCompactList}\small\item\em Contraction results table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contraction results table. \end{DoxyCompactList}\item 
+\Hypertarget{classFunctionDatabase_a055b28a28743b9fdc98884c106270f3c}\label{classFunctionDatabase_a055b28a28743b9fdc98884c106270f3c} 
+mysqlx\+::\+Table {\bfseries keller\+\_\+table\+\_\+}
+\begin{DoxyCompactList}\small\item\em Keller results table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Class to interact with the function database. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classFunctionDatabase_a818f96f69008173a3792f99be6584038}\label{classFunctionDatabase_a818f96f69008173a3792f99be6584038} 
+\index{FunctionDatabase@{FunctionDatabase}!ResultType@{ResultType}}
+\index{ResultType@{ResultType}!FunctionDatabase@{FunctionDatabase}}
+\doxysubsubsection{\texorpdfstring{ResultType}{ResultType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classFunctionDatabase_a818f96f69008173a3792f99be6584038}{Function\+Database\+::\+Result\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing the type of result. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Keller@{Keller}!FunctionDatabase@{FunctionDatabase}}\index{FunctionDatabase@{FunctionDatabase}!Keller@{Keller}}}\Hypertarget{classFunctionDatabase_a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9}\label{classFunctionDatabase_a818f96f69008173a3792f99be6584038a434127a732a15de804bc79c2dbe0fcd9} 
+Keller&New Keller result type. \\
+\hline
+
+\end{DoxyEnumFields}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05}\label{classFunctionDatabase_a209a02bbd437097388dac7c6ec672b05} 

@@ -1,0 +1,7 @@
+<map id="phc::base::SystemContainerFunctions" name="phc::base::SystemContainerFunctions">
+<area shape="rect" id="Node000001" title="Provides base functions for managing the system container." alt="" coords="160,5,356,125"/>
+<area shape="rect" id="Node000002" href="$structphc_1_1SystemContainerTraits.html" title="Traits for managing system containers based on precision." alt="" coords="5,181,247,306"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,138,174,182,170,179,203,135"/>
+<area shape="rect" id="Node000003" href="$structphc_1_1SystemContainerTraits_3_01Precision_1_1Standard_01_4.html" title="Specialization of SystemContainerTraits for standard precision." alt="" coords="271,173,512,313"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="313,135,341,172,337,175,309,138"/>
+</map>

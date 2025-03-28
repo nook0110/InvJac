@@ -1,5 +1,5 @@
 <map id="phc::PHCWrapper" name="phc::PHCWrapper">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,148,247,513"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="15,5,237,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,85,129,131,123,131,123,85"/>
+<area shape="rect" id="Node000001" title="A wrapper class for handling polynomial homotopy continuation operations." alt="" coords="5,163,247,548"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,231,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,100,129,146,123,146,123,100"/>
 </map>

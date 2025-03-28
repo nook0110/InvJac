@@ -1,0 +1,21 @@
+<map id="phc::PHCWrapper::GetInstance" name="phc::PHCWrapper::GetInstance">
+<area shape="rect" id="Node000001" title="Gets the singleton instance of the PHCWrapper." alt="" coords="1273,29,1495,55"/>
+<area shape="rect" id="Node000002" href="$classEquation.html#a8871fd36fb9bb10ec82a8922ad5fc009" title="Checks if the equation system is square." alt="" coords="852,5,995,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1305,30,1225,19,1134,17,1043,19,995,20,995,14,1043,14,1134,11,1226,14,1306,24"/>
+<area shape="rect" id="Node000003" href="$classEquation.html#aa930858b3d6f67de245f85569d446463" title="Loads the equations." alt="" coords="1043,29,1225,55"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1260,45,1226,45,1226,39,1260,39"/>
+<area shape="rect" id="Node000004" href="$classEquation.html#ae57d9bce0f5e3af995ea20b8e3af1149" title="Solves the equation." alt="" coords="862,55,985,80"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="1306,60,1226,70,1097,75,985,73,985,67,1097,69,1225,65,1305,54"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="1029,33,994,29,995,23,1029,27"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="1030,57,985,63,985,57,1029,52"/>
+<area shape="rect" id="Node000005" href="$classMap.html#a96bb87aa86af7d89988c619cd0fa59d5" title="Checks if the map has a contraction." alt="" coords="645,29,804,55"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="848,60,804,55,805,49,848,55"/>
+<area shape="rect" id="Node000009" href="$classSolver.html#a2bd03d19dfdd53d7b9bcceaa4a8ab044" title="Solves the equation defined by the given mapping and point." alt="" coords="671,79,778,104"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="849,79,779,88,778,82,848,74"/>
+<area shape="rect" id="Node000006" href="$classChecker.html#a6d1f44e90af6bd7279d82a2f5b8dc0a2" title="Performs the check on the set map." alt="" coords="423,29,597,55"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="631,45,598,45,598,39,631,39"/>
+<area shape="rect" id="Node000007" href="$classMapChecker.html#ac37359c66ceb1ce7e5f1d16240bfc3ac" title="Performs the check on the generated map." alt="" coords="172,29,375,55"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="409,45,375,45,375,39,409,39"/>
+<area shape="rect" id="Node000008" href="$classInvJacApp.html#a60085f4750c5a530574bdc86cd12c22e" title="Runs the InvJac application." alt="" coords="5,29,124,55"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="158,45,124,45,124,39,158,39"/>
+</map>

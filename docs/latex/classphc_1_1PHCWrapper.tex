@@ -2,6 +2,15 @@
 \hypertarget{classphc_1_1PHCWrapper}{}\label{classphc_1_1PHCWrapper}\index{phc::PHCWrapper@{phc::PHCWrapper}}
 
 
+A wrapper class for handling polynomial homotopy continuation operations.  
+
+
+
+
+{\ttfamily \#include $<$phc\+\_\+wrapper.\+hpp$>$}
+
+
+
 Collaboration diagram for phc\+::PHCWrapper\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -13,48 +22,44 @@ Collaboration diagram for phc\+::PHCWrapper\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classphc_1_1PHCWrapper_1_1PHCWrapperImplementation}{PHCWrapper\+Implementation}}
-\item 
+\begin{DoxyCompactList}\small\item\em Implementation of the \doxylink{classphc_1_1PHCWrapper}{PHCWrapper} for a specific precision. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents a root of the polynomial system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classphc_1_1PHCWrapper_a98bddaa58924c8cc07fbcd47512490b7}\label{classphc_1_1PHCWrapper_a98bddaa58924c8cc07fbcd47512490b7} 
 void {\bfseries Clear} () const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25}\label{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25} 
-void {\bfseries Initialize\+Number\+Of\+Polynomials} (size\+\_\+t n) const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773}\label{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773} 
-void {\bfseries Insert\+Polynomial} (std\+::string\+\_\+view polynomial, size\+\_\+t idx) const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec}\label{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec} 
-size\+\_\+t {\bfseries Get\+Amount\+Of\+Symbols} () const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4}\label{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4} 
-bool {\bfseries Is\+Square} () const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1}\label{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1} 
-void {\bfseries Set\+Symbols} (const std\+::vector$<$ std\+::string $>$ \&symbols)
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94}\label{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94} 
-std\+::vector$<$ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}} $>$ {\bfseries Solve} () const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb}\label{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb} 
-size\+\_\+t {\bfseries Get\+Total\+Degree} () const
-\item 
-\Hypertarget{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3}\label{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3} 
-size\+\_\+t {\bfseries Get\+Bezout\+Number} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clears the internal state of the wrapper. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25}{Initialize\+Number\+Of\+Polynomials}} (size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Initializes the number of polynomials to be solved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773}{Insert\+Polynomial}} (std\+::string\+\_\+view polynomial, size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em Inserts a polynomial into the system at the specified index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec}{Get\+Amount\+Of\+Symbols}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of symbols used in the polynomials. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4}{Is\+Square}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the system of polynomials is square (same number of equations and variables). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1}{Set\+Symbols}} (const std\+::vector$<$ std\+::string $>$ \&symbols)
+\begin{DoxyCompactList}\small\item\em Sets the symbols used in the polynomials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}} \mbox{\hyperlink{classphc_1_1PHCWrapper_a06fadfb600971a44543041d12a07233a}{Parse\+Root}} (std\+::string root\+\_\+string, size\+\_\+t max\+\_\+precision=10) const
+\begin{DoxyCompactList}\small\item\em Parses a root from a string representation. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{Root}} $>$ \mbox{\hyperlink{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94}{Solve}} () const
+\begin{DoxyCompactList}\small\item\em Solves the system of polynomials. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb}{Get\+Total\+Degree}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total degree of the polynomial system. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3}{Get\+Bezout\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Bezout number of the polynomial system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a}\label{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a} 
-static \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}} \& {\bfseries Get\+Instance} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}} \& \mbox{\hyperlink{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the \doxylink{classphc_1_1PHCWrapper}{PHCWrapper}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{classphc_1_1PHCWrapper_a1a9bf0479f47e90e0cd34e1606082dee}\label{classphc_1_1PHCWrapper_a1a9bf0479f47e90e0cd34e1606082dee} 
+{\bfseries PHCWrapper} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classphc_1_1PHCWrapper}{PHCWrapper} instance. \end{DoxyCompactList}\item 
 \Hypertarget{classphc_1_1PHCWrapper_a0405eed5b93ffa3ef1f519798c99ec29}\label{classphc_1_1PHCWrapper_a0405eed5b93ffa3ef1f519798c99ec29} 
 {\bfseries PHCWrapper} (\mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}} \&\&)=delete
 \item 
@@ -70,9 +75,202 @@ static \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}} \& {\bfseries Get\+
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classphc_1_1PHCWrapper_a6e4dd9239ae0ae9720464dc04d36ff10}\label{classphc_1_1PHCWrapper_a6e4dd9239ae0ae9720464dc04d36ff10} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classphc_1_1PHCWrapper_1_1PHCWrapperImplementation}{PHCWrapper\+Implementation}} $>$ {\bfseries implementation\+\_\+}
-\end{DoxyCompactItemize}
+\Hypertarget{classphc_1_1PHCWrapper_a28e0ce319b55dd537ba3725f04ed00d5}\label{classphc_1_1PHCWrapper_a28e0ce319b55dd537ba3725f04ed00d5} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classphc_1_1PHCWrapper_1_1PHCWrapperImplementation}{PHCWrapper\+Implementation}}$<$ Precision\+::\+Standard $>$ $>$ {\bfseries implementation\+\_\+}
+\begin{DoxyCompactList}\small\item\em The implementation instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A wrapper class for handling polynomial homotopy continuation operations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec}\label{classphc_1_1PHCWrapper_aa58b8094c171f8f3f8303c5ee9f376ec} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!GetAmountOfSymbols@{GetAmountOfSymbols}}
+\index{GetAmountOfSymbols@{GetAmountOfSymbols}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{GetAmountOfSymbols()}{GetAmountOfSymbols()}}
+{\footnotesize\ttfamily size\+\_\+t phc\+::\+PHCWrapper\+::\+Get\+Amount\+Of\+Symbols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of symbols used in the polynomials. 
+
+\begin{DoxyReturn}{Returns}
+The number of symbols. 
+\end{DoxyReturn}
+\Hypertarget{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3}\label{classphc_1_1PHCWrapper_a03d25f7ca6d14a8e02fa534d4bf442b3} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!GetBezoutNumber@{GetBezoutNumber}}
+\index{GetBezoutNumber@{GetBezoutNumber}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{GetBezoutNumber()}{GetBezoutNumber()}}
+{\footnotesize\ttfamily size\+\_\+t phc\+::\+PHCWrapper\+::\+Get\+Bezout\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the Bezout number of the polynomial system. 
+
+\begin{DoxyReturn}{Returns}
+The Bezout number. 
+\end{DoxyReturn}
+\Hypertarget{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a}\label{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classphc_1_1PHCWrapper}{PHCWrapper}} \& phc\+::\+PHCWrapper\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the \doxylink{classphc_1_1PHCWrapper}{PHCWrapper}. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classphc_1_1PHCWrapper}{PHCWrapper} instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a0191213383ec870741949f69f27f7c7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb}\label{classphc_1_1PHCWrapper_a45c73498576c0c8f5e085da1933432cb} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!GetTotalDegree@{GetTotalDegree}}
+\index{GetTotalDegree@{GetTotalDegree}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{GetTotalDegree()}{GetTotalDegree()}}
+{\footnotesize\ttfamily size\+\_\+t phc\+::\+PHCWrapper\+::\+Get\+Total\+Degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the total degree of the polynomial system. 
+
+\begin{DoxyReturn}{Returns}
+The total degree. 
+\end{DoxyReturn}
+\Hypertarget{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25}\label{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!InitializeNumberOfPolynomials@{InitializeNumberOfPolynomials}}
+\index{InitializeNumberOfPolynomials@{InitializeNumberOfPolynomials}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{InitializeNumberOfPolynomials()}{InitializeNumberOfPolynomials()}}
+{\footnotesize\ttfamily void phc\+::\+PHCWrapper\+::\+Initialize\+Number\+Of\+Polynomials (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Initializes the number of polynomials to be solved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of polynomials. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a8b19675d3ab4b629f927d53f96dc1f25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773}\label{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!InsertPolynomial@{InsertPolynomial}}
+\index{InsertPolynomial@{InsertPolynomial}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{InsertPolynomial()}{InsertPolynomial()}}
+{\footnotesize\ttfamily void phc\+::\+PHCWrapper\+::\+Insert\+Polynomial (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{polynomial,  }\item[{size\+\_\+t}]{idx }\end{DoxyParamCaption}) const}
+
+
+
+Inserts a polynomial into the system at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polynomial} & The polynomial as a string view. \\
+\hline
+{\em idx} & The index where the polynomial is inserted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a51398b92cf100355f9b26073d2c5c773_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4}\label{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!IsSquare@{IsSquare}}
+\index{IsSquare@{IsSquare}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{IsSquare()}{IsSquare()}}
+{\footnotesize\ttfamily bool phc\+::\+PHCWrapper\+::\+Is\+Square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the system of polynomials is square (same number of equations and variables). 
+
+\begin{DoxyReturn}{Returns}
+True if the system is square, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a1ead8dcc2ad1038f4400e4ede5a001a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classphc_1_1PHCWrapper_a06fadfb600971a44543041d12a07233a}\label{classphc_1_1PHCWrapper_a06fadfb600971a44543041d12a07233a} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!ParseRoot@{ParseRoot}}
+\index{ParseRoot@{ParseRoot}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{ParseRoot()}{ParseRoot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{PHCWrapper\+::\+Root}} phc\+::\+PHCWrapper\+::\+Parse\+Root (\begin{DoxyParamCaption}\item[{std\+::string}]{root\+\_\+string,  }\item[{size\+\_\+t}]{max\+\_\+precision = {\ttfamily 10} }\end{DoxyParamCaption}) const}
+
+
+
+Parses a root from a string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+\_\+string} & The string representation of the root. \\
+\hline
+{\em max\+\_\+precision} & The maximum precision for parsing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parsed root. 
+\end{DoxyReturn}
+\Hypertarget{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1}\label{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!SetSymbols@{SetSymbols}}
+\index{SetSymbols@{SetSymbols}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{SetSymbols()}{SetSymbols()}}
+{\footnotesize\ttfamily void phc\+::\+PHCWrapper\+::\+Set\+Symbols (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{symbols }\end{DoxyParamCaption})}
+
+
+
+Sets the symbols used in the polynomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbols} & A vector of symbol names. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a4e2645b2f24716a72316bcd7bd14aac1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94}\label{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94} 
+\index{phc::PHCWrapper@{phc::PHCWrapper}!Solve@{Solve}}
+\index{Solve@{Solve}!phc::PHCWrapper@{phc::PHCWrapper}}
+\doxysubsubsection{\texorpdfstring{Solve()}{Solve()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structphc_1_1PHCWrapper_1_1Root}{PHCWrapper\+::\+Root}} $>$ phc\+::\+PHCWrapper\+::\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the system of polynomials. 
+
+\begin{DoxyReturn}{Returns}
+A vector of roots. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classphc_1_1PHCWrapper_a6c0a34ada438fc0059b33c3f52ecdf94_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
