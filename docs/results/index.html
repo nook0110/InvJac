@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Preview</title>
+  <script>
+    let data = {}; // Placeholder for JSON data
+    let currentTable = '';
+
+    async function loadData() {
+      try {
+        const response = await fetch('data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        data = await response.json();
+        updateTable();
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('results').innerHTML = '<p>Error loading data. Please check the console for details.</p>';
+      }
+    }
+
+    function updateTable() {
+      const tableSelect = document.getElementById('tableSelect').value;
+      const filterInput = document.getElementById('filterInput').value;
+      const useRegex = document.getElementById('regexFilter').checked;
+      const resultsContainer = document.getElementById('results');
+      currentTable = tableSelect;
+
+      if (!data[tableSelect]) {
+        resultsContainer.innerHTML = '<p>No data available for the selected table.</p>';
+        return;
+      }
+
+      let filteredData;
+      if (useRegex) {
+        try {
+          const regex = new RegExp(filterInput, 'i');
+          filteredData = data[tableSelect].filter(item =>
+            regex.test(JSON.stringify(item))
+          );
+        } catch (error) {
+          resultsContainer.innerHTML = '<p>Invalid regex pattern.</p>';
+          return;
+        }
+      } else {
+        const lowerFilter = filterInput.toLowerCase();
+        filteredData = data[tableSelect].filter(item =>
+          JSON.stringify(item).toLowerCase().includes(lowerFilter)
+        );
+      }
+
+      let tableHTML = '<table border="1"><thead><tr>';
+      if (filteredData.length > 0) {
+        Object.keys(filteredData[0]).forEach(key => {
+          tableHTML += `<th>${key}</th>`;
+        });
+        tableHTML += '</tr></thead><tbody>';
+        filteredData.forEach(row => {
+          tableHTML += '<tr>';
+          Object.values(row).forEach(value => {
+            tableHTML += `<td>${value}</td>`;
+          });
+          tableHTML += '</tr>';
+        });
+        tableHTML += '</tbody></table>';
+      } else {
+        tableHTML = '<p>No results found.</p>';
+      }
+
+      resultsContainer.innerHTML = tableHTML;
+    }
+
+    document.addEventListener('DOMContentLoaded', loadData);
+  </script>
+</head>
+
+<body>
+  <h1>Data Preview</h1>
+  <label for="tableSelect">Choose a table:</label>
+  <select id="tableSelect" onchange="updateTable()">
+    <option value="test_results">Test Results</option>
+    <option value="passed_results">Passed Results</option>
+    <option value="contraction_results">Contraction Results</option>
+    <option value="keller_results">Keller Results</option>
+    <option value="failed_results">Failed Results</option>
+    <option value="error_results">Error Results</option>
+  </select>
+  <br><br>
+  <label for="filterInput">Filter:</label>
+  <input type="text" id="filterInput" placeholder="Type to filter..."
+    onkeypress="if(event.key === 'Enter') updateTable()">
+  <button onclick="updateTable()">Apply Filter</button>
+  <br><br>
+  <label for="regexFilter">Use Regex:</label>
+  <input type="checkbox" id="regexFilter" onchange="updateTable()">
+  <br><br>
+  <div id="results"></div>
+</body>
+
+</html>
